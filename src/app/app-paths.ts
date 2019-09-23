@@ -1,4 +1,5 @@
 export const paths = {
   home: 'home',
-  warframes: 'warframes'
+  warframes: 'warframes',
+  wfDetail: 'warframes/:name'
 };

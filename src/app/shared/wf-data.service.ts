@@ -6,8 +6,12 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
   providedIn: 'root'
 })
 export class WfDataService {
+  allFrames: Item[];
 
-  constructor(private sanitization: DomSanitizer) { }
+
+  constructor(private sanitization: DomSanitizer) {
+    this.allFrames = this.getAllWarframes();
+  }
 
   public getThumbnail(imageName: string): SafeStyle {
     return this.sanitization.bypassSecurityTrustStyle(`url(https://cdn.warframestat.us/img/${imageName})`);
@@ -15,6 +19,11 @@ export class WfDataService {
 
   getAllWarframes(): Item[] {
     return new Items({ category: ['Warframes'] });
+  }
+
+  getWarframeByName(name: string): Item {
+    console.log(`Retreiving data for ${name}`);
+    return this.allFrames.find(x => x.name === name);
   }
 
   getAllPrimaries(): Item[] {
