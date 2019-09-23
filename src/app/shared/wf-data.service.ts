@@ -33,13 +33,16 @@ export class WfDataService {
 
   public getThumb(imageName: string): SafeStyle {
     if (imageName === 'equinox.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/c/c1/EquinoxIcon64.png/revision/latest?cb=20170920180706';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/c/c1/EquinoxIcon64.png/revision/latest';
     }
     if (imageName === 'equinox-prime.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/5/55/EquinoxPrimeIcon64.png/revision/latest?cb=20190402202642';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/5/55/EquinoxPrimeIcon64.png/revision/latest';
     }
     if (imageName === 'wukong-prime.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/c/cb/WukongPrimeIcon64.png/revision/latest?cb=20190719014403';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/c/cb/WukongPrimeIcon64.png/revision/latest';
+    }
+    if (imageName === 'https://vignette.wikia.nocookie.net/warframe/images/f/f2/ChromaPrime.png/revision/latest?cb=20180925193634') {
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/f/fa/ChromaPrimeIcon64.png/revision/latest?cb=20180925195210';
     }
     return this.sanitization.bypassSecurityTrustStyle(`url(${imageName})`);
   }
