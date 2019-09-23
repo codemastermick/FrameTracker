@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import Items, { Item } from 'warframe-items';
+import Items, { Item, Polarity } from 'warframe-items';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+
+
 
 @Injectable({
   providedIn: 'root'
