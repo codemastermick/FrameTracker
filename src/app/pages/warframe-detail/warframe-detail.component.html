@@ -12,8 +12,8 @@
   <mat-card-content>
     <div fxLayout="row">
       <div fxFlex="60%">
-        <div>Passive Ability: {{frame.passiveDescription}}</div>
-        <div>Aura Polarity:
+        <div>Passive Ability: {{getPassive(frame)}}</div>
+        <div *ngIf="frame.aura">Aura Polarity:
           <span class="icon-{{frame.aura.toLowerCase()}}"></span>
         </div>
         <div class="health">Health: {{frame.health}}</div>
@@ -41,19 +41,21 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div *ngFor="let comp of frame.components">
+      <div *ngFor="let comp of frame.components;">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{comp.name}}
-            </mat-panel-title>
+            <div *ngIf="comp.drops">
+              <mat-panel-title>
+                {{comp.name}}
+              </mat-panel-title>
+            </div>
           </mat-expansion-panel-header>
-          <div *ngIf="comp.drops" mat-card-avatar class="thumbnail" [style.background-image]="getThumb(comp.imageName)">
-          </div>
           <mat-list>
-            <mat-list-item *ngFor="let drop of comp.drops">
-              {{drop.location.split('nce:')[0]}}: {{drop.chance}}%
-            </mat-list-item>
+            <div *ngIf="comp.drops">
+              <mat-list-item *ngFor="let d of comp.drops.sort()">
+                {{d.location.split('nce:')[0]}}: {{d.chance.toFixed(2)}}%
+              </mat-list-item>
+            </div>
           </mat-list>
         </mat-expansion-panel>
       </div>

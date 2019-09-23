@@ -32,7 +32,7 @@ export class WarframeDetailComponent implements OnInit {
     return this.wf.getImage(imageName);
   }
 
-  getThumb(){
+  getThumb() {
     return this.wf.getThumb(this.frame.wikiaThumbnail);
   }
 
@@ -40,5 +40,9 @@ export class WarframeDetailComponent implements OnInit {
     return comp.drops.filter((item, index) => {
       return comp.drops.indexOf(item) === index;
     });
+  }
+
+  getPassive() {
+    return this.wf.getFramePassive(this.frame);
   }
 }
