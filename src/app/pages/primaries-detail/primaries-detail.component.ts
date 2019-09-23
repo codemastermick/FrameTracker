@@ -30,7 +30,7 @@ export class PrimariesDetailComponent implements OnInit {
   }
 
   getThumb() {
-    return this.wf.getThumbnail(this.primary.imageName);
+    return this.wf.getThumb(this.primary.imageName);
   }
 
 }
