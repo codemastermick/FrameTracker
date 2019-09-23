@@ -2,18 +2,22 @@
   background-size: cover;
 }
 
-.health{
+.health {
   color: red;
 }
 
-.shield{
+.shield {
   color: blue;
 }
 
-.energy{
+.energy {
   color: cyan;
 }
 
-.armour{
+.armour {
   color: purple;
+}
+
+.polarities > span {
+  color: black;
 }

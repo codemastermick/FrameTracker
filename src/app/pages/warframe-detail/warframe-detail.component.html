@@ -6,16 +6,61 @@
     <mat-card-subtitle>
       {{frame.description}}
     </mat-card-subtitle>
-    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
+    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb(frame.imageName)"></div>
   </mat-card-header>
 
   <mat-card-content>
-    <span class="health">Health {{frame.health}}</span>
-    |
-    <span class="shield">Shield {{frame.shield}}</span>
-    |
-    <span class="energy">Energy {{frame.power}}</span>
-    |
-    <span class="armour">Armour {{frame.armor}}</span>
+    <div>Passive Ability: {{frame.passiveDescription}}</div>
+    <div>Aura Polarity:
+        <span class="icon-{{frame.aura.toLowerCase()}}"></span>
+    </div>
+    <div class="health">Health: {{frame.health}}</div>
+    <div class="shield">Shield: {{frame.shield}}</div>
+    <div class="energy">Energy: {{frame.power}}</div>
+    <div class="armour">Armour: {{frame.armor}}</div>
+    <div>Sprint Speed: {{frame.sprintSpeed}}</div>
+    <div>PVP: {{frame.conclave}}</div>
+    <div>MR: {{frame.masteryReq}}</div>
+    Polarities:
+    <span *ngFor="let polarity of frame.polarities" class="polarities">
+      <span class="icon-{{polarity.toLowerCase()}}"></span>
+    </span>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Components
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let comp of frame.components">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{comp.name}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div *ngIf="comp.drops" mat-card-avatar class="thumbnail" [style.background-image]="getThumb(comp.imageName)">
+          </div>
+          <mat-list>
+            <mat-list-item *ngFor="let drop of comp.drops">
+              {{drop.location.split('nce:')[0]}}: {{drop.chance}}%
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Abilities
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngFor="let ability of frame.abilities">
+        {{ability.name}}: {{ability.description}}
+      </div>
+    </mat-expansion-panel>
+
   </mat-card-content>
 </mat-card>
