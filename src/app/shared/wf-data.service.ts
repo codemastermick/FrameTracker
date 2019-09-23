@@ -9,13 +9,11 @@ import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 })
 export class WfDataService {
   allFrames: Item[];
-  allPrimaries: Item[];
   allSecondaries: Item[];
   allMelee: Item[];
 
   constructor(private sanitization: DomSanitizer) {
     this.allFrames = this.getAllWarframes();
-    this.allPrimaries = this.getAllPrimaries();
     this.allSecondaries = this.getAllSecondaries();
     this.allMelee = this.getAllMelees();
   }
@@ -59,16 +57,6 @@ export class WfDataService {
 
   getFramePassive(frame: Item) {
     return frame.passiveDescription.replace(/\|\b.*?\|%/gm, '');
-  }
-
-  getAllPrimaries(): Item[] {
-    return new Items({ category: ['Primary'] });
-  }
-
-  getPrimaryByName(name: string): Item {
-    name = this.formatUrl(name);
-    console.log(`Retreiving data for ${name}`);
-    return this.allPrimaries.find(x => x.name === name);
   }
 
   getAllSecondaries(): Item[] {
