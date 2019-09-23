@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
+import { WfDataService } from 'app/shared/wf-data.service';
+import { Item } from 'warframe-items';
 
 @Component({
   selector: 'app-warframes',
@@ -9,13 +11,17 @@ import { Title, Meta } from '@angular/platform-browser';
 })
 export class WarframesComponent implements OnInit {
 
-  constructor(private titleService: Title, private metaTagService: Meta) { }
+  allWarframes: Item[];
+
+  constructor(private titleService: Title, private metaTagService: Meta, private wf: WfDataService) { }
 
   ngOnInit() {
     this.titleService.setTitle('Pathfinder Project Managment System');
     this.metaTagService.updateTag({ name: 'description', content: 'Simplifying project management for everyone' });
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
+
+    this.allWarframes = this.wf.getAllWarframes();
   }
 
 }

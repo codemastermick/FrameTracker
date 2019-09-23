@@ -1,3 +1,5 @@
 <div fxFlex="row">
-  Warframes works!
+  <div *ngFor="let frame of allWarframes">
+    <app-wf-summary frame={{frame|json}}></app-wf-summary>
+  </div>
 </div>
