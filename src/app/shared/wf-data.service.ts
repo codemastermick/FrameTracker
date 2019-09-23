@@ -27,8 +27,21 @@ export class WfDataService {
     return url;
   }
 
-  public getThumbnail(imageName: string): SafeStyle {
+  public getImage(imageName: string): SafeStyle {
     return this.sanitization.bypassSecurityTrustStyle(`url(https://cdn.warframestat.us/img/${imageName})`);
+  }
+
+  public getThumb(imageName: string): SafeStyle {
+    if (imageName === 'equinox.png') {
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/c/c1/EquinoxIcon64.png/revision/latest?cb=20170920180706';
+    }
+    if (imageName === 'equinox-prime.png') {
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/5/55/EquinoxPrimeIcon64.png/revision/latest?cb=20190402202642';
+    }
+    if (imageName === 'wukong-prime.png') {
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/c/cb/WukongPrimeIcon64.png/revision/latest?cb=20190719014403';
+    }
+    return this.sanitization.bypassSecurityTrustStyle(`url(${imageName})`);
   }
 
   getAllWarframes(): Item[] {
