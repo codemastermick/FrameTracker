@@ -22,6 +22,9 @@ export class WfDataService {
   }
 
   getWarframeByName(name: string): Item {
+    name = name.toLowerCase();
+    name = name.replace('%20', ' ');
+    name = name.replace(/\b(\w)/g, c => c.toUpperCase());
     console.log(`Retreiving data for ${name}`);
     return this.allFrames.find(x => x.name === name);
   }

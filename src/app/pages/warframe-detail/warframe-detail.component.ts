@@ -20,19 +20,16 @@ export class WarframeDetailComponent implements OnInit {
     private wf: WfDataService) { }
 
   ngOnInit() {
-    let name = this.router.url.split('/')[2];
-    name = name.replace(/^./, name[0].toUpperCase());
-    this.frame = this.wf.getWarframeByName(name);
+    this.frame = this.wf.getWarframeByName(this.router.url.split('/')[2]);
 
-    // this.titleService.setTitle(`Details for ${this.frame.name}`);
-    // this.metaTagService.updateTag({ name: 'description', content: `Warframe details for ${this.frame.name}` });
-    // this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
-    // this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
+    this.titleService.setTitle(`Details for ${this.frame.name}`);
+    this.metaTagService.updateTag({ name: 'description', content: `Warframe details for ${this.frame.name}` });
+    this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
+    this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
 
-    // this.frame = JSON.parse(this.frame.toString());
   }
 
-  getThumb(){
+  getThumb() {
     return this.wf.getThumbnail(this.frame.imageName);
   }
 
