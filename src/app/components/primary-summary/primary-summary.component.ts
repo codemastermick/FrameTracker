@@ -24,4 +24,8 @@ export class PrimarySummaryComponent implements OnInit {
     // open overlay with detail view
   }
 
+  getDPS() {
+    return this.primary.damagePerShot.reduce((a, b) => a + b, 0);
+  }
+
 }
