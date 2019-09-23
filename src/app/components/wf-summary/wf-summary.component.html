@@ -1,0 +1,21 @@
+<mat-card *ngIf="frame" (onclick)="openDetails()">
+  <mat-card-header>
+    <mat-card-title>
+      {{frame.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{frame.description}}
+    </mat-card-subtitle>
+    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <span class="health">Health {{frame.health}}</span>
+    |
+    <span class="shield">Shield {{frame.shield}}</span>
+    |
+    <span class="energy">Energy {{frame.power}}</span>
+    |
+    <span class="armour">Armour {{frame.armor}}</span>
+  </mat-card-content>
+</mat-card>
