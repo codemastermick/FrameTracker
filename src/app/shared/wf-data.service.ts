@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import Items, { Item, Polarity } from 'warframe-items';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 
 
 
@@ -27,8 +27,8 @@ export class WfDataService {
     return url;
   }
 
-  public getImage(imageName: string): SafeStyle {
-    return this.sanitization.bypassSecurityTrustStyle(`url(https://cdn.warframestat.us/img/${imageName})`);
+  public getImage(imageName: string): SafeUrl {
+    return this.sanitization.bypassSecurityTrustUrl(`https://cdn.warframestat.us/img/${imageName}`);
   }
 
   public getThumb(imageName: string): SafeStyle {

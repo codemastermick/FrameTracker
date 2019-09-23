@@ -10,22 +10,30 @@
   </mat-card-header>
 
   <mat-card-content>
-    <div>Passive Ability: {{frame.passiveDescription}}</div>
-    <div>Aura Polarity:
-        <span class="icon-{{frame.aura.toLowerCase()}}"></span>
-    </div>
-    <div class="health">Health: {{frame.health}}</div>
-    <div class="shield">Shield: {{frame.shield}}</div>
-    <div class="energy">Energy: {{frame.power}}</div>
-    <div class="armour">Armour: {{frame.armor}}</div>
-    <div>Sprint Speed: {{frame.sprintSpeed}}</div>
-    <div>PVP: {{frame.conclave}}</div>
-    <div>MR: {{frame.masteryReq}}</div>
-    Polarities:
-    <span *ngFor="let polarity of frame.polarities" class="polarities">
-      <span class="icon-{{polarity.toLowerCase()}}"></span>
-    </span>
+    <div fxLayout="row">
+      <div fxFlex="60%">
+        <div>Passive Ability: {{frame.passiveDescription}}</div>
+        <div>Aura Polarity:
+          <span class="icon-{{frame.aura.toLowerCase()}}"></span>
+        </div>
+        <div class="health">Health: {{frame.health}}</div>
+        <div class="shield">Shield: {{frame.shield}}</div>
+        <div class="energy">Energy: {{frame.power}}</div>
+        <div class="armour">Armour: {{frame.armor}}</div>
+        <div>Sprint Speed: {{frame.sprintSpeed}}</div>
+        <div>PVP: {{frame.conclave}}</div>
+        <div>MR: {{frame.masteryReq}}</div>
+        Polarities:
+        <span *ngFor="let polarity of frame.polarities" class="polarities">
+          <span class="icon-{{polarity.toLowerCase()}}"></span>
+        </span>
+      </div>
 
+      <div fxFlex="40%" class="wfImage">
+        <img [src]="getImage(frame.imageName)" alt="{{frame.name}} image">
+      </div>
+    </div>
+    <!-- bottom section -->
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
