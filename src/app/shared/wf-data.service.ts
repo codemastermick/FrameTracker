@@ -57,6 +57,10 @@ export class WfDataService {
     return this.allFrames.find(x => x.name === name);
   }
 
+  getFramePassive(frame: Item) {
+    return frame.passiveDescription.replace(/\|\b.*?\|%/gm, '');
+  }
+
   getAllPrimaries(): Item[] {
     return new Items({ category: ['Primary'] });
   }
