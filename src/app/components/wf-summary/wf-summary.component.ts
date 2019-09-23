@@ -16,8 +16,8 @@ export class WfSummaryComponent implements OnInit {
     this.frame = JSON.parse(this.frame.toString());
   }
 
-  getThumb() {
-    return this.wf.getThumbnail(this.frame.imageName);
+  getThumb(imageName: string) {
+    return this.wf.getThumb(imageName);
   }
 
   public openDetails() {
