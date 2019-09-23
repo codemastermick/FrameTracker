@@ -1,25 +1,26 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
+    <span class="icon-lotus"></span>
     Welcome Tenno, to {{ title }}
+    <span class="icon-lotus"></span>
   </h1>
-  <img width="300" alt="Lotus Symbol" src="http://i.imgur.com/eVFxjmc.png">
 </div>
 <mat-toolbar class="navPanel">
-    <button mat-raised-button>
-        <a [routerLink]="['/home']">Home</a>
-      </button>
-  <button mat-raised-button>
-    <a [routerLink]="['/warframes']">Warframes</a>
+  <button mat-button [routerLink]="['/home']">
+    <span class="icon-lotus"></span>
   </button>
-  <button mat-raised-button>
-    <a [routerLink]="['/primary']">Primary</a>
+  <button mat-raised-button [routerLink]="['/warframes']">
+    Warframes
   </button>
-  <button mat-raised-button>
-    <a [routerLink]="['/secondary']">Secondary</a>
+  <button mat-raised-button [routerLink]="['/primary']">
+    Primary
   </button>
-  <button mat-raised-button>
-    <a [routerLink]="['/melee']">Melee</a>
+  <button mat-raised-button [routerLink]="['/secondary']">
+    Secondary
+  </button>
+  <button mat-raised-button [routerLink]="['/melee']">
+    Melee
   </button>
 </mat-toolbar>
 <router-outlet></router-outlet>
