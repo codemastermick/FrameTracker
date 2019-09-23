@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?79zz2h');
+  src:  url('fonts/icomoon.eot?79zz2h#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?79zz2h') format('truetype'),
+    url('fonts/icomoon.woff?79zz2h') format('woff'),
+    url('fonts/icomoon.svg?79zz2h#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loka:before {
+  content: "\e908";
+}
+.icon-redveil:before {
+  content: "\e909";
+}
+.icon-arbitars:before {
+  content: "\e90a";
+}
+.icon-cephalon:before {
+  content: "\e90b";
+}
+.icon-perrin:before {
+  content: "\e90c";
+}
+.icon-meridian:before {
+  content: "\e90d";
+}
+.icon-simaris:before {
+  content: "\e90e";
+}
+.icon-lotus:before {
+  content: "\e907";
+}
+.icon-madurai:before {
+  content: "\e900";
+}
+.icon-naramon:before {
+  content: "\e901";
+}
+.icon-penjaga:before {
+  content: "\e902";
+}
+.icon-umbra:before {
+  content: "\e903";
+}
+.icon-unairu:before {
+  content: "\e904";
+}
+.icon-vazarin:before {
+  content: "\e905";
+}
+.icon-zenurik:before {
+  content: "\e906";
+}
