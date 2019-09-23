@@ -7,10 +7,11 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 })
 export class WfDataService {
   allFrames: Item[];
-
+  allPrimaries: Item[];
 
   constructor(private sanitization: DomSanitizer) {
     this.allFrames = this.getAllWarframes();
+    this.allPrimaries = this.getAllPrimaries();
   }
 
   public getThumbnail(imageName: string): SafeStyle {
@@ -31,6 +32,14 @@ export class WfDataService {
 
   getAllPrimaries(): Item[] {
     return new Items({ category: ['Primary'] });
+  }
+
+  getPrimaryByName(name: string): Item {
+    name = name.toLowerCase();
+    name = name.replace('%20', ' ');
+    name = name.replace(/\b(\w)/g, c => c.toUpperCase());
+    console.log(`Retreiving data for ${name}`);
+    return this.allPrimaries.find(x => x.name === name);
   }
 
   getAllSecondaries(): Item[] {

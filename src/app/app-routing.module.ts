@@ -15,6 +15,15 @@ const routes: Routes = [
     path: paths.wfDetail,
     loadChildren: () => import('./pages/warframe-detail/warframe-detail.module').then(m => m.WarframesDetailModule)
   },
+
+  {
+    path: paths.primaries,
+    loadChildren: () => import('./pages/primaries/primaries.module').then(m => m.PrimariesModule)
+  },
+  {
+    path: paths.primaryDetail,
+    loadChildren: () => import('./pages/primaries-detail/primaries-detail.module').then(m => m.PrimariesDetailModule)
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Fallback to home if no route is found
   {
     path: '**',

@@ -1,0 +1,19 @@
+<mat-card *ngIf="primary">
+  <mat-card-header>
+    <mat-card-title>
+      {{primary.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{primary.description}}
+    </mat-card-subtitle>
+    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <span class="health">DPS {{primary.damagePerSecond}}</span>
+    |
+    <span class="shield">Damage Per Shot {{primary.damagePerShot}}</span>
+    |
+    <span class="energy">Damage Types {{primary.damageTypes}}</span>
+  </mat-card-content>
+</mat-card>
