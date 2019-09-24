@@ -4,9 +4,10 @@ import { SecondariesRoutingModule } from './secondaries-routing.module';
 import { SecondariesComponent } from './secondaries.component';
 import { MaterialModule } from '../../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SecondarySummaryComponent } from 'app/components/secondary-summary/secondary-summary.component';
 
 @NgModule({
   imports: [CommonModule, SecondariesRoutingModule, MaterialModule, FlexLayoutModule],
-  declarations: [SecondariesComponent]
+  declarations: [SecondariesComponent, SecondarySummaryComponent]
 })
 export class SecondariesModule { }

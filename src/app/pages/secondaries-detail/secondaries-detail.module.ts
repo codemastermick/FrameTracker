@@ -4,10 +4,10 @@ import { WarframeDetailRoutingModule } from './secondaries-detail-routing.module
 import { SecondariesDetailComponent } from './secondaries-detail.component';
 import { MaterialModule } from '../../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DispositionComponent } from 'app/components/disposition/disposition.component';
+import { DispositionModule } from 'app/components/disposition/disposition.module';
 
 @NgModule({
-  imports: [CommonModule, WarframeDetailRoutingModule, MaterialModule, FlexLayoutModule],
-  declarations: [SecondariesDetailComponent, DispositionComponent]
+  imports: [CommonModule, WarframeDetailRoutingModule, MaterialModule, FlexLayoutModule, DispositionModule],
+  declarations: [SecondariesDetailComponent]
 })
 export class SecondariesDetailModule { }
