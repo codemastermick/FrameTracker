@@ -10,14 +10,68 @@
   </mat-card-header>
 
   <mat-card-content>
-      <span class="dps">DPS {{primary.damagePerSecond}}</span>
-      |
-      <span class="dmg">Damage Types {{primary.damageTypes|json}}</span>
-      |
-      <span class="rof">Rate of Fire {{primary.fireRate}}</span>
-      |
-      <span class="crit">Critical Chance {{primary.criticalChance}}</span>
-      |
-      <span class="proc">Status Chance {{primary.procChance}}</span>
+    <div fxLayout="row">
+      <div fxFlex="60%">
+        <div *ngIf="primary.vaulted;else estVaulting">
+          Vaulted On: {{primary.vaultDate}}
+        </div>
+        <ng-template #estVaulting>
+          <div *ngIf="primary.estimatedVaultDate">
+            Estimated Vaulting: {{primary.estimatedVaultDate}}
+          </div>
+        </ng-template>
+        <app-disposition [disposition]="primary.disposition"></app-disposition>
+        <!-- <div >Disposition: {{primary.disposition}}</div> -->
+        <div class="dps">DPS: {{primary.damagePerSecond}}</div>
+        <div class="rof">Rate of Fire: {{primary.fireRate}}</div>
+        <div class="crit">Critical Chance: {{primary.criticalChance}}</div>
+        <div class="crit">Critical Multiplier: {{primary.criticalMultiplier}}</div>
+        <div class="proc">Status Chance: {{primary.procChance}}</div>
+        <div >Accuracy: {{primary.accuracy.toFixed(2)}}</div>
+      </div>
+      <div fxFlex="40%" class="primaryImage">
+        <img [src]="getImage(primary.imageName)" alt="{{primary.name}} image">
+      </div>
+    </div>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Damage
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let dmg of primary.damageTypes| keyvalue;">
+        {{dmg.key|titlecase}}: {{dmg.value}}
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Components
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let comp of primary.components;">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div *ngIf="comp.drops;">
+              <mat-panel-title>
+                {{comp.name}}
+              </mat-panel-title>
+            </div>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <div *ngIf="comp.drops">
+              <mat-list-item *ngFor="let d of comp.drops.sort()">
+                {{d.location.split('nce:')[0]}}: {{d.chance}}%
+              </mat-list-item>
+            </div>
+          </mat-list>
+        </mat-expansion-panel>
+      </div>
+    </mat-expansion-panel>
+
   </mat-card-content>
 </mat-card>

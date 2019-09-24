@@ -29,6 +29,10 @@ export class PrimariesDetailComponent implements OnInit {
 
   }
 
+  getImage(imageName: string) {
+    return this.weapons.getImage(imageName);
+  }
+
   getThumb() {
     return this.weapons.getThumb(this.primary.wikiaThumbnail);
   }
