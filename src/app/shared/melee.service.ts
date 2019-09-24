@@ -15,6 +15,8 @@ export class MeleeService {
   private formatUrl(url: string): string {
     url = url.toLowerCase();
     url = url.replace('%20', ' ');
+    url = url.replace('&%20', '& '); // special case for sword and shield
+    url = url.replace('s%20', 's '); // special case for silva & aegis prime
     url = url.replace(/\b(\w)/g, c => c.toUpperCase());
     return url;
   }
@@ -25,19 +27,19 @@ export class MeleeService {
 
   public getThumb(imageName: string): SafeStyle {
     if (imageName === 'ceramic-dagger.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/6/64/SwordCeramic_d.png/revision/latest/scale-to-width-down/220?cb=20190306231452';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/6/64/SwordCeramic_d.png';
     }
     if (imageName === 'dark-split-sword.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/d/da/DarkSplitSwordDualIcon.png/revision/latest/scale-to-width-down/220?cb=20180407161508';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/d/da/DarkSplitSwordDualIcon.png';
     }
     if (imageName === 'dual-ether.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/e/ee/Dual_Ether.png/revision/latest/scale-to-width-down/220?cb=20130412222314';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/e/ee/Dual_Ether.png';
     }
     if (imageName === 'galatine.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/d/df/Galatine_o.png/revision/latest/scale-to-width-down/220?cb=20130928190402';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/d/df/Galatine_o.png';
     }
     if (imageName === 'wolf-sledge.png') {
-      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/4/46/Wolf_Sledge_Image.png/revision/latest/scale-to-width-down/220?cb=20190426192305';
+      imageName = 'https://vignette.wikia.nocookie.net/warframe/images/4/46/Wolf_Sledge_Image.png';
     }
     return this.sanitization.bypassSecurityTrustStyle(`url(${imageName})`);
   }
