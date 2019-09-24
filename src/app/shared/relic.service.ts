@@ -8,7 +8,9 @@ import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 export class RelicService {
   allRelics: Item[];
 
-  constructor(private sanitization: DomSanitizer) { }
+  constructor(private sanitization: DomSanitizer) {
+    this.allRelics = this.getAllRelics();
+  }
 
   private formatUrl(url: string): string {
     url = url.toLowerCase();
