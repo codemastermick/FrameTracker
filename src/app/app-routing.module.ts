@@ -39,6 +39,14 @@ const routes: Routes = [
     path: paths.meleeDetail,
     loadChildren: () => import('./pages/melee-detail/melee-detail.module').then(m => m.MeleeDetailModule)
   },
+  {
+    path: paths.relics,
+    loadChildren: () => import('./pages/relics/relics.module').then(m => m.RelicsModule)
+  },
+  {
+    path: paths.relicsDetail,
+    loadChildren: () => import('./pages/relics-detail/relics-detail.module').then(m => m.RelicsDetailModule)
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Fallback to home if no route is found
   {
     path: '**',

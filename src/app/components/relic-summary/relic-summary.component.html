@@ -1,0 +1,16 @@
+<mat-card *ngIf="relic" routerLink="/relics/{{relic.name}}">
+  <mat-card-header>
+    <mat-card-title>
+      {{relic.name}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{relic.description}}
+    </mat-card-subtitle>
+    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div *ngIf="relic.vaulted">Vaulted: {{relic.vaulted}}</div>
+    <div>Tradable: {{relic.tradable}}</div>
+  </mat-card-content>
+</mat-card>

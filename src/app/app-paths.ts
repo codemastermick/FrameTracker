@@ -7,5 +7,7 @@ export const paths = {
   secondaries: 'secondary',
   secondaryDetail: 'secondary/:name',
   melee: 'melee',
-  meleeDetail: 'melee/:name'
+  meleeDetail: 'melee/:name',
+  relics: 'relics',
+  relicsDetail: 'relics/:name'
 };
