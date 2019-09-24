@@ -10,7 +10,7 @@ export class AppComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
-    if (window.pageYOffset > 342) {
+    if (window.pageYOffset > 38) {
       const element = document.getElementsByTagName('mat-toolbar')[0];
       element.classList.add('sticky-nav');
     } else {
