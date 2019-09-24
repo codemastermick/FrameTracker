@@ -15,7 +15,6 @@ const routes: Routes = [
     path: paths.wfDetail,
     loadChildren: () => import('./pages/warframe-detail/warframe-detail.module').then(m => m.WarframesDetailModule)
   },
-
   {
     path: paths.primaries,
     loadChildren: () => import('./pages/primaries/primaries.module').then(m => m.PrimariesModule)
@@ -23,6 +22,14 @@ const routes: Routes = [
   {
     path: paths.primaryDetail,
     loadChildren: () => import('./pages/primaries-detail/primaries-detail.module').then(m => m.PrimariesDetailModule)
+  },
+  {
+    path: paths.secondaries,
+    loadChildren: () => import('./pages/secondaries/secondaries.module').then(m => m.SecondariesModule)
+  },
+  {
+    path: paths.secondaryDetail,
+    loadChildren: () => import('./pages/secondaries-detail/secondaries-detail.module').then(m => m.SecondariesDetailModule)
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Fallback to home if no route is found
   {
