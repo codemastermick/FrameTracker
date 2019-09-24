@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
+import { DispositionModule } from './components/disposition/disposition.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MaterialModule } from './shared/material.module';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    DispositionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

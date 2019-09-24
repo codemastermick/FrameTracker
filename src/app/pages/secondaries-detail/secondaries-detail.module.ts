@@ -10,4 +10,4 @@ import { DispositionComponent } from 'app/components/disposition/disposition.com
   imports: [CommonModule, WarframeDetailRoutingModule, MaterialModule, FlexLayoutModule],
   declarations: [SecondariesDetailComponent, DispositionComponent]
 })
-export class PrimariesDetailModule { }
+export class SecondariesDetailModule { }
