@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Item } from 'warframe-items';
-import { WfDataService } from 'app/shared/wf-data.service';
+import { PrimaryWeaponsService } from 'app/shared/primary-weapons.service';
 
 @Component({
   selector: 'app-primary-summary',
@@ -10,14 +10,14 @@ import { WfDataService } from 'app/shared/wf-data.service';
 export class PrimarySummaryComponent implements OnInit {
   @Input() primary: Item;
 
-  constructor(public wf: WfDataService) { }
+  constructor(public weapons: PrimaryWeaponsService) { }
 
   ngOnInit() {
     this.primary = JSON.parse(this.primary.toString());
   }
 
   getThumb() {
-    return this.wf.getThumb(this.primary.imageName);
+    return this.weapons.getThumb(this.primary.wikiaThumbnail || this.primary.imageName);
   }
 
   public openDetails() {
