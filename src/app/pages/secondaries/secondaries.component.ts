@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Item } from 'warframe-items';
-import { PrimaryWeaponsService } from '../../shared/primary-weapons.service';
+import { SecondaryWeaponsService } from 'app/shared/secondary-weapons.service';
 
 @Component({
   selector: 'app-secondaries',
@@ -13,7 +13,7 @@ export class SecondariesComponent implements OnInit {
 
   allSecondaries: Item[];
 
-  constructor(private titleService: Title, private metaTagService: Meta, private weapons: PrimaryWeaponsService) { }
+  constructor(private titleService: Title, private metaTagService: Meta, private weapons: SecondaryWeaponsService) { }
 
   ngOnInit() {
     this.titleService.setTitle('Pathfinder Project Managment System');
@@ -21,7 +21,7 @@ export class SecondariesComponent implements OnInit {
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
 
-    this.allSecondaries = this.weapons.getAllPrimaries();
+    this.allSecondaries = this.weapons.getAllSecondaries();
   }
 
   getThumb(imageName: string) {
