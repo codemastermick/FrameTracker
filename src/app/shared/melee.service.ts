@@ -15,8 +15,7 @@ export class MeleeService {
   private formatUrl(url: string): string {
     url = url.toLowerCase();
     url = url.replace('%20', ' ');
-    url = url.replace('&%20', '& '); // special case for sword and shield
-    url = url.replace('s%20', 's '); // special case for silva & aegis prime
+    url = url.replace(/\%20.*?/gm, ' ');
     url = url.replace(/\b(\w)/g, c => c.toUpperCase());
     return url;
   }
