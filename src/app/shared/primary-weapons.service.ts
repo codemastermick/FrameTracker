@@ -33,6 +33,12 @@ export class PrimaryWeaponsService {
   }
 
   public getThumb(wikiaURL: string): SafeStyle {
+    if (wikiaURL === 'miter.png') {
+      wikiaURL = 'https://raw.githubusercontent.com/wfcd/warframe-items/development/data/img/miter.png';
+    }
+    if (wikiaURL === 'sybaris-prime.png') {
+      wikiaURL = 'https://raw.githubusercontent.com/wfcd/warframe-items/development/data/img/sybaris-prime.png';
+    }
     return this.sanitization.bypassSecurityTrustStyle(`url(${wikiaURL})`);
   }
 }
