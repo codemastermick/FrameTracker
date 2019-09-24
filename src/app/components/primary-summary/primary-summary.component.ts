@@ -20,10 +20,6 @@ export class PrimarySummaryComponent implements OnInit {
     return this.weapons.getThumb(this.primary.wikiaThumbnail || this.primary.imageName);
   }
 
-  public openDetails() {
-    // open overlay with detail view
-  }
-
   getDPS() {
     return this.primary.damagePerShot.reduce((a, b) => a + b, 0);
   }
