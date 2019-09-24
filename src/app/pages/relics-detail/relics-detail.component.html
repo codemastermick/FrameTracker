@@ -20,55 +20,29 @@
             Estimated Vaulting: {{relic.estimatedVaultDate}}
           </div>
         </ng-template>
-        <app-disposition [disposition]="relic.disposition"></app-disposition>
-        <div class="dps">DPS: {{relic.damagePerSecond}}</div>
-        <div class="rof">Rate of Fire: {{relic.fireRate}}</div>
-        <div class="crit">Critical Chance: {{relic.criticalChance}}%</div>
-        <div class="crit">Critical Multiplier: x{{relic.criticalMultiplier}}</div>
-        <div class="proc">Status Chance: {{relic.procChance}}%</div>
-        <div >Accuracy: {{relic.accuracy.toFixed(2)}}%</div>
+
+        <div class="dps">Tradable: {{relic.tradable}}</div>
       </div>
       <div fxFlex="40%" class="relicImage">
         <img [src]="getImage(relic.imageName)" alt="{{relic.name}} image">
       </div>
     </div>
 
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngIf="relic.drops">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Damage
+          Drops
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div *ngFor="let dmg of relic.damageTypes| keyvalue;">
-        {{dmg.key|titlecase}}: {{dmg.value}}
-      </div>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Components
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <div *ngFor="let comp of relic.components;">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <div *ngIf="comp.drops;">
-              <mat-panel-title>
-                {{comp.name}}
-              </mat-panel-title>
-            </div>
-          </mat-expansion-panel-header>
-          <mat-list>
-            <div *ngIf="comp.drops">
-              <mat-list-item *ngFor="let d of comp.drops.sort()">
-                {{d.location.split('nce:')[0]}}: {{d.chance}}%
-              </mat-list-item>
-            </div>
-          </mat-list>
-        </mat-expansion-panel>
+      <div>
+        <mat-list>
+          <mat-list-item *ngFor="let d of relic.drops.sort()">
+            {{d.location.split('nce:')[0]}}: {{d.chance}}%
+            Rotation: {{d.rotation}}
+            Rarity: {{d.rarity}}
+          </mat-list-item>
+        </mat-list>
       </div>
     </mat-expansion-panel>
 
