@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?79zz2h');
-  src:  url('fonts/icomoon.eot?79zz2h#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?79zz2h') format('truetype'),
-    url('fonts/icomoon.woff?79zz2h') format('woff'),
-    url('fonts/icomoon.svg?79zz2h#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?k0j3s8');
+  src:  url('fonts/icomoon.eot?k0j3s8#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?k0j3s8') format('truetype'),
+    url('fonts/icomoon.woff?k0j3s8') format('woff'),
+    url('fonts/icomoon.svg?k0j3s8#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^="wf-"], [class*=" wf-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -25,48 +25,48 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-loka:before {
+.wf-loka:before {
   content: "\e908";
 }
-.icon-redveil:before {
+.wf-redveil:before {
   content: "\e909";
 }
-.icon-arbitars:before {
+.wf-arbitars:before {
   content: "\e90a";
 }
-.icon-cephalon:before {
+.wf-cephalon:before {
   content: "\e90b";
 }
-.icon-perrin:before {
+.wf-perrin:before {
   content: "\e90c";
 }
-.icon-meridian:before {
+.wf-meridian:before {
   content: "\e90d";
 }
-.icon-simaris:before {
+.wf-simaris:before {
   content: "\e90e";
 }
-.icon-lotus:before {
+.wf-lotus:before {
   content: "\e907";
 }
-.icon-madurai:before {
+.wf-madurai:before {
   content: "\e900";
 }
-.icon-naramon:before {
+.wf-naramon:before {
   content: "\e901";
 }
-.icon-penjaga:before {
+.wf-penjaga:before {
   content: "\e902";
 }
-.icon-umbra:before {
+.wf-umbra:before {
   content: "\e903";
 }
-.icon-unairu:before {
+.wf-unairu:before {
   content: "\e904";
 }
-.icon-vazarin:before {
+.wf-vazarin:before {
   content: "\e905";
 }
-.icon-zenurik:before {
+.wf-zenurik:before {
   content: "\e906";
 }

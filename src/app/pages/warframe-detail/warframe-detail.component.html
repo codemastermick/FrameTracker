@@ -14,7 +14,7 @@
       <div fxFlex="60%">
         <div>Passive Ability: {{getPassive(frame)}}</div>
         <div *ngIf="frame.aura">Aura Polarity:
-          <span class="icon-{{frame.aura.toLowerCase()}}"></span>
+          <span class="wf-{{frame.aura.toLowerCase()}}"></span>
         </div>
         <div class="health">Health: {{frame.health}}</div>
         <div class="shield">Shield: {{frame.shield}}</div>
@@ -25,7 +25,7 @@
         <div>MR: {{frame.masteryReq}}</div>
         Polarities:
         <span *ngFor="let polarity of frame.polarities" class="polarities">
-          <span class="icon-{{polarity.toLowerCase()}}"></span>
+          <span class="wf-{{polarity.toLowerCase()}}"></span>
         </span>
       </div>
 
