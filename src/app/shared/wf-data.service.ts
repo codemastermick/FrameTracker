@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Items, { Item, Polarity } from 'warframe-items';
+import Items, { Item } from 'warframe-items';
 import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({
@@ -7,12 +7,9 @@ import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 })
 export class WfDataService {
   allFrames: Item[];
-  allMelee: Item[];
 
   constructor(private sanitization: DomSanitizer) {
     this.allFrames = this.getAllWarframes();
-
-    this.allMelee = this.getAllMelees();
   }
 
   private formatUrl(url: string): string {
@@ -54,15 +51,5 @@ export class WfDataService {
 
   getFramePassive(frame: Item) {
     return frame.passiveDescription.replace(/\|\b.*?\|%/gm, '');
-  }
-
-  getAllMelees(): Item[] {
-    return new Items({ category: ['Melee'] });
-  }
-
-  getMeleeByName(name: string): Item {
-    name = this.formatUrl(name);
-    console.log(`Retreiving data for ${name}`);
-    return this.allMelee.find(x => x.name === name);
   }
 }
