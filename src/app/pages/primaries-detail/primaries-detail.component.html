@@ -23,10 +23,10 @@
         <app-disposition [disposition]="primary.disposition"></app-disposition>
         <div class="dps">DPS: {{primary.damagePerSecond}}</div>
         <div class="rof">Rate of Fire: {{primary.fireRate}}</div>
-        <div class="crit">Critical Chance: {{primary.criticalChance}}</div>
-        <div class="crit">Critical Multiplier: {{primary.criticalMultiplier}}</div>
-        <div class="proc">Status Chance: {{primary.procChance}}</div>
-        <div >Accuracy: {{primary.accuracy.toFixed(2)}}</div>
+        <div class="crit">Critical Chance: {{primary.criticalChance}}%</div>
+        <div class="crit">Critical Multiplier: x{{primary.criticalMultiplier}}</div>
+        <div class="proc">Status Chance: {{primary.procChance}}%</div>
+        <div >Accuracy: {{primary.accuracy.toFixed(2)}}%</div>
       </div>
       <div fxFlex="40%" class="primaryImage">
         <img [src]="getImage(primary.imageName)" alt="{{primary.name}} image">
