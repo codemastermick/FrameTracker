@@ -2,19 +2,16 @@ import { Injectable } from '@angular/core';
 import Items, { Item, Polarity } from 'warframe-items';
 import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class WfDataService {
   allFrames: Item[];
-  allSecondaries: Item[];
   allMelee: Item[];
 
   constructor(private sanitization: DomSanitizer) {
     this.allFrames = this.getAllWarframes();
-    this.allSecondaries = this.getAllSecondaries();
+
     this.allMelee = this.getAllMelees();
   }
 
@@ -57,16 +54,6 @@ export class WfDataService {
 
   getFramePassive(frame: Item) {
     return frame.passiveDescription.replace(/\|\b.*?\|%/gm, '');
-  }
-
-  getAllSecondaries(): Item[] {
-    return new Items({ category: ['Secondary'] });
-  }
-
-  getSecondaryByName(name: string): Item {
-    name = this.formatUrl(name);
-    console.log(`Retreiving data for ${name}`);
-    return this.allSecondaries.find(x => x.name === name);
   }
 
   getAllMelees(): Item[] {
