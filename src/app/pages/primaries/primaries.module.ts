@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PrimariesRoutingModule } from './Primaries-routing.module';
-import { PrimariesComponent } from './Primaries.component';
+import { PrimariesRoutingModule } from './primaries-routing.module';
+import { PrimariesComponent } from './primaries.component';
 import { MaterialModule } from '../../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PrimarySummaryComponent } from 'app/components/primary-summary/primary-summary.component';
