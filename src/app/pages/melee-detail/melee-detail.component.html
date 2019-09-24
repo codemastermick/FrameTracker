@@ -1,10 +1,10 @@
-<mat-card *ngIf="secondary">
+<mat-card *ngIf="melee">
   <mat-card-header>
     <mat-card-title>
-      {{secondary.name}}
+      {{melee.name}}
     </mat-card-title>
     <mat-card-subtitle>
-      {{secondary.description}}
+      {{melee.description}}
     </mat-card-subtitle>
     <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
   </mat-card-header>
@@ -12,24 +12,24 @@
   <mat-card-content>
     <div fxLayout="row">
       <div fxFlex="60%">
-        <div *ngIf="secondary.vaulted;else estVaulting">
-          Vaulted On: {{secondary.vaultDate}}
+        <div *ngIf="melee.vaulted;else estVaulting">
+          Vaulted On: {{melee.vaultDate}}
         </div>
         <ng-template #estVaulting>
-          <div *ngIf="secondary.estimatedVaultDate">
-            Estimated Vaulting: {{secondary.estimatedVaultDate}}
+          <div *ngIf="melee.estimatedVaultDate">
+            Estimated Vaulting: {{melee.estimatedVaultDate}}
           </div>
         </ng-template>
-        <app-disposition [disposition]="secondary.disposition"></app-disposition>
-        <div class="dps">DPS: {{secondary.damagePerSecond}}</div>
-        <div class="rof">Rate of Fire: {{secondary.fireRate}}</div>
-        <div class="crit">Critical Chance: {{secondary.criticalChance}}%</div>
-        <div class="crit">Critical Multiplier: x{{secondary.criticalMultiplier}}</div>
-        <div class="proc">Status Chance: {{secondary.procChance}}%</div>
-        <div >Accuracy: {{secondary.accuracy.toFixed(2)}}%</div>
+        <app-disposition [disposition]="melee.disposition"></app-disposition>
+        <div class="dps">DPS: {{melee.damagePerSecond}}</div>
+        <div class="rof">Rate of Fire: {{melee.fireRate}}</div>
+        <div class="crit">Critical Chance: {{melee.criticalChance}}%</div>
+        <div class="crit">Critical Multiplier: x{{melee.criticalMultiplier}}</div>
+        <div class="proc">Status Chance: {{melee.procChance}}%</div>
+        <div >Accuracy: {{melee.accuracy.toFixed(2)}}%</div>
       </div>
-      <div fxFlex="40%" class="secondaryImage">
-        <img [src]="getImage(secondary.imageName)" alt="{{secondary.name}} image">
+      <div fxFlex="40%" class="meleeImage">
+        <img [src]="getImage(melee.imageName)" alt="{{melee.name}} image">
       </div>
     </div>
 
@@ -40,7 +40,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div *ngFor="let dmg of secondary.damageTypes| keyvalue;">
+      <div *ngFor="let dmg of melee.damageTypes| keyvalue;">
         {{dmg.key|titlecase}}: {{dmg.value}}
       </div>
     </mat-expansion-panel>
@@ -52,7 +52,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div *ngFor="let comp of secondary.components;">
+      <div *ngFor="let comp of melee.components;">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <div *ngIf="comp.drops;">
