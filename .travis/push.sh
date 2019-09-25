@@ -3,7 +3,7 @@
 success=1
 
 git remote rm origin
-git remote add origin https://codemastermick:${GH_TOKEN}@github.com/codemastermick/WarframeTracker.git >/dev/null 2>&1
+git remote add origin https://codemastermick:${GH_TOKEN}@github.com/codemastermick/FrameTracker.git >/dev/null 2>&1
 git pull
 git push origin master --quiet && success=0
 
