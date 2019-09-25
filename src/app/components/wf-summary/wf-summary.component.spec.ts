@@ -45,6 +45,7 @@ const ASH: Item = {
     {
       uniqueName: '/Lotus/Types/Recipes/WarframeRecipes/AshBlueprint',
       name: 'Blueprint',
+      // tslint:disable-next-line: max-line-length
       description: 'Ash is great for players looking for a stealthier approach to combat. Lethal abilities are complemented by powers of distraction.',
       itemCount: 1,
       imageName: 'blueprint.png',

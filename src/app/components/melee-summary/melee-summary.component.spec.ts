@@ -50,6 +50,7 @@ const AMPHIS: Item = {
     {
       uniqueName: '/Lotus/Types/Recipes/Weapons/GrnStaffBlueprint',
       name: 'Blueprint',
+      // tslint:disable-next-line: max-line-length
       description: 'Fashioned with Grineer materials and balanced for marine infantry use, the Amphis is a traditional staff weapon that has received a monstrous makeover that enables shock damage on jump attacks. Connects with multiple enemies with each strike.',
       itemCount: 1,
       imageName: 'blueprint.png',
