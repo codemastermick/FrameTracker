@@ -15,6 +15,7 @@ const AMPHIS: Item = {
   totalDamage: 55,
   damagePerSecond: 69,
   trigger: 'Melee',
+  // tslint:disable-next-line: max-line-length
   description: 'Fashioned with Grineer materials and balanced for marine infantry use, the Amphis is a traditional staff weapon that has received a monstrous makeover that enables shock damage on jump attacks. Connects with multiple enemies with each strike.',
   accuracy: 100,
   criticalChance: 0.075000003,
