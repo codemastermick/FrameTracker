@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
 import { DispositionModule } from './components/disposition/disposition.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DispositionModule } from './components/disposition/disposition.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    DispositionModule
+    DispositionModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

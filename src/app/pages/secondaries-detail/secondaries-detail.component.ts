@@ -37,8 +37,8 @@ export class SecondariesDetailComponent implements OnInit {
     return this.weapons.getThumb(this.secondary.wikiaThumbnail);
   }
 
-  getDamageTypes(weapon: Item): DamageTypes {
-    return weapon.damageTypes;
+  getDamageTypes(weapon: Item): DamageTypes[] {
+    return new Array(weapon.damageTypes);
   }
 
 }

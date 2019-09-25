@@ -10,10 +10,16 @@ import { SecondaryWeaponsService } from 'app/shared/secondary-weapons.service';
 export class SecondarySummaryComponent implements OnInit {
   @Input() secondary: Item;
 
-  constructor(private weapons: SecondaryWeaponsService) { }
+  constructor(public weapons: SecondaryWeaponsService) { }
 
   ngOnInit() {
-    this.secondary = JSON.parse(this.secondary.toString());
+    this.secondary = null;
+
+    try {
+      this.secondary = JSON.parse(this.secondary.toString());
+    } catch (e) {
+      this.secondary = this.secondary;
+    }
   }
 
   getThumb() {

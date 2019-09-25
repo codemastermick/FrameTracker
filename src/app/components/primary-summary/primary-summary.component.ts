@@ -13,7 +13,13 @@ export class PrimarySummaryComponent implements OnInit {
   constructor(public weapons: PrimaryWeaponsService) { }
 
   ngOnInit() {
-    this.primary = JSON.parse(this.primary.toString());
+    this.primary = null;
+
+    try {
+      this.primary = JSON.parse(this.primary.toString());
+    } catch (e) {
+      this.primary = this.primary;
+    }
   }
 
   getThumb() {
@@ -21,6 +27,7 @@ export class PrimarySummaryComponent implements OnInit {
   }
 
   getDPS() {
+    // cannot reduce undefined - primary not being set correctly in test
     return this.primary.damagePerShot.reduce((a, b) => a + b, 0);
   }
 

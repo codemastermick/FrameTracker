@@ -5,6 +5,7 @@ import { MaterialModule } from '../../shared/material.module';
 import { DispositionModule } from '../../components/disposition/disposition.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('PrimariesDetailComponent', () => {
   let component: PrimariesDetailComponent;
@@ -13,14 +14,17 @@ describe('PrimariesDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule, DispositionModule, RouterTestingModule],
+      imports: [MaterialModule,
+        DispositionModule,
+        RouterTestingModule,
+        BrowserAnimationsModule],
       declarations: [PrimariesDetailComponent],
       providers: [
         {
-           provide: Router,
-           useValue: {
-              url: 'localhost:4200/warframes/Ash'
-           } // you could use also jasmine.createSpyObj() for methods
+          provide: Router,
+          useValue: {
+            url: 'localhost:4200/primary/Tigris'
+          }
         }
       ]
     }).compileComponents();
@@ -28,9 +32,8 @@ describe('PrimariesDetailComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PrimariesDetailComponent);
-    component = fixture.componentInstance;
     router = TestBed.get(Router);
-    component.ngOnInit();
+    component = fixture.componentInstance;
     fixture.detectChanges();
   });
 

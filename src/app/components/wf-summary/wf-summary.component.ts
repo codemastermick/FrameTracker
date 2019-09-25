@@ -13,7 +13,11 @@ export class WfSummaryComponent implements OnInit {
   constructor(public wf: WfDataService) { }
 
   ngOnInit() {
-    this.frame = JSON.parse(this.frame.toString());
+    try {
+      this.frame = JSON.parse(this.frame.toString());
+    } catch (e) {
+      this.frame = this.frame;
+    }
   }
 
   getThumb(imageName: string) {
