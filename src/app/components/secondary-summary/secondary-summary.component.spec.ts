@@ -47,6 +47,7 @@ const ACRID: Item = {
     {
       uniqueName: '/Lotus/Types/Items/MiscItems/Forma',
       name: 'Forma',
+      // tslint:disable-next-line: max-line-length
       description: 'This shape-altering component is fundamental to Orokin construction. Allows you to change the polarity of a mod slot on a Warframe, Companions or Weapon and then resets their affinity to Unranked. This can only be used on Level 30 Warframes, Companions and Weapons.',
       itemCount: 1,
       imageName: 'forma.png',
@@ -3764,6 +3765,7 @@ const ACRID: Item = {
     {
       uniqueName: '/Lotus/Types/Items/Research/BioComponent',
       name: 'Mutagen Mass',
+      // tslint:disable-next-line: max-line-length
       description: 'This living mass can produce weaponized toxins for weaponry.Can be acquired from Infestation Outbreaks & Clan Research.',
       itemCount: 5,
       imageName: 'mutagen-mass.png',
