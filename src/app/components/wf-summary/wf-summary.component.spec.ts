@@ -8,6 +8,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 const ASH: Item = {
   uniqueName: '/Lotus/Powersuits/Ninja/Ninja',
   name: 'Ash',
+  // tslint:disable-next-line: max-line-length
   description: 'Ash is great for players looking for a stealthier approach to combat. Lethal abilities are complemented by powers of distraction.',
   health: 150,
   shield: 100,
