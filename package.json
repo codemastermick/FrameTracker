@@ -1,5 +1,5 @@
 {
-  "name": "ng-devops",
+  "name": "warframetracker",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,11 +7,12 @@
     "start": "ng serve",
     "poststart": "npm run lint",
     "build": "ng build",
+    "build:highmem": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng build WarframeTracker --prod",
     "build:prod": "ng build --prod",
     "build-test": "npm run build && npm run test:ci",
     "test": "ng test --code-coverage",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
-    "coverage": "cat coverage/ng-devops/lcov.info | codacy-coverage --username codemastermick --projectName ng-devops",
+    "coverage": "cat coverage/WarframeTracker/lcov.info | codacy-coverage --username codemastermick --projectName WarframeTracker",
     "lint": "ng lint --fix",
     "lintonly": "ng lint",
     "e2e": "ng e2e",

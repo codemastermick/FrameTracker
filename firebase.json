@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "warframe-data-viewer",
-    "public": "dist/ng-devops",
+    "public": "dist/WarframeTracker",
     "ignore": [
       "firebase.json",
       "**/.*",
