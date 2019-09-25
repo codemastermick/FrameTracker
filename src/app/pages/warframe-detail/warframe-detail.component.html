@@ -6,13 +6,13 @@
     <mat-card-subtitle>
       {{frame.description}}
     </mat-card-subtitle>
-    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb(frame.imageName)"></div>
+    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
   </mat-card-header>
 
   <mat-card-content>
     <div fxLayout="row">
       <div fxFlex="60%">
-        <div>Passive Ability: {{getPassive(frame)}}</div>
+        <div>Passive Ability: {{getPassive()}}</div>
         <div *ngIf="frame.aura">Aura Polarity:
           <span class="wf-{{frame.aura.toLowerCase()}}"></span>
         </div>

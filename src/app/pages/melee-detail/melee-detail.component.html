@@ -40,8 +40,9 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div *ngFor="let dmg of melee.damageTypes| keyvalue;">
-        {{dmg.key|titlecase}}: {{dmg.value}}
+      <div *ngFor="let dmg of getDamageTypes(melee);">
+        <!-- {{dmg.key|titlecase}}: {{dmg.value}} -->
+        {{dmg|json}}
       </div>
     </mat-expansion-panel>
 

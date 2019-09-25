@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MeleeDetailComponent } from './melee-detail.component';
-import { MaterialModule } from 'app/shared/material.module';
+import { MaterialModule } from '../../shared/material.module';
+import { DispositionModule } from '../../components/disposition/disposition.module';
 
 describe('MeleeDetailComponent', () => {
   let component: MeleeDetailComponent;
@@ -9,7 +10,7 @@ describe('MeleeDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule],
+      imports: [MaterialModule, DispositionModule],
       declarations: [MeleeDetailComponent]
     }).compileComponents();
   }));

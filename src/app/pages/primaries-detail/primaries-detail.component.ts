@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Item } from 'warframe-items';
+import { Item, DamageTypes } from 'warframe-items';
 import { Router } from '@angular/router';
-import { PrimaryWeaponsService } from 'app/shared/primary-weapons.service';
+import { PrimaryWeaponsService } from '../../shared/primary-weapons.service';
 
 @Component({
   selector: 'app-primaries-detail',
@@ -35,6 +35,10 @@ export class PrimariesDetailComponent implements OnInit {
 
   getThumb() {
     return this.weapons.getThumb(this.primary.wikiaThumbnail);
+  }
+
+  getDamageTypes(weapon: Item): DamageTypes {
+    return weapon.damageTypes;
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Item } from 'warframe-items';
+import { Item, DamageTypes } from 'warframe-items';
 import { Router } from '@angular/router';
 import { MeleeService } from 'app/shared/melee.service';
 
@@ -35,6 +35,10 @@ export class MeleeDetailComponent implements OnInit {
 
   getThumb() {
     return this.weapons.getThumb(this.melee.wikiaThumbnail);
+  }
+
+  getDamageTypes(weapon: Item): DamageTypes[] {
+    return new Array(weapon.damageTypes);
   }
 
 }

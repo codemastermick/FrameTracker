@@ -1,7 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PrimariesComponent } from './Primaries.component';
-import { MaterialModule } from 'app/shared/material.module';
+import { MaterialModule } from '../../shared/material.module';
+import { DispositionModule } from '../../components/disposition/disposition.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 describe('PrimariesComponent', () => {
   let component: PrimariesComponent;
@@ -9,7 +11,7 @@ describe('PrimariesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule],
+      imports: [MaterialModule, FlexLayoutModule, DispositionModule],
       declarations: [PrimariesComponent]
     }).compileComponents();
   }));

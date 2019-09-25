@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Item } from 'warframe-items';
+import { Item, DamageTypes } from 'warframe-items';
 import { Router } from '@angular/router';
 import { SecondaryWeaponsService } from 'app/shared/secondary-weapons.service';
 
@@ -35,6 +35,10 @@ export class SecondariesDetailComponent implements OnInit {
 
   getThumb() {
     return this.weapons.getThumb(this.secondary.wikiaThumbnail);
+  }
+
+  getDamageTypes(weapon: Item): DamageTypes {
+    return weapon.damageTypes;
   }
 
 }
