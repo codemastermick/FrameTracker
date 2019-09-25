@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrimariesComponent } from './Primaries.component';
+import { PrimariesComponent } from './primaries.component';
 import { MaterialModule } from '../../shared/material.module';
 import { DispositionModule } from '../../components/disposition/disposition.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
