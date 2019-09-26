@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: paths.copyright,
+    loadChildren: () => import('./pages/copyright/copyright.module').then(m => m.CopyrightModule)
+  },
+  {
     path: paths.warframes,
     loadChildren: () => import('./pages/warframes/warframes.module').then(m => m.WarframesModule)
   },
