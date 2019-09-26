@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/copyright/copyright.module').then(m => m.CopyrightModule)
   },
   {
+    path: paths.contrib,
+    loadChildren: () => import('./pages/contrib/contrib.module').then(m => m.ContribModule)
+  },
+  {
     path: paths.warframes,
     loadChildren: () => import('./pages/warframes/warframes.module').then(m => m.WarframesModule)
   },

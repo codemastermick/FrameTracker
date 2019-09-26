@@ -1,6 +1,7 @@
 export const paths = {
   home: 'home',
   copyright: 'copyright',
+  contrib: 'contrib',
   warframes: 'warframes',
   wfDetail: 'warframes/:name',
   primaries: 'primary',
