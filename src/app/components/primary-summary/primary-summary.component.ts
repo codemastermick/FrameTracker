@@ -13,8 +13,6 @@ export class PrimarySummaryComponent implements OnInit {
   constructor(public weapons: PrimaryWeaponsService) { }
 
   ngOnInit() {
-    this.primary = null;
-
     try {
       this.primary = JSON.parse(this.primary.toString());
     } catch (e) {

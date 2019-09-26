@@ -13,8 +13,6 @@ export class RelicSummaryComponent implements OnInit {
   constructor(private relics: RelicService) { }
 
   ngOnInit() {
-    this.relic = null;
-
     try {
       this.relic = JSON.parse(this.relic.toString());
     } catch (e) {

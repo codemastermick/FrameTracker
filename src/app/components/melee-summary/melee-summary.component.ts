@@ -13,8 +13,6 @@ export class MeleeSummaryComponent implements OnInit {
   constructor(public weapons: MeleeService) { }
 
   ngOnInit() {
-    this.melee = null;
-
     try {
       this.melee = JSON.parse(this.melee.toString());
     } catch (e) {

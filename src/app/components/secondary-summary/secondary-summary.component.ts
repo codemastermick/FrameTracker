@@ -13,8 +13,6 @@ export class SecondarySummaryComponent implements OnInit {
   constructor(public weapons: SecondaryWeaponsService) { }
 
   ngOnInit() {
-    this.secondary = null;
-
     try {
       this.secondary = JSON.parse(this.secondary.toString());
     } catch (e) {
