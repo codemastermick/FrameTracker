@@ -8,7 +8,7 @@ import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 export class PrimaryWeaponsService {
   allPrimaries: Item[];
   constructor(private sanitization: DomSanitizer) {
-    this.allPrimaries = this.getAllPrimaries();
+    this.allPrimaries = new Items({ category: ['Primary'] });
   }
 
   private formatUrl(url: string): string {
@@ -19,7 +19,7 @@ export class PrimaryWeaponsService {
   }
 
   getAllPrimaries(): Item[] {
-    return new Items({ category: ['Primary'] });
+    return this.allPrimaries;
   }
 
   getPrimaryByName(name: string): Item {

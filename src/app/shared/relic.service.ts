@@ -9,7 +9,7 @@ export class RelicService {
   allRelics: Item[];
 
   constructor(private sanitization: DomSanitizer) {
-    this.allRelics = this.getAllRelics();
+    this.allRelics = new Items({ category: ['Relics'] });
   }
 
   private formatUrl(url: string): string {
@@ -29,7 +29,7 @@ export class RelicService {
   }
 
   getAllRelics() {
-    return new Items({ category: ['Relics'] });
+    return this.allRelics;
   }
 
   getRelicByName(name: string) {

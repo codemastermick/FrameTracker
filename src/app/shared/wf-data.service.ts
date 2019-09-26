@@ -9,7 +9,7 @@ export class WfDataService {
   allFrames: Item[];
 
   constructor(private sanitization: DomSanitizer) {
-    this.allFrames = this.getAllWarframes();
+    this.allFrames = new Items({ category: ['Warframes'] });
   }
 
   private formatUrl(url: string): string {
@@ -40,7 +40,7 @@ export class WfDataService {
   }
 
   getAllWarframes(): Item[] {
-    return new Items({ category: ['Warframes'] });
+    return this.allFrames;
   }
 
   getWarframeByName(name: string): Item {

@@ -9,7 +9,7 @@ export class MeleeService {
   allMelee: Item[];
 
   constructor(private sanitization: DomSanitizer) {
-    this.allMelee = this.getAllMelees();
+    this.allMelee = new Items({ category: ['Melee'] });
   }
 
   private formatUrl(url: string): string {
@@ -44,7 +44,7 @@ export class MeleeService {
   }
 
   getAllMelees(): Item[] {
-    return new Items({ category: ['Melee'] });
+    return this.allMelee;
   }
 
   getMeleeByName(name: string): Item {

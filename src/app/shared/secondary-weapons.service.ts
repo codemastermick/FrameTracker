@@ -9,7 +9,7 @@ export class SecondaryWeaponsService {
   allSecondaries: Item[];
 
   constructor(private sanitization: DomSanitizer) {
-    this.allSecondaries = this.getAllSecondaries();
+    this.allSecondaries = new Items({ category: ['Secondary'] });
   }
 
   private formatUrl(url: string): string {
@@ -28,7 +28,7 @@ export class SecondaryWeaponsService {
   }
 
   getAllSecondaries(): Item[] {
-    return new Items({ category: ['Secondary'] });
+    return this.allSecondaries;
   }
 
   getSecondaryByName(name: string): Item {
