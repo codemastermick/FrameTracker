@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Items, { Item } from 'warframe-items';
+import Items, { Item, Type } from 'warframe-items';
 import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({
@@ -51,5 +51,15 @@ export class MeleeService {
     name = this.formatUrl(name);
     console.log(`Retreiving data for ${name}`);
     return this.allMelee.find(x => x.name === name);
+  }
+
+  getAllOfType(type: Type) {
+    return this.allMelee.filter(x => x.type === type);
+  }
+
+  getMultipleTypes(types: Type[]) {
+    return types.forEach(type => {
+      return this.allMelee.filter(x => x.type === type);
+    });
   }
 }

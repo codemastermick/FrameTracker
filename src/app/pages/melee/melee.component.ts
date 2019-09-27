@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Item } from 'warframe-items';
+import { Item, Type } from 'warframe-items';
 import { MeleeService } from 'app/shared/melee.service';
 
 @Component({
@@ -26,6 +26,18 @@ export class MeleeComponent implements OnInit {
 
   getThumb(imageName: string) {
     return this.weapons.getThumb(imageName);
+  }
+
+  resetFilters() {
+    this.allMelees = this.weapons.getAllMelees();
+  }
+
+  getFilteredList(type: Type) {
+    this.allMelees = this.weapons.getAllOfType(type);
+  }
+
+  getMultipleLists(types: Type[]) {
+    this.allMelees = this.weapons.getMultipleTypes(types);
   }
 
 }

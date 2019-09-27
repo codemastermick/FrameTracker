@@ -1,4 +1,138 @@
 <div fxFlex="row">
+  <mat-toolbar>
+    <button mat-raised-button (click)="resetFilters()">
+      All
+    </button>
+    <button mat-raised-button [matMenuTriggerFor]="blades">Blades</button>
+    <mat-menu #blades="matMenu">
+      <mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Dagger')">
+            Dagger
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Dual Daggers')">
+            Dual Daggers
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Dual Swords')">
+            Dual Swords
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Gunblade')">
+            Gunblade
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Heavy Blade')">
+            Heavy Blade
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Machete')">
+            Machete
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Nikana')">
+            Nikana
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Rapier')">
+            Rapier
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Sword')">
+            Sword
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Two-Handed Nikana')">
+            Two-Handed Nikana
+          </button>
+        </mat-list-item>
+      </mat-list-item>
+    </mat-menu>
+
+    <button mat-raised-button [matMenuTriggerFor]="blunt">Blunt Weapons</button>
+    <mat-menu #blunt="matMenu">
+      <mat-list>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Hammer')">
+            Hammer
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Polearm')">
+            Polearm
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Staff')">
+            Staff
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Tonfa')">
+            Tonfa
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-menu>
+
+    <button mat-raised-button [matMenuTriggerFor]="h2h">Hand To Hand</button>
+    <mat-menu #h2h="matMenu">
+      <mat-list>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Claws')">
+            Claws
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Fist')">
+            Fist
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Sparring')">
+            Sparring
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-menu>
+
+    <button mat-raised-button [matMenuTriggerFor]="whips">Whips</button>
+    <mat-menu #whips="matMenu">
+      <mat-list>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Blade and Whip')">
+            Blade and Whip
+          </button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-raised-button (click)="getFilteredList('Whip')">
+            Whip
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-menu>
+
+    <button mat-raised-button (click)="getFilteredList('Glaive')">
+      Glaive
+    </button>
+    <button mat-raised-button (click)="getFilteredList('Scythe')">
+      Scythe
+    </button>
+    <button mat-raised-button (click)="getFilteredList('Warfan')">
+      Warfan
+    </button>
+  </mat-toolbar>
+
   <div *ngFor="let melee of allMelees">
     <app-melee-summary melee={{melee|json}}></app-melee-summary>
   </div>
