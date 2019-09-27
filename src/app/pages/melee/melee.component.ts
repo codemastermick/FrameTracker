@@ -35,9 +35,4 @@ export class MeleeComponent implements OnInit {
   getFilteredList(type: Type) {
     this.allMelees = this.weapons.getAllOfType(type);
   }
-
-  getMultipleLists(types: Type[]) {
-    this.allMelees = this.weapons.getMultipleTypes(types);
-  }
-
 }

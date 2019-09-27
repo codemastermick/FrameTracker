@@ -56,10 +56,4 @@ export class MeleeService {
   getAllOfType(type: Type) {
     return this.allMelee.filter(x => x.type === type);
   }
-
-  getMultipleTypes(types: Type[]) {
-    return types.forEach(type => {
-      return this.allMelee.filter(x => x.type === type);
-    });
-  }
 }
