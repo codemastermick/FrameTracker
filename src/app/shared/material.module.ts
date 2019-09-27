@@ -6,10 +6,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 // import { MatGridListModule } from '@angular/material/grid-list';
-// import { MatMenuModule } from '@angular/material/menu';
 // import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
@@ -19,8 +19,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatExpansionModule
-    // MatMenuModule,
+    MatExpansionModule,
+    MatMenuModule
     // MatSidenavModule,
     // MatGridListModule
   ],
@@ -30,8 +30,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatExpansionModule
-    // MatMenuModule,
+    MatExpansionModule,
+    MatMenuModule
     // MatSidenavModule,
     // MatGridListModule
   ]
