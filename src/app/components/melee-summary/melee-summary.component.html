@@ -1,4 +1,4 @@
-<mat-card *ngIf="melee" routerLink="/melee/{{melee.name}}">
+<mat-card *ngIf="melee" routerLink="/melee/{{melee.name}}" [class.odd]="odd" [class.even]="even">
     <mat-card-header>
       <mat-card-title>
         {{melee.name}}

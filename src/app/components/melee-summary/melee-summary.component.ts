@@ -9,6 +9,8 @@ import { MeleeService } from 'app/shared/melee.service';
 })
 export class MeleeSummaryComponent implements OnInit {
   @Input() melee: Item;
+  @Input() even: boolean;
+  @Input() odd: boolean;
 
   constructor(public weapons: MeleeService) { }
 
