@@ -7,6 +7,7 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   title = 'The Sanctuary';
+  darkTheme = false;
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(e) {
