@@ -1,5 +1,5 @@
 <div fxFlex="row">
-  <mat-toolbar class="filterbar">
+  <mat-toolbar color="accent" class="filterbar">
     <button mat-raised-button (click)="resetFilters()">
       All
     </button>
@@ -7,52 +7,52 @@
     <mat-menu #blades="matMenu">
       <mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Dagger')">
+          <button mat-button (click)="getFilteredList('Dagger')" class="itemButton">
             Dagger
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Dual Daggers')">
+          <button mat-button (click)="getFilteredList('Dual Daggers')" class="itemButton">
             Dual Daggers
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Dual Swords')">
+          <button mat-button (click)="getFilteredList('Dual Swords')" class="itemButton">
             Dual Swords
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Gunblade')">
+          <button mat-button (click)="getFilteredList('Gunblade')" class="itemButton">
             Gunblade
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Heavy Blade')">
+          <button mat-button (click)="getFilteredList('Heavy Blade')" class="itemButton">
             Heavy Blade
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Machete')">
+          <button mat-button (click)="getFilteredList('Machete')" class="itemButton">
             Machete
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Nikana')">
+          <button mat-button (click)="getFilteredList('Nikana')" class="itemButton">
             Nikana
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Rapier')">
+          <button mat-button (click)="getFilteredList('Rapier')" class="itemButton">
             Rapier
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Sword')">
+          <button mat-button (click)="getFilteredList('Sword')" class="itemButton">
             Sword
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Two-Handed Nikana')">
+          <button mat-button (click)="getFilteredList('Two-Handed Nikana')" class="itemButton">
             Two-Handed Nikana
           </button>
         </mat-list-item>
@@ -63,22 +63,22 @@
     <mat-menu #blunt="matMenu">
       <mat-list>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Hammer')">
+          <button mat-button (click)="getFilteredList('Hammer')" class="itemButton">
             Hammer
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Polearm')">
+          <button mat-button (click)="getFilteredList('Polearm')" class="itemButton">
             Polearm
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Staff')">
+          <button mat-button (click)="getFilteredList('Staff')" class="itemButton">
             Staff
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Tonfa')">
+          <button mat-button (click)="getFilteredList('Tonfa')" class="itemButton">
             Tonfa
           </button>
         </mat-list-item>
@@ -89,17 +89,17 @@
     <mat-menu #h2h="matMenu">
       <mat-list>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Claws')">
+          <button mat-button (click)="getFilteredList('Claws')" class="itemButton">
             Claws
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Fist')">
+          <button mat-button (click)="getFilteredList('Fist')" class="itemButton">
             Fist
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Sparring')">
+          <button mat-button (click)="getFilteredList('Sparring')" class="itemButton">
             Sparring
           </button>
         </mat-list-item>
@@ -110,12 +110,12 @@
     <mat-menu #whips="matMenu">
       <mat-list>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Blade and Whip')">
+          <button mat-button (click)="getFilteredList('Blade and Whip')" class="itemButton">
             Blade and Whip
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-raised-button (click)="getFilteredList('Whip')">
+          <button mat-button (click)="getFilteredList('Whip')" class="itemButton">
             Whip
           </button>
         </mat-list-item>
@@ -133,7 +133,7 @@
     </button>
   </mat-toolbar>
 
-  <div *ngFor="let melee of allMelees">
-    <app-melee-summary melee={{melee|json}}></app-melee-summary>
+  <div *ngFor="let melee of allMelees; let even=even; let odd=odd">
+    <app-melee-summary [odd]="odd" [even]="even" melee={{melee|json}}></app-melee-summary>
   </div>
 </div>
