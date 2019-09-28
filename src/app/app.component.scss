@@ -1,8 +1,17 @@
+.header{
+  text-align:center;
+  border-radius: 0;
+}
+
 .navPanel{
 
 }
 
-.navPanel > button {
+.navButtons{
+  width: 80vw;
+}
+
+button {
   margin: 0.25em;
 }
 
