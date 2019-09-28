@@ -7,52 +7,52 @@
     <mat-menu #blades="matMenu">
       <mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Dagger')" class="itemButton">
+          <button mat-button (click)="filterOn('Dagger')" class="itemButton">
             Dagger
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Dual Daggers')" class="itemButton">
+          <button mat-button (click)="filterOn('Dual Daggers')" class="itemButton">
             Dual Daggers
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Dual Swords')" class="itemButton">
+          <button mat-button (click)="filterOn('Dual Swords')" class="itemButton">
             Dual Swords
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Gunblade')" class="itemButton">
+          <button mat-button (click)="filterOn('Gunblade')" class="itemButton">
             Gunblade
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Heavy Blade')" class="itemButton">
+          <button mat-button (click)="filterOn('Heavy Blade')" class="itemButton">
             Heavy Blade
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Machete')" class="itemButton">
+          <button mat-button (click)="filterOn('Machete')" class="itemButton">
             Machete
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Nikana')" class="itemButton">
+          <button mat-button (click)="filterOn('Nikana')" class="itemButton">
             Nikana
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Rapier')" class="itemButton">
+          <button mat-button (click)="filterOn('Rapier')" class="itemButton">
             Rapier
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Sword')" class="itemButton">
+          <button mat-button (click)="filterOn('Sword')" class="itemButton">
             Sword
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Two-Handed Nikana')" class="itemButton">
+          <button mat-button (click)="filterOn('Two-Handed Nikana')" class="itemButton">
             Two-Handed Nikana
           </button>
         </mat-list-item>
@@ -63,22 +63,22 @@
     <mat-menu #blunt="matMenu">
       <mat-list>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Hammer')" class="itemButton">
+          <button mat-button (click)="filterOn('Hammer')" class="itemButton">
             Hammer
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Polearm')" class="itemButton">
+          <button mat-button (click)="filterOn('Polearm')" class="itemButton">
             Polearm
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Staff')" class="itemButton">
+          <button mat-button (click)="filterOn('Staff')" class="itemButton">
             Staff
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Tonfa')" class="itemButton">
+          <button mat-button (click)="filterOn('Tonfa')" class="itemButton">
             Tonfa
           </button>
         </mat-list-item>
@@ -89,17 +89,17 @@
     <mat-menu #h2h="matMenu">
       <mat-list>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Claws')" class="itemButton">
+          <button mat-button (click)="filterOn('Claws')" class="itemButton">
             Claws
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Fist')" class="itemButton">
+          <button mat-button (click)="filterOn('Fist')" class="itemButton">
             Fist
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Sparring')" class="itemButton">
+          <button mat-button (click)="filterOn('Sparring')" class="itemButton">
             Sparring
           </button>
         </mat-list-item>
@@ -110,25 +110,25 @@
     <mat-menu #whips="matMenu">
       <mat-list>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Blade and Whip')" class="itemButton">
+          <button mat-button (click)="filterOn('Blade and Whip')" class="itemButton">
             Blade and Whip
           </button>
         </mat-list-item>
         <mat-list-item>
-          <button mat-button (click)="getFilteredList('Whip')" class="itemButton">
+          <button mat-button (click)="filterOn('Whip')" class="itemButton">
             Whip
           </button>
         </mat-list-item>
       </mat-list>
     </mat-menu>
 
-    <button mat-raised-button (click)="getFilteredList('Glaive')">
+    <button mat-raised-button (click)="filterOn('Glaive')">
       Glaive
     </button>
-    <button mat-raised-button (click)="getFilteredList('Scythe')">
+    <button mat-raised-button (click)="filterOn('Scythe')">
       Scythe
     </button>
-    <button mat-raised-button (click)="getFilteredList('Warfan')">
+    <button mat-raised-button (click)="filterOn('Warfan')">
       Warfan
     </button>
   </mat-toolbar>

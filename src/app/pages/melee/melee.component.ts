@@ -32,7 +32,7 @@ export class MeleeComponent implements OnInit {
     this.allMelees = this.weapons.getAllMelees();
   }
 
-  getFilteredList(type: Type) {
+  filterOn(type: Type) {
     this.allMelees = this.weapons.getAllOfType(type);
   }
 }
