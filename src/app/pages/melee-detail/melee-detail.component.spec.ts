@@ -6,6 +6,8 @@ import { DispositionModule } from '../../components/disposition/disposition.modu
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComponentsDisplayModule } from 'app/components/components-display/components-display.module';
+import { DamageDisplayModule } from 'app/components/damage-display/damage-display.module';
 
 describe('MeleeDetailComponent', () => {
   let component: MeleeDetailComponent;
@@ -14,10 +16,15 @@ describe('MeleeDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule,
+      imports: [
+        MaterialModule,
         DispositionModule,
         RouterTestingModule,
-        BrowserAnimationsModule],
+        BrowserAnimationsModule,
+        DispositionModule,
+        ComponentsDisplayModule,
+        DamageDisplayModule
+      ],
       declarations: [MeleeDetailComponent],
       providers: [{
         provide: Router,

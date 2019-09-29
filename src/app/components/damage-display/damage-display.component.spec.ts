@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DamageDisplayComponent } from './damage-display.component';
+import { MaterialModule } from 'app/shared/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('DamageDisplayComponent', () => {
   let component: DamageDisplayComponent;
@@ -8,9 +10,10 @@ describe('DamageDisplayComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DamageDisplayComponent ]
+      imports: [MaterialModule, BrowserAnimationsModule],
+      declarations: [DamageDisplayComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
