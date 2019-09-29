@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
-import { DispositionModule } from './components/disposition/disposition.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    DispositionModule,
     RouterModule
   ],
   providers: [],
