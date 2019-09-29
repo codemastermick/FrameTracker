@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, HostListener } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Item, Type } from 'warframe-items';
 import { MeleeService } from 'app/shared/melee.service';
@@ -22,6 +22,17 @@ export class MeleeComponent implements OnInit {
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
 
     this.allMelees = this.weapons.getAllMelees();
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(e) {
+    if (window.pageYOffset > 70) {
+      const element = document.getElementsByClassName('filterbar')[0];
+      element.classList.add('sticky-nav');
+    } else {
+      const element = document.getElementsByClassName('filterbar')[0];
+      element.classList.remove('sticky-nav');
+    }
   }
 
   getThumb(imageName: string) {
