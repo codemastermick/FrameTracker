@@ -5,7 +5,7 @@
     </button>
     <button mat-raised-button [matMenuTriggerFor]="blades">Blades</button>
     <mat-menu #blades="matMenu">
-      <mat-list-item>
+      <mat-list>
         <mat-list-item>
           <button mat-button (click)="filterOn('Dagger')" class="itemButton">
             Dagger
@@ -56,7 +56,7 @@
             Two-Handed Nikana
           </button>
         </mat-list-item>
-      </mat-list-item>
+      </mat-list>
     </mat-menu>
 
     <button mat-raised-button [matMenuTriggerFor]="blunt">Blunt Weapons</button>
