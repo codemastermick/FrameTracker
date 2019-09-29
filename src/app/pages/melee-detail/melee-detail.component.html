@@ -20,12 +20,17 @@
             Estimated Vaulting: {{melee.estimatedVaultDate}}
           </div>
         </ng-template>
+        <div>Mastery Requirement: MR {{melee.masteryReq}}</div>
         <app-disposition [disposition]="melee.disposition"></app-disposition>
-        <div class="dps">DPS: {{melee.damagePerSecond}}</div>
-        <div class="rof">Rate of Fire: {{melee.fireRate}}</div>
-        <div class="crit">Critical Chance: {{melee.criticalChance}}%</div>
-        <div class="crit">Critical Multiplier: x{{melee.criticalMultiplier}}</div>
-        <div class="proc">Status Chance: {{melee.procChance}}%</div>
+        <div>Damage per Hit: {{melee.totalDamage}}</div>
+        <div>Charge Attack: {{melee.chargeAttack}}</div>
+        <div>Spin Attack: {{melee.spinAttack}}</div>
+        <div>Leap Attack: {{melee.leapAttack}}</div>
+        <div>Wall Attack: {{melee.wallAttack}}</div>
+        <div>Rate of Fire: {{melee.fireRate}}</div>
+        <div>Critical Chance: {{melee.criticalChance}}%</div>
+        <div>Critical Multiplier: x{{melee.criticalMultiplier}}</div>
+        <div>Status Chance: {{melee.procChance}}%</div>
         <div>Accuracy: {{melee.accuracy.toFixed(2)}}%</div>
       </div>
       <div fxFlex="40%" class="meleeImage">
