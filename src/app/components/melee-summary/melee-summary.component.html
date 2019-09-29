@@ -10,10 +10,10 @@
     </mat-card-header>
 
     <mat-card-content>
-        <span>Damage Per Hit {{getDPS()}}</span>
+        <span>Damage Per Hit {{getDPS().toFixed()}}</span>
         |
-        <span>Critical {{melee.criticalChance}}%</span>
+        <span>Critical {{melee.criticalChance.toFixed(2)}}%</span>
         |
-        <span>Status {{melee.procChance}}%</span>
+        <span>Status {{melee.procChance.toFixed(2)}}%</span>
     </mat-card-content>
   </mat-card>
