@@ -35,4 +35,12 @@ export class MeleeComponent implements OnInit {
   filterOn(type: Type) {
     this.allMelees = this.weapons.getAllOfType(type);
   }
+
+
+  sortByDamage() {
+    this.allMelees.sort((a, b) =>
+      (a.damagePerShot.reduce((c, d) => c + d, 0) >
+        b.damagePerShot.reduce((e, f) => e + f, 0)
+      ) ? 1 : -1);
+  }
 }

@@ -133,6 +133,9 @@
     </button>
   </mat-toolbar>
 
+  <button (click)="sortByDamage()">
+Sort by damage
+  </button>
   <div *ngFor="let melee of allMelees; let even=even; let odd=odd">
     <app-melee-summary [odd]="odd" [even]="even" melee={{melee|json}}></app-melee-summary>
   </div>
