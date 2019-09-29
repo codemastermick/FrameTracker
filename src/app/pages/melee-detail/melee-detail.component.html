@@ -26,7 +26,7 @@
         <div class="crit">Critical Chance: {{melee.criticalChance}}%</div>
         <div class="crit">Critical Multiplier: x{{melee.criticalMultiplier}}</div>
         <div class="proc">Status Chance: {{melee.procChance}}%</div>
-        <div >Accuracy: {{melee.accuracy.toFixed(2)}}%</div>
+        <div>Accuracy: {{melee.accuracy.toFixed(2)}}%</div>
       </div>
       <div fxFlex="40%" class="meleeImage">
         <img [src]="getImage(melee.imageName)" alt="{{melee.name}} image">
@@ -40,10 +40,7 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      <div *ngFor="let dmg of getDamageTypes(melee);">
-        <!-- {{dmg.key|titlecase}}: {{dmg.value}} -->
-        {{dmg|json}}
-      </div>
+      <app-damage-display [damageTypes]="melee.damageTypes"></app-damage-display>
     </mat-expansion-panel>
 
     <mat-expansion-panel>
@@ -56,9 +53,9 @@
       <div *ngFor="let comp of melee.components;">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <div *ngIf="comp.drops;">
+            <div *ngIf="comp;">
               <mat-panel-title>
-                {{comp.name}}
+                {{comp.itemCount}} {{comp.name}}
               </mat-panel-title>
             </div>
           </mat-expansion-panel-header>
