@@ -6,6 +6,7 @@ import { MaterialModule } from '../../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DispositionModule } from 'app/components/disposition/disposition.module';
 import { DamageDisplayModule } from 'app/components/damage-display/damage-display.module';
+import { ComponentsDisplayModule } from 'app/components/components-display/components-display.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { DamageDisplayModule } from 'app/components/damage-display/damage-displa
     MaterialModule,
     FlexLayoutModule,
     DispositionModule,
-    DamageDisplayModule
+    DamageDisplayModule,
+    ComponentsDisplayModule
   ],
   declarations: [MeleeDetailComponent]
 })
