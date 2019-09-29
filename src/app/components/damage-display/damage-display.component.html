@@ -1,4 +1,4 @@
-<mat-list>
+<mat-list *ngIf="damageTypes;else noData">
   <mat-list-item *ngIf="damageTypes.blast>0">
     Blast: {{damageTypes.blast}}
   </mat-list-item>
@@ -47,3 +47,7 @@
     Viral: {{damageTypes.viral}}
   </mat-list-item>
 </mat-list>
+
+<ng-template #noData>
+  No API data supplied!
+</ng-template>
