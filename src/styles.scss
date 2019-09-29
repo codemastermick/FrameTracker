@@ -10,3 +10,7 @@
 .dark {
   @include angular-material-theme($altTheme);
 }
+
+mat-card{
+  font-family: 'Orbitron';
+}
