@@ -1,52 +1,59 @@
-<mat-list *ngIf="damageTypes;else noData">
-  <mat-list-item *ngIf="damageTypes.blast>0">
-    Blast: {{damageTypes.blast}}
-  </mat-list-item>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Damage
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-list *ngIf="damageTypes;else noData">
+    <mat-list-item *ngIf="damageTypes.blast>0">
+      Blast: {{damageTypes.blast}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.cold>0">
-    Cold: {{damageTypes.cold}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.cold>0">
+      Cold: {{damageTypes.cold}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.corrosive>0">
-    Corrosive: {{damageTypes.corrosive}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.corrosive>0">
+      Corrosive: {{damageTypes.corrosive}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.electricity>0">
-    Electricity: {{damageTypes.electricity}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.electricity>0">
+      Electricity: {{damageTypes.electricity}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.heat>0">
-    Heat: {{damageTypes.heat}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.heat>0">
+      Heat: {{damageTypes.heat}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.impact>0">
-    Impact: {{damageTypes.impact}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.impact>0">
+      Impact: {{damageTypes.impact}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.magnetic>0">
-    Magnetic: {{damageTypes.magnetic}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.magnetic>0">
+      Magnetic: {{damageTypes.magnetic}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.puncture>0">
-    Puncture: {{damageTypes.puncture}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.puncture>0">
+      Puncture: {{damageTypes.puncture}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.radiation>0">
-    Radiation: {{damageTypes.radiation}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.radiation>0">
+      Radiation: {{damageTypes.radiation}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.slash>0">
-    Slash: {{damageTypes.slash}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.slash>0">
+      Slash: {{damageTypes.slash}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.toxin>0">
-    Toxin: {{damageTypes.toxin}}
-  </mat-list-item>
+    <mat-list-item *ngIf="damageTypes.toxin>0">
+      Toxin: {{damageTypes.toxin}}
+    </mat-list-item>
 
-  <mat-list-item *ngIf="damageTypes.viral>0">
-    Viral: {{damageTypes.viral}}
-  </mat-list-item>
-</mat-list>
+    <mat-list-item *ngIf="damageTypes.viral>0">
+      Viral: {{damageTypes.viral}}
+    </mat-list-item>
+  </mat-list>
+</mat-expansion-panel>
 
 <ng-template #noData>
   No API data supplied!
