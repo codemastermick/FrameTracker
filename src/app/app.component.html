@@ -30,9 +30,9 @@
     </div>
 
     <!-- push to right edge -->
-    <button mat-raised-button (click)="darkTheme=!darkTheme" fxFlex="20%">
-      {{darkTheme?"Toggle Light Theme":"Toggle Dark Theme"}}
-    </button>
+    {{!darkTheme?"Toggle Light Theme":"Toggle Dark Theme"}}
+    <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme" fxFlex="20%">
+    </mat-slide-toggle>
 
   </mat-toolbar>
 
