@@ -41,6 +41,7 @@ export class MeleeComponent implements OnInit {
 
   resetFilters() {
     this.allMelees = this.weapons.getAllMelees();
+    this.allMelees.sort((a, b) => (a.name > b.name) ? 1 : -1);
   }
 
   filterOn(type: Type) {
