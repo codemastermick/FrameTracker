@@ -4,15 +4,16 @@ import { MeleeRoutingModule } from './melee-routing.module';
 import { MeleeComponent } from './melee.component';
 import { MaterialModule } from '../../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MeleeSummaryComponent } from 'app/components/melee-summary/melee-summary.component';
+import { MeleeSummaryModule } from 'app/components/melee-summary/melee-summary.module';
 
 @NgModule({
   imports: [
     CommonModule,
     MeleeRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MeleeSummaryModule
   ],
-  declarations: [MeleeComponent, MeleeSummaryComponent]
+  declarations: [MeleeComponent]
 })
 export class MeleeModule { }
