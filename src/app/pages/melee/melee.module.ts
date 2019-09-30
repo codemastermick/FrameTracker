@@ -7,7 +7,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MeleeSummaryComponent } from 'app/components/melee-summary/melee-summary.component';
 
 @NgModule({
-  imports: [CommonModule, MeleeRoutingModule, MaterialModule, FlexLayoutModule],
+  imports: [
+    CommonModule,
+    MeleeRoutingModule,
+    MaterialModule,
+    FlexLayoutModule
+  ],
   declarations: [MeleeComponent, MeleeSummaryComponent]
 })
 export class MeleeModule { }
