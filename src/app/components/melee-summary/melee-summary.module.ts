@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { MeleeSummaryComponent } from './melee-summary.component';
 import { MaterialModule } from 'app/shared/material.module';
 import { RouterModule } from '@angular/router';
+import { DeferLoadModule } from 'app/shared/defer-load-directive';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    DeferLoadModule
   ],
   declarations: [
     MeleeSummaryComponent
