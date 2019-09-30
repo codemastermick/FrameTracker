@@ -2,6 +2,7 @@ import { ElementRef, EventEmitter, Output, AfterViewInit, Directive, NgModule } 
 import { CommonModule } from '@angular/common';
 
 @Directive({
+  // tslint:disable-next-line: directive-selector
   selector: '[deferLoad]'
 })
 export class DeferLoadDirective implements AfterViewInit {
