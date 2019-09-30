@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy, HostListener } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, HostListener, AfterViewInit } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Item, Type } from 'warframe-items';
+import { Type } from 'warframe-items';
 import { MeleeService } from 'app/shared/melee.service';
+import { LazyItem } from 'app/shared/lazyItem.interface';
 
 @Component({
   selector: 'app-melee',
@@ -11,7 +12,7 @@ import { MeleeService } from 'app/shared/melee.service';
 })
 export class MeleeComponent implements OnInit {
 
-  allMelees: Item[];
+  allMelees: LazyItem[] = [];
 
   constructor(private titleService: Title, private metaTagService: Meta, private weapons: MeleeService) { }
 
@@ -21,7 +22,13 @@ export class MeleeComponent implements OnInit {
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
 
-    this.allMelees = this.weapons.getAllMelees();
+    this.weapons.getAllMelees().forEach(x => {
+      this.allMelees.push(x);
+    });
+
+    this.allMelees.forEach(x => {
+      x.show = false;
+    });
   }
 
   @HostListener('window:scroll', ['$event'])

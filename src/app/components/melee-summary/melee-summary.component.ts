@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from 'warframe-items';
 import { MeleeService } from 'app/shared/melee.service';
+import { LazyItem } from 'app/shared/lazyItem.interface';
 
 @Component({
   selector: 'app-melee-summary',
@@ -8,9 +8,21 @@ import { MeleeService } from 'app/shared/melee.service';
   styleUrls: ['./melee-summary.component.scss']
 })
 export class MeleeSummaryComponent implements OnInit {
-  @Input() melee: Item;
+  @Input() melee: LazyItem;
   @Input() even: boolean;
   @Input() odd: boolean;
+
+  observer = new IntersectionObserver(entries => {
+    entries.forEach(x => {
+      if (x.intersectionRatio > 0) {
+        this.melee.show = true;
+        // console.log('Setting show state on ' + this.melee.name);
+      } else {
+        this.melee.show = false;
+        // console.log('Setting hide state on ' + this.melee.name);
+      }
+    });
+  }, { root: null, threshold: [0] });
 
   constructor(public weapons: MeleeService) { }
 
@@ -20,6 +32,9 @@ export class MeleeSummaryComponent implements OnInit {
     } catch (e) {
       this.melee = this.melee;
     }
+    const cards = document.querySelectorAll('app-melee');
+    cards.forEach(c => this.observer.observe(c));
+    // this.observer.observe(document.getElementsByTagName('app-melee-summary')[0]);
   }
 
   getThumb() {
