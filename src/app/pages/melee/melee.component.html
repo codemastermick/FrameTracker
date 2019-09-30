@@ -133,7 +133,9 @@
   <button (click)="sortByDPS()">
     Sort by DPS
   </button>
-  <div *ngFor="let melee of allMelees; let even=even; let odd=odd">
+
+  <div class="meleeCards" *ngFor="let melee of allMelees; let even=even; let odd=odd">
     <app-melee-summary [odd]="odd" [even]="even" melee={{melee|json}}></app-melee-summary>
   </div>
+
 </div>
