@@ -447,4 +447,9 @@ describe('MeleeSummaryComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return a thumbnail URL', () => {
+    const val = component.getThumb();
+    expect(val).toBeTruthy();
+  });
 });
