@@ -15,7 +15,6 @@ export class MeleeSummaryComponent implements OnInit, AfterViewInit {
   observer = new IntersectionObserver(entries => {
     entries.forEach(x => {
       this.melee.show = x.intersectionRatio > 0.1;
-      console.log(`Setting ${this.melee.name} as ${this.melee.show ? 'visible' : 'hidden'}`);
     });
   }, { root: null, threshold: [0.1] });
 
