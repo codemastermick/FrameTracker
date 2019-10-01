@@ -1,138 +1,151 @@
 <div fxFlex="row">
   <mat-toolbar color="accent" class="filterbar">
-    <button mat-raised-button (click)="resetFilters()">
-      All
-    </button>
-    <button mat-raised-button [matMenuTriggerFor]="blades">Blades</button>
-    <mat-menu #blades="matMenu">
-      <mat-list>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Dagger')" class="itemButton">
-            Dagger
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Dual Daggers')" class="itemButton">
-            Dual Daggers
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Dual Swords')" class="itemButton">
-            Dual Swords
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Gunblade')" class="itemButton">
-            Gunblade
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Heavy Blade')" class="itemButton">
-            Heavy Blade
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Machete')" class="itemButton">
-            Machete
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Nikana')" class="itemButton">
-            Nikana
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Rapier')" class="itemButton">
-            Rapier
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Sword')" class="itemButton">
-            Sword
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Two-Handed Nikana')" class="itemButton">
-            Two-Handed Nikana
-          </button>
-        </mat-list-item>
-      </mat-list>
-    </mat-menu>
+    <div fxFlex="90%">
+      <button mat-raised-button (click)="resetFilters()">
+        All
+      </button>
+      <button mat-raised-button [matMenuTriggerFor]="blades">Blades</button>
+      <mat-menu #blades="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Dagger')" class="itemButton">
+              Dagger
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Dual Daggers')" class="itemButton">
+              Dual Daggers
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Dual Swords')" class="itemButton">
+              Dual Swords
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Gunblade')" class="itemButton">
+              Gunblade
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Heavy Blade')" class="itemButton">
+              Heavy Blade
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Machete')" class="itemButton">
+              Machete
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Nikana')" class="itemButton">
+              Nikana
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Rapier')" class="itemButton">
+              Rapier
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Sword')" class="itemButton">
+              Sword
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Two-Handed Nikana')" class="itemButton">
+              Two-Handed Nikana
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
 
-    <button mat-raised-button [matMenuTriggerFor]="blunt">Blunt Weapons</button>
-    <mat-menu #blunt="matMenu">
-      <mat-list>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Hammer')" class="itemButton">
-            Hammer
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Polearm')" class="itemButton">
-            Polearm
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Staff')" class="itemButton">
-            Staff
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Tonfa')" class="itemButton">
-            Tonfa
-          </button>
-        </mat-list-item>
-      </mat-list>
-    </mat-menu>
+      <button mat-raised-button [matMenuTriggerFor]="blunt">Blunt Weapons</button>
+      <mat-menu #blunt="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Hammer')" class="itemButton">
+              Hammer
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Polearm')" class="itemButton">
+              Polearm
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Staff')" class="itemButton">
+              Staff
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Tonfa')" class="itemButton">
+              Tonfa
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
 
-    <button mat-raised-button [matMenuTriggerFor]="h2h">Hand To Hand</button>
-    <mat-menu #h2h="matMenu">
-      <mat-list>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Claws')" class="itemButton">
-            Claws
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Fist')" class="itemButton">
-            Fist
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Sparring')" class="itemButton">
-            Sparring
-          </button>
-        </mat-list-item>
-      </mat-list>
-    </mat-menu>
+      <button mat-raised-button [matMenuTriggerFor]="h2h">Hand To Hand</button>
+      <mat-menu #h2h="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Claws')" class="itemButton">
+              Claws
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Fist')" class="itemButton">
+              Fist
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Sparring')" class="itemButton">
+              Sparring
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
 
-    <button mat-raised-button [matMenuTriggerFor]="whips">Whips</button>
-    <mat-menu #whips="matMenu">
-      <mat-list>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Blade and Whip')" class="itemButton">
-            Blade and Whip
-          </button>
-        </mat-list-item>
-        <mat-list-item>
-          <button mat-button (click)="filterOn('Whip')" class="itemButton">
-            Whip
-          </button>
-        </mat-list-item>
-      </mat-list>
-    </mat-menu>
+      <button mat-raised-button [matMenuTriggerFor]="whips">Whips</button>
+      <mat-menu #whips="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Blade and Whip')" class="itemButton">
+              Blade and Whip
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="filterOn('Whip')" class="itemButton">
+              Whip
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
 
-    <button mat-raised-button (click)="filterOn('Glaive')"> Glaive </button>
-    <button mat-raised-button (click)="filterOn('Scythe')"> Scythe </button>
-    <button mat-raised-button (click)="filterOn('Warfan')"> Warfan </button>
+      <button mat-raised-button (click)="filterOn('Glaive')"> Glaive </button>
+      <button mat-raised-button (click)="filterOn('Scythe')"> Scythe </button>
+      <button mat-raised-button (click)="filterOn('Warfan')"> Warfan </button>
+    </div>
+
+    <div fxFlex="10%">
+      <button mat-raised-button [matMenuTriggerFor]="filters">Filters</button>
+      <mat-menu #filters="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <button (click)="sortByDamage()">
+              Sort by damage
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button (click)="sortByDPS()">
+              Sort by DPS
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
+    </div>
   </mat-toolbar>
-
-  <button (click)="sortByDamage()">
-    Sort by damage
-  </button>
-  <button (click)="sortByDPS()">
-    Sort by DPS
-  </button>
 
   <cdk-virtual-scroll-viewport style="height: 70vh" itemSize="90">
     <div *cdkVirtualFor="let melee of allMelees; let even=even; let odd=odd templateCacheSize: 0">
