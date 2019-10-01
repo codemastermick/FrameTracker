@@ -51,13 +51,13 @@ export class MeleeComponent implements OnInit {
 
 
   sortByDamage() {
-    this.allMelees.sort((a, b) =>
+    this.allMelees = this.allMelees.sort((a, b) =>
       (a.damagePerShot.reduce((c, d) => c + d, 0) >
         b.damagePerShot.reduce((e, f) => e + f, 0)
       ) ? 1 : -1);
   }
 
   sortByDPS() {
-    this.allMelees.sort((a, b) => (a.damagePerSecond > b.damagePerSecond) ? 1 : -1);
+    this.allMelees = this.allMelees.sort((a, b) => (a.damagePerSecond > b.damagePerSecond) ? 1 : -1);
   }
 }
