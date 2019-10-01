@@ -134,8 +134,10 @@
     Sort by DPS
   </button>
 
-  <div class="meleeCards" *ngFor="let melee of allMelees; let even=even; let odd=odd">
-    <app-melee-summary [odd]="odd" [even]="even" melee={{melee|json}}></app-melee-summary>
-  </div>
+  <cdk-virtual-scroll-viewport style="height: 70vh" itemSize="90">
+    <div *cdkVirtualFor="let melee of allMelees; let even=even; let odd=odd templateCacheSize: 0">
+      <app-melee-summary [odd]="odd" [even]="even" melee={{melee|json}}></app-melee-summary>
+    </div>
+  </cdk-virtual-scroll-viewport>
 
 </div>

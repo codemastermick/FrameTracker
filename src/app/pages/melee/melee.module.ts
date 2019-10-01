@@ -5,6 +5,7 @@ import { MeleeComponent } from './melee.component';
 import { MaterialModule } from '../../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MeleeSummaryModule } from 'app/components/melee-summary/melee-summary.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { MeleeSummaryModule } from 'app/components/melee-summary/melee-summary.m
     MeleeRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    MeleeSummaryModule
+    MeleeSummaryModule,
+    ScrollingModule
   ],
   declarations: [MeleeComponent]
 })

@@ -22,13 +22,7 @@ export class MeleeComponent implements OnInit {
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
 
-    this.weapons.getAllMelees().forEach(x => {
-      this.allMelees.push(x);
-    });
-
-    this.allMelees.forEach(x => {
-      x.show = false;
-    });
+    this.allMelees = this.weapons.getAllMelees();
   }
 
   @HostListener('window:scroll', ['$event'])
