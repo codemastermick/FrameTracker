@@ -4,12 +4,15 @@ import { MeleeSummaryComponent } from './melee-summary.component';
 import { MaterialModule } from 'app/shared/material.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Item } from 'warframe-items';
+import { DeferLoadModule } from 'app/shared/defer-load-directive';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { MeleeModule } from 'app/pages/melee/melee.module';
 
 const AMPHIS: Item = {
   name: 'Amphis',
   uniqueName: '/Lotus/Weapons/Tenno/Melee/Staff/GrnStaff',
   secondsPerShot: 0.79999995,
-  damagePerShot: [ 38.5, 8.25, 8.249999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  damagePerShot: [38.5, 8.25, 8.249999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   magazineSize: 0,
   reloadTime: 0,
   totalDamage: 55,
@@ -414,9 +417,9 @@ const AMPHIS: Item = {
     puncture: 8.3
   },
   marketCost: 150,
-  polarities: [ 'Naramon' ],
+  polarities: ['Naramon'],
   stancePolarity: 'Madurai',
-  tags: [ 'Grineer' ],
+  tags: ['Grineer'],
   wikiaThumbnail: 'https://vignette.wikia.nocookie.net/warframe/images/f/f9/DEAmphis.png/revision/latest?cb=20140407035856',
   wikiaUrl: 'http://warframe.fandom.com/wiki/Amphis',
   disposition: 5
@@ -428,10 +431,10 @@ describe('MeleeSummaryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule, RouterTestingModule],
-      declarations: [ MeleeSummaryComponent ]
+      imports: [MaterialModule, RouterTestingModule, DeferLoadModule, ScrollingModule, MeleeModule],
+      declarations: []
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
