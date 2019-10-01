@@ -45,4 +45,9 @@ describe('MeleeDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return damage types', () => {
+    const val = component.getDamageTypes(component.melee);
+    expect(val).toBeTruthy();
+  });
 });
