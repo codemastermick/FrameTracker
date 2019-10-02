@@ -1,6 +1,7 @@
 .header {
   text-align: center;
   border-radius: 0;
+  flex-grow: 1;
 }
 
 .navPanel {
@@ -27,7 +28,7 @@ button {
   width: 100%;
 }
 
-.decopyline{
+.decopyline {
   flex-grow: 3;
 }
 
@@ -38,4 +39,17 @@ mat-toolbar > div > a {
 
 .copyline {
   text-align: end;
+}
+
+.spinner {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
