@@ -9,7 +9,7 @@ const ACRID: Item = {
   name: 'Acrid',
   uniqueName: '/Lotus/Weapons/ClanTech/Bio/AcidDartPistol',
   secondsPerShot: 0.14999999,
-  damagePerShot: [ 0, 0, 0, 0, 0, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  damagePerShot: [0, 0, 0, 0, 0, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   magazineSize: 15,
   reloadTime: 1.2,
   totalDamage: 35,
@@ -3798,9 +3798,9 @@ const ACRID: Item = {
     toxin: 35
   },
   flight: 65,
-  polarities: [  ],
+  polarities: [],
   projectile: 'Projectile',
-  tags: [ 'Grineer' ],
+  tags: ['Grineer'],
   wikiaThumbnail: 'https://vignette.wikia.nocookie.net/warframe/images/a/a8/Acrid2.png/revision/latest?cb=20130530193010',
   wikiaUrl: 'http://warframe.fandom.com/wiki/Acrid',
   disposition: 5
@@ -3813,9 +3813,9 @@ describe('SecondarySummaryComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, RouterTestingModule],
-      declarations: [ SecondarySummaryComponent ]
+      declarations: [SecondarySummaryComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -3827,5 +3827,15 @@ describe('SecondarySummaryComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return a thumbnail URL', () => {
+    const val = component.getThumb();
+    expect(val).toBeTruthy();
+  });
+
+  it('should return DPS', () => {
+    const val = component.getDPS();
+    expect(val).toBeTruthy();
   });
 });
