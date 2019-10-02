@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, HostListener, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, HostListener, ChangeDetectorRef } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Type } from 'warframe-items';
 import { MeleeService } from 'app/shared/melee.service';
@@ -14,7 +14,11 @@ export class MeleeComponent implements OnInit {
 
   allMelees: LazyItem[] = [];
 
-  constructor(private titleService: Title, private metaTagService: Meta, private weapons: MeleeService) { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta,
+    private weapons: MeleeService,
+    private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
     this.titleService.setTitle('Pathfinder Project Managment System');
@@ -51,13 +55,17 @@ export class MeleeComponent implements OnInit {
 
 
   sortByDamage() {
-    this.allMelees = this.allMelees.sort((a, b) =>
+    const newList: LazyItem[] = this.allMelees.sort((a, b) =>
       (a.damagePerShot.reduce((c, d) => c + d, 0) >
         b.damagePerShot.reduce((e, f) => e + f, 0)
       ) ? 1 : -1);
+    this.allMelees = [...newList];
+    this.changeDetectorRef.detectChanges();
   }
 
   sortByDPS() {
-    this.allMelees = this.allMelees.sort((a, b) => (a.damagePerSecond > b.damagePerSecond) ? 1 : -1);
+    const newList: LazyItem[] = this.allMelees.sort((a, b) => (a.damagePerSecond > b.damagePerSecond) ? 1 : -1);
+    this.allMelees = [...newList];
+    this.changeDetectorRef.detectChanges();
   }
 }
