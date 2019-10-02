@@ -68,4 +68,16 @@ export class MeleeComponent implements OnInit {
     this.allMelees = [...newList];
     this.changeDetectorRef.detectChanges();
   }
+
+  sortByCrit() {
+    const newList: LazyItem[] = this.allMelees.sort((a, b) => (a.criticalChance > b.criticalChance) ? 1 : -1);
+    this.allMelees = [...newList];
+    this.changeDetectorRef.detectChanges();
+  }
+
+  sortByProc() {
+    const newList: LazyItem[] = this.allMelees.sort((a, b) => (a.procChance > b.procChance) ? 1 : -1);
+    this.allMelees = [...newList];
+    this.changeDetectorRef.detectChanges();
+  }
 }
