@@ -1,13 +1,14 @@
-.header{
-  text-align:center;
+.header {
+  text-align: center;
   border-radius: 0;
 }
 
-.navPanel{
-
+.navPanel {
+ // this is being used to select the correct element
+ // and apply the stick-nav style to it. DO NOT REMOVE!
 }
 
-.navButtons{
+.navButtons {
   width: 80vw;
 }
 
