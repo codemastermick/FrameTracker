@@ -21,8 +21,8 @@ export class MeleeComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Pathfinder Project Managment System');
-    this.metaTagService.updateTag({ name: 'description', content: 'Simplifying project management for everyone' });
+    this.titleService.setTitle('The Tenno Sanctuary: Melee Weapons');
+    this.metaTagService.updateTag({ name: 'description', content: 'Warframe melee items' });
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
 

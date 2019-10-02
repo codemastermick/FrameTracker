@@ -12,8 +12,8 @@ export class ContribComponent implements OnInit {
   constructor(private titleService: Title, private metaTagService: Meta) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Pathfinder Project Managment System');
-    this.metaTagService.updateTag({ name: 'description', content: 'Simplifying project management for everyone' });
+    this.titleService.setTitle('The Tenno Sanctuary: Contribution Information');
+    this.metaTagService.updateTag({ name: 'description', content: 'Contribution information for The Tenno Sanctuary' });
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
   }
