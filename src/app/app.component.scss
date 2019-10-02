@@ -4,8 +4,8 @@
 }
 
 .navPanel {
- // this is being used to select the correct element
- // and apply the stick-nav style to it. DO NOT REMOVE!
+  // this is being used to select the correct element
+  // and apply the stick-nav style to it. DO NOT REMOVE!
 }
 
 .navButtons {
@@ -21,4 +21,21 @@ button {
   top: 0;
   z-index: 999;
   width: 100%;
+}
+
+.footer {
+  width: 100%;
+}
+
+.decopyline{
+  flex-grow: 3;
+}
+
+mat-toolbar > div > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.copyline {
+  text-align: end;
 }
