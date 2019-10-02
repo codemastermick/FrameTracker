@@ -1,5 +1,5 @@
 <div [class.light]="!darkTheme" [class.dark]="darkTheme" fxFlex="column">
-  <mat-card class="header">
+  <mat-card class="header" fxFlex="100%">
     <h1>
       <span class="wf-simaris"></span>
       Welcome Hunter, to {{ title }}
@@ -7,7 +7,7 @@
     </h1>
   </mat-card>
 
-  <mat-toolbar color="primary" class="navPanel" fxFlexFill>
+  <mat-toolbar color="primary" class="navPanel" fxFlex="row">
     <div fxFlexAlign="start" fxFlex="80%" class="navButtons">
       <button mat-button [routerLink]="['/home']">
         <span class="wf-lotus" style="font-size: 2em;"></span>
@@ -29,11 +29,10 @@
       </button>
     </div>
 
-    <!-- push to right edge -->
-    {{!darkTheme?"Toggle Light Theme":"Toggle Dark Theme"}}
-    <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme" fxFlex="20%">
-    </mat-slide-toggle>
-
+    <div fxFlex="20%">
+      {{!darkTheme?"Toggle Light Theme":"Toggle Dark Theme"}}
+      <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme"> </mat-slide-toggle>
+    </div>
   </mat-toolbar>
 
   <router-outlet></router-outlet>
