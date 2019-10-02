@@ -452,4 +452,9 @@ describe('MeleeSummaryComponent', () => {
     const val = component.getThumb();
     expect(val).toBeTruthy();
   });
+
+  it('should return DPS', () => {
+    const val = component.getDPS();
+    expect(val).toBeTruthy();
+  });
 });
