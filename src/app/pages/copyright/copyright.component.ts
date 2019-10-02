@@ -12,8 +12,8 @@ export class CopyrightComponent implements OnInit {
   constructor(private titleService: Title, private metaTagService: Meta) { }
 
   ngOnInit() {
-    this.titleService.setTitle('Pathfinder Project Managment System');
-    this.metaTagService.updateTag({ name: 'description', content: 'Simplifying project management for everyone' });
+    this.titleService.setTitle('Copyright information for The Tenno Sanctuary');
+    this.metaTagService.updateTag({ name: 'description', content: 'Copyright information for the webapp The Tenno Sanctuary' });
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
   }
