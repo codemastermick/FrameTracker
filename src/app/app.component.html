@@ -35,7 +35,10 @@
     </div>
   </mat-toolbar>
 
-  <router-outlet></router-outlet>
+  <div *ngIf="loading">
+    <mat-progress-spinner mode="indeterminate" color="accent"> </mat-progress-spinner>
+  </div>
+  <router-outlet *ngIf="!loading"> </router-outlet>
 
   <mat-toolbar fxFlex="row" fxLayoutAlign="space-between" class="footer" [routerLink]="['/copyright']">
     <div class="decopyline">
