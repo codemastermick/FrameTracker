@@ -30,4 +30,25 @@ describe('MeleeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return a thumbnail URL', () => {
+    const val = component.getThumb(component.allMelees[0].imageName);
+    expect(val).toBeTruthy();
+  });
+
+  it('should filter when asked', () => {
+    const t = component.allMelees[0].type;
+    component.filterOn(t);
+    expect(component.allMelees[0].type === t).toBeTruthy();
+  });
+
+  it('should sort by damage per shot when asked', () => {
+    component.sortByDamage();
+    expect(component.allMelees[0].damagePerShot >= component.allMelees[10].damagePerShot).toBeTruthy();
+  });
+
+  it('should sort by DPS when asked', () => {
+    component.sortByDPS();
+    expect(component.allMelees[0].damagePerSecond <= component.allMelees[10].damagePerSecond).toBeTruthy();
+  });
 });
