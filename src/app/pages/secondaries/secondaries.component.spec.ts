@@ -6,6 +6,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DispositionModule } from 'app/components/disposition/disposition.module';
 import { SecondarySummaryComponent } from 'app/components/secondary-summary/secondary-summary.component';
 import { Router } from '@angular/router';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PrimarySummaryModule } from 'app/components/primary-summary/primary-summary.module';
+import { SecondarySummaryModule } from 'app/components/secondary-summary/secondary-summary.module';
 
 describe('SecondariesComponent', () => {
   let component: SecondariesComponent;
@@ -14,8 +17,14 @@ describe('SecondariesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule, RouterTestingModule, DispositionModule],
-      declarations: [SecondariesComponent, SecondarySummaryComponent]
+      imports: [
+        MaterialModule,
+        RouterTestingModule,
+        DispositionModule,
+        ScrollingModule,
+        SecondarySummaryModule
+      ],
+      declarations: [SecondariesComponent]
     }).compileComponents();
   }));
 

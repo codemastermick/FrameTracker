@@ -7,6 +7,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { PrimarySummaryComponent } from 'app/components/primary-summary/primary-summary.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PrimarySummaryModule } from 'app/components/primary-summary/primary-summary.module';
 
 describe('PrimariesComponent', () => {
   let router: Router;
@@ -15,8 +17,15 @@ describe('PrimariesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule, FlexLayoutModule, DispositionModule, RouterTestingModule],
-      declarations: [PrimariesComponent, PrimarySummaryComponent]
+      imports: [
+        MaterialModule,
+        FlexLayoutModule,
+        DispositionModule,
+        RouterTestingModule,
+        ScrollingModule,
+        PrimarySummaryModule
+      ],
+      declarations: [PrimariesComponent]
     }).compileComponents();
   }));
 
@@ -29,5 +38,26 @@ describe('PrimariesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should return a thumbnail URL', () => {
+    const val = component.getThumb(component.allPrimaries[0].imageName);
+    expect(val).toBeTruthy();
+  });
+
+  it('should filter when asked', () => {
+    const t = component.allPrimaries[0].type;
+    component.filterOn(t);
+    expect(component.allPrimaries[0].type === t).toBeTruthy();
+  });
+
+  it('should sort by damage per shot when asked', () => {
+    component.sortByDamage();
+    expect(component.allPrimaries[0].damagePerShot <= component.allPrimaries[10].damagePerShot).toBeTruthy();
+  });
+
+  it('should sort by DPS when asked', () => {
+    component.sortByDPS();
+    expect(component.allPrimaries[0].damagePerSecond <= component.allPrimaries[10].damagePerSecond).toBeTruthy();
   });
 });

@@ -6,6 +6,9 @@ import { DispositionModule } from '../../components/disposition/disposition.modu
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DamageBreakdownModule } from 'app/components/damage-breakdown/damage-breakdown.module';
+import { DamageDisplayModule } from 'app/components/damage-display/damage-display.module';
+import { ComponentsDisplayModule } from 'app/components/components-display/components-display.module';
 
 describe('PrimariesDetailComponent', () => {
   let component: PrimariesDetailComponent;
@@ -14,10 +17,15 @@ describe('PrimariesDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule,
+      imports: [
+        MaterialModule,
         DispositionModule,
         RouterTestingModule,
-        BrowserAnimationsModule],
+        BrowserAnimationsModule,
+        DamageBreakdownModule,
+        DamageDisplayModule,
+        ComponentsDisplayModule
+      ],
       declarations: [PrimariesDetailComponent],
       providers: [
         {

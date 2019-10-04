@@ -15,7 +15,13 @@ describe('MeleeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule, RouterTestingModule, DispositionModule, MeleeSummaryModule, ScrollingModule],
+      imports: [
+        MaterialModule,
+        RouterTestingModule,
+        DispositionModule,
+        MeleeSummaryModule,
+        ScrollingModule
+      ],
       declarations: [MeleeComponent]
     }).compileComponents();
   }));
