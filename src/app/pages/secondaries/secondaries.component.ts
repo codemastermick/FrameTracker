@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, HostListener } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
-import { Item, Type } from 'warframe-items';
+import { Type } from 'warframe-items';
 import { SecondaryWeaponsService } from 'app/shared/secondary-weapons.service';
 import { LazyItem } from 'app/shared/lazyItem.interface';
 
@@ -12,7 +12,7 @@ import { LazyItem } from 'app/shared/lazyItem.interface';
 })
 export class SecondariesComponent implements OnInit {
 
-  allSecondaries: Item[];
+  allSecondaries: LazyItem[];
 
   constructor(
     private titleService: Title,
