@@ -7,6 +7,7 @@
       <button mat-raised-button (click)="filterOn('Rifle')">Rifles</button>
       <button mat-raised-button (click)="filterOn('Shotgun')">Shotguns</button>
       <button mat-raised-button (click)="filterOn('Sniper Rifle')">Snipers</button>
+      <button mat-raised-button (click)="filterOn('Bow')">Bows</button>
       <button mat-raised-button (click)="filterOn('Launcher')">Launchers</button>
       <button mat-raised-button (click)="filterOn('Crossbow')">Crossbow</button>
       <button mat-raised-button (click)="filterOn('Speargun')">Speargun</button>
@@ -43,7 +44,9 @@
 
   <cdk-virtual-scroll-viewport style="height: 70vh" itemSize="90">
     <div *cdkVirtualFor="let primary of allPrimaries; let even=even; let odd=odd templateCacheSize: 0">
-      <app-primary-summary [odd]="odd" [even]="even" primary={{primary|json}}></app-primary-summary>
+      <div *ngIf="!primary.sentinel">
+        <app-primary-summary [odd]="odd" [even]="even" primary={{primary|json}}></app-primary-summary>
+      </div>
     </div>
   </cdk-virtual-scroll-viewport>
 
