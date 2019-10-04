@@ -22,9 +22,17 @@
         </ng-template>
         <div>Mastery Requirement: MR {{melee.masteryReq}}</div>
         <div>Stance Polarity: <span class=wf-{{melee.stancePolarity.toLowerCase()}}></span></div>
-        Mod Polarities: <span *ngFor="let polarity of melee.polarities">
-          <span class="wf-{{polarity.toLowerCase()}}"></span>
-        </span>
+
+        <div *ngIf="melee.polarities.length>0;else noPols">
+          Mod Polarities: <span *ngFor="let polarity of melee.polarities">
+            <span class="wf-{{polarity.toLowerCase()}}"></span>
+          </span>
+        </div>
+
+        <ng-template #noPols>
+          Mod Polarities: None
+        </ng-template>
+
         <div>Build Time: {{melee.buildTime/60/60}} hours</div>
         <div>Cost to Build: {{melee.buildPrice|number}}
           <img src="../../../assets/img/Credits64.png" alt="credits icon" height="15em">
