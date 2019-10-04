@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "warframe-data-viewer",
+    "site": "tenno-sanctuary",
     "public": "dist/WarframeTracker",
     "ignore": [
       "firebase.json",
