@@ -22,7 +22,7 @@
         </ng-template>
         <div>Mastery Requirement: MR {{melee.masteryReq}}</div>
         <div>Stance Polarity: <span class=wf-{{melee.stancePolarity.toLowerCase()}}></span></div>
-        Polarities: <span *ngFor="let polarity of melee.polarities">
+        Mod Polarities: <span *ngFor="let polarity of melee.polarities">
           <span class="wf-{{polarity.toLowerCase()}}"></span>
         </span>
         <div>Build Time: {{melee.buildTime/60/60}} hours</div>
