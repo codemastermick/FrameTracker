@@ -6,22 +6,50 @@
   </mat-expansion-panel-header>
 
   <div *ngFor="let comp of components;">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
+    <div *ngIf="comp.drops && comp.drops.length>0;else nodrops">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <div *ngIf="comp;">
+            <mat-panel-title>
+              {{comp.itemCount}}
+              <span *ngIf="comp.name==='Kuva';else notkuva">
+                &nbsp;
+                <img src="../../../assets/img/Kuva64.png" alt="kuva icon">
+                Kuva
+              </span>
+              <ng-template #notkuva>
+                {{comp.name}}
+              </ng-template>
+            </mat-panel-title>
+          </div>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <div *ngIf="comp.drops">
+            <mat-list-item *ngFor="let d of comp.drops.sort()">
+              {{d.location.split('nce:')[0]}}: {{d.chance}}%
+            </mat-list-item>
+          </div>
+        </mat-list>
+      </mat-expansion-panel>
+    </div>
+
+    <ng-template #nodrops>
+      <button mat-button style="width: 100%; text-align:left;">
         <div *ngIf="comp;">
-          <mat-panel-title>
-            {{comp.itemCount}} {{comp.name}}
-          </mat-panel-title>
+          <span>
+            {{comp.itemCount}}
+            <span *ngIf="comp.name==='Kuva';else notkuva">
+              &nbsp;
+              <img src="../../../assets/img/Kuva64.png" alt="kuva icon">
+              Kuva
+            </span>
+            <ng-template #notkuva>
+              {{comp.name}}
+            </ng-template>
+          </span>
         </div>
-      </mat-expansion-panel-header>
-      <mat-list>
-        <div *ngIf="comp.drops">
-          <mat-list-item *ngFor="let d of comp.drops.sort()">
-            {{d.location.split('nce:')[0]}}: {{d.chance}}%
-          </mat-list-item>
-        </div>
-      </mat-list>
-    </mat-expansion-panel>
+      </button>
+    </ng-template>
   </div>
 </mat-expansion-panel>
 
