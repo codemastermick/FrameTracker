@@ -1,4 +1,4 @@
-<mat-card *ngIf="secondary" routerLink="/secondary/{{secondary.name}}">
+<mat-card *ngIf="secondary" (deferLoad)="secondary.show === true" routerLink="/secondary/{{secondary.name}}"  [class.odd]="odd" [class.even]="even">
     <mat-card-header>
       <mat-card-title>
         {{secondary.name}}
