@@ -19,8 +19,7 @@ import { SecondarySummaryModule } from 'app/components/secondary-summary/seconda
     DispositionModule,
     DamageBreakdownModule,
     DamageDisplayModule,
-    ComponentsDisplayModule,
-    SecondarySummaryModule
+    ComponentsDisplayModule
   ],
   declarations: [SecondariesDetailComponent]
 })
