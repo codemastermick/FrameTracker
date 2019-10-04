@@ -5,7 +5,7 @@
 ###
 
 STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep ".ts")
-TSLINT="$(git rev-parse --show-toplevel)/node_modules/.bin/tslint --fix"
+TSLINT="npm run lintonly"
 
 if [[ "$STAGED_FILES" == "" ]]; then
     exit 0
