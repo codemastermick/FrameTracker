@@ -1,77 +1,60 @@
 <mat-card *ngIf="primary">
-  <mat-card-header>
-    <mat-card-title>
-      {{primary.name}}
-    </mat-card-title>
-    <mat-card-subtitle>
-      {{primary.description}}
-    </mat-card-subtitle>
-    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
-  </mat-card-header>
+    <mat-card-header>
+      <mat-card-title>
+        {{primary.name}}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{primary.description}}
+      </mat-card-subtitle>
+      <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
+    </mat-card-header>
 
-  <mat-card-content>
-    <div fxLayout="row">
-      <div fxFlex="60%">
-        <div *ngIf="primary.vaulted;else estVaulting">
-          Vaulted On: {{primary.vaultDate}}
-        </div>
-        <ng-template #estVaulting>
-          <div *ngIf="primary.estimatedVaultDate">
-            Estimated Vaulting: {{primary.estimatedVaultDate}}
+    <mat-card-content>
+      <div fxLayout="row">
+        <div fxFlex="60%">
+          <div *ngIf="primary.vaulted;else estVaulting">
+            Vaulted On: {{primary.vaultDate}}
           </div>
-        </ng-template>
-        <app-disposition [disposition]="primary.disposition"></app-disposition>
-        <div class="dps">DPS: {{primary.damagePerSecond}}</div>
-        <div class="rof">Rate of Fire: {{primary.fireRate}}</div>
-        <div class="crit">Critical Chance: {{primary.criticalChance}}%</div>
-        <div class="crit">Critical Multiplier: x{{primary.criticalMultiplier}}</div>
-        <div class="proc">Status Chance: {{primary.procChance}}%</div>
-        <div >Accuracy: {{primary.accuracy.toFixed(2)}}%</div>
-      </div>
-      <div fxFlex="40%" class="primaryImage">
-        <img [src]="getImage(primary.imageName)" alt="{{primary.name}} image">
-      </div>
-    </div>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Damage
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <div *ngFor="let dmg of getDamageTypes(primary);">
-        <!-- {{dmg.key|titlecase}}: {{dmg.value}} -->
-        {{dmg|json}}
-      </div>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Components
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <div *ngFor="let comp of primary.components;">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <div *ngIf="comp.drops;">
-              <mat-panel-title>
-                {{comp.name}}
-              </mat-panel-title>
+          <ng-template #estVaulting>
+            <div *ngIf="primary.estimatedVaultDate">
+              Estimated Vaulting: {{primary.estimatedVaultDate}}
             </div>
-          </mat-expansion-panel-header>
-          <mat-list>
-            <div *ngIf="comp.drops">
-              <mat-list-item *ngFor="let d of comp.drops.sort()">
-                {{d.location.split('nce:')[0]}}: {{d.chance}}%
-              </mat-list-item>
-            </div>
-          </mat-list>
-        </mat-expansion-panel>
-      </div>
-    </mat-expansion-panel>
+          </ng-template>
+          <div>Mastery Requirement: MR {{primary.masteryReq}}</div>
 
-  </mat-card-content>
-</mat-card>
+          <div *ngIf="primary.polarities.length>0;else noPols">
+            Mod Polarities: <span *ngFor="let polarity of primary.polarities">
+              <span class="wf-{{polarity.toLowerCase()}}"></span>
+            </span>
+          </div>
+
+          <ng-template #noPols>
+            Mod Polarities: None
+          </ng-template>
+
+          <div>Build Time: {{primary.buildTime/60/60}} hours</div>
+          <div>Cost to Build: {{primary.buildPrice|number}}
+            <img src="../../../assets/img/Credits64.png" alt="credits icon" height="15em">
+          </div>
+          <div>Cost to Skip Build Time: {{primary.skipBuildTimePrice}}
+            <img src="../../../assets/img/PlatinumLarge.png" alt="platinum icon" height="15em">
+          </div>
+          <app-disposition [disposition]="primary.disposition"></app-disposition>
+          <app-damage-breakdown [weapon]=primary></app-damage-breakdown>
+          <div>Rate of Fire: {{primary.fireRate.toFixed(2)}}</div>
+          <div>Critical Chance: {{(primary.criticalChance*100).toFixed()}}%</div>
+          <div>Critical Multiplier: x{{primary.criticalMultiplier}}</div>
+          <div>Status Chance: {{(primary.procChance*100).toFixed()}}%</div>
+          <div>Accuracy: {{primary.accuracy.toFixed(2)}}%</div>
+        </div>
+        <div fxFlex="40%" class="primaryImage">
+          <img [src]="getImage(primary.imageName)" alt="{{primary.name}} image">
+        </div>
+      </div>
+
+      <app-damage-display [damageTypes]="primary.damageTypes"></app-damage-display>
+
+      <app-components-display [components]="primary.components"></app-components-display>
+
+    </mat-card-content>
+  </mat-card>

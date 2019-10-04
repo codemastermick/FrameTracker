@@ -1,0 +1,22 @@
+.filterbar > button {
+  margin: 0.25em;
+}
+
+.filterbar > mat-menu > mat-list > mat-list-item {
+  margin: 2em;
+}
+
+.itemButton {
+  width: 100%;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 64px;
+  z-index: 999;
+  width: 100%;
+}
+
+.primaryCards {
+  margin: 0.25em;
+}

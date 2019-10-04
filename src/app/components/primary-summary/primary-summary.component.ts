@@ -9,6 +9,8 @@ import { PrimaryWeaponsService } from 'app/shared/primary-weapons.service';
 })
 export class PrimarySummaryComponent implements OnInit {
   @Input() primary: Item;
+  @Input() even: boolean;
+  @Input() odd: boolean;
 
   constructor(public weapons: PrimaryWeaponsService) { }
 

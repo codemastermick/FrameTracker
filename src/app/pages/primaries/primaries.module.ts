@@ -4,10 +4,18 @@ import { PrimariesRoutingModule } from './primaries-routing.module';
 import { PrimariesComponent } from './primaries.component';
 import { MaterialModule } from '../../shared/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { PrimarySummaryComponent } from '../../components/primary-summary/primary-summary.component';
+import { PrimarySummaryModule } from 'app/components/primary-summary/primary-summary.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
-  imports: [CommonModule, PrimariesRoutingModule, MaterialModule, FlexLayoutModule],
-  declarations: [PrimariesComponent, PrimarySummaryComponent]
+  imports: [
+    CommonModule,
+    PrimariesRoutingModule,
+    MaterialModule,
+    FlexLayoutModule,
+    PrimarySummaryModule,
+    ScrollingModule
+  ],
+  declarations: [PrimariesComponent]
 })
 export class PrimariesModule { }

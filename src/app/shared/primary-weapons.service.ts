@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Items, { Item, Polarity } from 'warframe-items';
+import Items, { Item, Type } from 'warframe-items';
 import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({
@@ -40,5 +40,9 @@ export class PrimaryWeaponsService {
       wikiaURL = 'https://raw.githubusercontent.com/wfcd/warframe-items/development/data/img/sybaris-prime.png';
     }
     return this.sanitization.bypassSecurityTrustStyle(`url(${wikiaURL})`);
+  }
+
+  getAllOfType(type: Type) {
+    return this.allPrimaries.filter(x => x.type === type);
   }
 }
