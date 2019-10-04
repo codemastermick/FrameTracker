@@ -76,7 +76,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "git fetch && git pull",
+      "pre-commit": "git fetch && git pull && npm run lint",
       "pre-push": "npm run test:ci"
     }
   }
