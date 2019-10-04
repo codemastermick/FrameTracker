@@ -73,5 +73,11 @@
     "ignore": [
       "typescript"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lintonly",
+      "pre-push": "npm run test:ci"
+    }
   }
 }
