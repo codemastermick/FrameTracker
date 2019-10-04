@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Item } from 'warframe-items';
 import { PrimaryWeaponsService } from 'app/shared/primary-weapons.service';
+import { LazyItem } from 'app/shared/lazyItem.interface';
 
 @Component({
   selector: 'app-primary-summary',
@@ -8,7 +8,7 @@ import { PrimaryWeaponsService } from 'app/shared/primary-weapons.service';
   styleUrls: ['./primary-summary.component.scss']
 })
 export class PrimarySummaryComponent implements OnInit {
-  @Input() primary: Item;
+  @Input() primary: LazyItem;
   @Input() even: boolean;
   @Input() odd: boolean;
 
