@@ -21,16 +21,23 @@
           </div>
         </ng-template>
         <div>Mastery Requirement: MR {{melee.masteryReq}}</div>
+        <div>Stance Polarity: <span class=wf-{{melee.stancePolarity.toLowerCase()}}></span></div>
+        Polarities: <span *ngFor="let polarity of melee.polarities">
+          <span class="wf-{{polarity.toLowerCase()}}"></span>
+        </span>
+        <div>Build Time: {{melee.buildTime/60/60}} hours</div>
+        <div>Cost to Build: {{melee.buildPrice|number}}
+          <img src="../../../assets/img/Credits64.png" alt="credits icon" height="15em">
+        </div>
+        <div>Cost to Skip Build Time: {{melee.skipBuildTimePrice}}
+          <img src="../../../assets/img/PlatinumLarge.png" alt="platinum icon" height="15em">
+        </div>
         <app-disposition [disposition]="melee.disposition"></app-disposition>
-        <div>Damage per Hit: {{melee.totalDamage}}</div>
-        <div>Charge Attack: {{melee.chargeAttack}}</div>
-        <div>Spin Attack: {{melee.spinAttack}}</div>
-        <div>Leap Attack: {{melee.leapAttack}}</div>
-        <div>Wall Attack: {{melee.wallAttack}}</div>
-        <div>Rate of Fire: {{melee.fireRate}}</div>
-        <div>Critical Chance: {{melee.criticalChance}}%</div>
+        <app-damage-breakdown [weapon]=melee></app-damage-breakdown>
+        <div>Rate of Fire: {{melee.fireRate.toFixed(2)}}</div>
+        <div>Critical Chance: {{(melee.criticalChance*100).toFixed()}}%</div>
         <div>Critical Multiplier: x{{melee.criticalMultiplier}}</div>
-        <div>Status Chance: {{melee.procChance}}%</div>
+        <div>Status Chance: {{(melee.procChance*100).toFixed()}}%</div>
         <div>Accuracy: {{melee.accuracy.toFixed(2)}}%</div>
       </div>
       <div fxFlex="40%" class="meleeImage">
