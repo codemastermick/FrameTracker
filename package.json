@@ -76,7 +76,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint",
+      "pre-commit": "npm run --silent lint",
       "pre-push": "npm run test:ci"
     }
   }
