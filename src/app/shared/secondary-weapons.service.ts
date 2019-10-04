@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import Items, { Item } from 'warframe-items';
+import Items, { Item, Type } from 'warframe-items';
 import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
 
 @Injectable({
@@ -35,5 +35,9 @@ export class SecondaryWeaponsService {
     name = this.formatUrl(name);
     console.log(`Retreiving data for ${name}`);
     return this.allSecondaries.find(x => x.name === name);
+  }
+
+  getAllOfType(type: Type) {
+    return this.allSecondaries.filter(x => x.type === type);
   }
 }

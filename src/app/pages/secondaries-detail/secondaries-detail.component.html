@@ -20,58 +20,42 @@
             Estimated Vaulting: {{secondary.estimatedVaultDate}}
           </div>
         </ng-template>
+        <div>Mastery Requirement: MR {{secondary.masteryReq}}</div>
+
+        <div *ngIf="secondary.polarities.length>0;else noPols">
+          Mod Polarities:
+          <span *ngFor="let polarity of secondary.polarities">
+            <span class="wf-{{polarity.toLowerCase()}}"></span>
+          </span>
+        </div>
+
+        <ng-template #noPols>
+          Mod Polarities: None
+        </ng-template>
+
+        <div>Build Time: {{secondary.buildTime/60/60}} hours</div>
+        <div>Cost to Build: {{secondary.buildPrice|number}}
+          <img src="../../../assets/img/Credits64.png" alt="credits icon" height="15em">
+        </div>
+        <div>Cost to Skip Build Time: {{secondary.skipBuildTimePrice}}
+          <img src="../../../assets/img/PlatinumLarge.png" alt="platinum icon" height="15em">
+        </div>
         <app-disposition [disposition]="secondary.disposition"></app-disposition>
-        <div class="dps">DPS: {{secondary.damagePerSecond}}</div>
-        <div class="rof">Rate of Fire: {{secondary.fireRate}}</div>
-        <div class="crit">Critical Chance: {{secondary.criticalChance}}%</div>
-        <div class="crit">Critical Multiplier: x{{secondary.criticalMultiplier}}</div>
-        <div class="proc">Status Chance: {{secondary.procChance}}%</div>
-        <div >Accuracy: {{secondary.accuracy.toFixed(2)}}%</div>
+        <app-damage-breakdown [weapon]=secondary></app-damage-breakdown>
+        <div>Rate of Fire: {{secondary.fireRate.toFixed(2)}}</div>
+        <div>Critical Chance: {{(secondary.criticalChance*100).toFixed()}}%</div>
+        <div>Critical Multiplier: x{{secondary.criticalMultiplier}}</div>
+        <div>Status Chance: {{(secondary.procChance*100).toFixed()}}%</div>
+        <div>Accuracy: {{secondary.accuracy.toFixed(2)}}%</div>
       </div>
       <div fxFlex="40%" class="secondaryImage">
         <img [src]="getImage(secondary.imageName)" alt="{{secondary.name}} image">
       </div>
     </div>
 
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Damage
-        </mat-panel-title>
-      </mat-expansion-panel-header>
+    <app-damage-display [damageTypes]="secondary.damageTypes"></app-damage-display>
 
-      <div *ngFor="let dmg of (getDamageTypes(secondary));">
-        <!-- {{dmg.key|titlecase}}: {{dmg.value}} -->
-        {{dmg|json}}
-      </div>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Components
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <div *ngFor="let comp of secondary.components;">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <div *ngIf="comp.drops;">
-              <mat-panel-title>
-                {{comp.name}}
-              </mat-panel-title>
-            </div>
-          </mat-expansion-panel-header>
-          <mat-list>
-            <div *ngIf="comp.drops">
-              <mat-list-item *ngFor="let d of comp.drops.sort()">
-                {{d.location.split('nce:')[0]}}: {{d.chance}}%
-              </mat-list-item>
-            </div>
-          </mat-list>
-        </mat-expansion-panel>
-      </div>
-    </mat-expansion-panel>
+    <app-components-display [components]="secondary.components"></app-components-display>
 
   </mat-card-content>
 </mat-card>

@@ -9,6 +9,8 @@ import { SecondaryWeaponsService } from 'app/shared/secondary-weapons.service';
 })
 export class SecondarySummaryComponent implements OnInit {
   @Input() secondary: Item;
+  @Input() even: boolean;
+  @Input() odd: boolean;
 
   constructor(public weapons: SecondaryWeaponsService) { }
 

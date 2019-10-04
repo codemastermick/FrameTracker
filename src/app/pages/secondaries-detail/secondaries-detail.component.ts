@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 import { Item, DamageTypes } from 'warframe-items';
 import { Router } from '@angular/router';
@@ -23,7 +23,7 @@ export class SecondariesDetailComponent implements OnInit {
     this.secondary = this.weapons.getSecondaryByName(this.router.url.split('/')[2]);
 
     this.titleService.setTitle(`Details for ${this.secondary.name}`);
-    this.metaTagService.updateTag({ name: 'description', content: `Primary weapon details for ${this.secondary.name}` });
+    this.metaTagService.updateTag({ name: 'description', content: `Secondary weapon details for ${this.secondary.name}` });
     this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
     this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
 
