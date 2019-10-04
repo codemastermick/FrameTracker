@@ -1,16 +1,18 @@
-<div *ngIf="isOpened===true;else totalDMG" (click)="isOpened=!isOpened">
+<div *ngIf="isOpened===true&&weapon.category==='Melee';else totalDMG" (click)="isOpened=!isOpened">
   <div>
     Damage per Second: {{weapon.damagePerSecond}}
     <mat-icon>keyboard_arrow_down</mat-icon>
   </div>
-  <div>Charge Attack: {{weapon.chargeAttack}}</div>
-  <div>Spin Attack: {{weapon.spinAttack}}</div>
-  <div>Leap Attack: {{weapon.leapAttack}}</div>
-  <div>Wall Attack: {{weapon.wallAttack}}</div>
+  <div class="mobilityAttacks">
+      <div>Charge Attack: {{weapon.chargeAttack}}</div>
+      <div>Spin Attack: {{weapon.spinAttack}}</div>
+      <div>Leap Attack: {{weapon.leapAttack}}</div>
+      <div>Wall Attack: {{weapon.wallAttack}}</div>
+  </div>
 </div>
 
 <ng-template #totalDMG>
   <div (click)="isOpened=!isOpened">Damage: {{weapon.totalDamage}}
-    <mat-icon>keyboard_arrow_right</mat-icon>
+    <mat-icon *ngIf="weapon.category==='Melee'">keyboard_arrow_right</mat-icon>
   </div>
 </ng-template>
