@@ -8,10 +8,10 @@ import { LazyItem } from 'app/shared/lazyItem.interface';
 })
 export class DamageBreakdownComponent implements OnInit {
   @Input() weapon: LazyItem;
+  isOpened = false;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
