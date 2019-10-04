@@ -8,6 +8,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsDisplayModule } from 'app/components/components-display/components-display.module';
 import { DamageDisplayModule } from 'app/components/damage-display/damage-display.module';
+import { DamageBreakdownModule } from 'app/components/damage-breakdown/damage-breakdown.module';
 
 describe('MeleeDetailComponent', () => {
   let component: MeleeDetailComponent;
@@ -23,7 +24,8 @@ describe('MeleeDetailComponent', () => {
         BrowserAnimationsModule,
         DispositionModule,
         ComponentsDisplayModule,
-        DamageDisplayModule
+        DamageDisplayModule,
+        DamageBreakdownModule
       ],
       declarations: [MeleeDetailComponent],
       providers: [{
