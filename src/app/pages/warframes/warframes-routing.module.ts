@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { WarframesComponent } from './warframes.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { WarframesComponent } from "./warframes.component";
 
-const routes: Routes = [{ path: '', component: WarframesComponent }];
+const routes: Routes = [{ path: "", component: WarframesComponent }];
 
 @NgModule({
   exports: [RouterModule],

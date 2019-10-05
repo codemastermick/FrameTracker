@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Item } from 'warframe-items';
-import { RelicService } from 'app/shared/relic.service';
+import { Component, OnInit, Input } from "@angular/core";
+import { Item } from "warframe-items";
+import { RelicService } from "app/shared/relic.service";
 
 @Component({
-  selector: 'app-relic-summary',
-  templateUrl: './relic-summary.component.html',
-  styleUrls: ['./relic-summary.component.scss']
+  selector: "app-relic-summary",
+  templateUrl: "./relic-summary.component.html",
+  styleUrls: ["./relic-summary.component.scss"]
 })
 export class RelicSummaryComponent implements OnInit {
   @Input() relic: Item;

@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { SecondaryWeaponsService } from 'app/shared/secondary-weapons.service';
-import { LazyItem } from 'app/shared/lazyItem.interface';
+import { Component, OnInit, Input } from "@angular/core";
+import { SecondaryWeaponsService } from "app/shared/secondary-weapons.service";
+import { LazyItem } from "app/shared/lazyItem.interface";
 
 @Component({
-  selector: 'app-secondary-summary',
-  templateUrl: './secondary-summary.component.html',
-  styleUrls: ['./secondary-summary.component.scss']
+  selector: "app-secondary-summary",
+  templateUrl: "./secondary-summary.component.html",
+  styleUrls: ["./secondary-summary.component.scss"]
 })
 export class SecondarySummaryComponent implements OnInit {
   @Input() secondary: LazyItem;

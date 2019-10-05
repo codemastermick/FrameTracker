@@ -1,13 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
-import { Item, DamageTypes } from 'warframe-items';
-import { Router } from '@angular/router';
-import { PrimaryWeaponsService } from '../../shared/primary-weapons.service';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Title, Meta } from "@angular/platform-browser";
+import { Item, DamageTypes } from "warframe-items";
+import { Router } from "@angular/router";
+import { PrimaryWeaponsService } from "../../shared/primary-weapons.service";
 
 @Component({
-  selector: 'app-primaries-detail',
-  templateUrl: './primaries-detail.component.html',
-  styleUrls: ['./primaries-detail.component.scss'],
+  selector: "app-primaries-detail",
+  templateUrl: "./primaries-detail.component.html",
+  styleUrls: ["./primaries-detail.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrimariesDetailComponent implements OnInit {
@@ -20,12 +20,12 @@ export class PrimariesDetailComponent implements OnInit {
     private weapons: PrimaryWeaponsService) { }
 
   ngOnInit() {
-    this.primary = this.weapons.getPrimaryByName(this.router.url.split('/')[2]);
+    this.primary = this.weapons.getPrimaryByName(this.router.url.split("/")[2]);
 
     this.titleService.setTitle(`Details for ${this.primary.name}`);
-    this.metaTagService.updateTag({ name: 'description', content: `Primary weapon details for ${this.primary.name}` });
-    this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
-    this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
+    this.metaTagService.updateTag({ name: "description", content: `Primary weapon details for ${this.primary.name}` });
+    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
+    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
 
   }
 

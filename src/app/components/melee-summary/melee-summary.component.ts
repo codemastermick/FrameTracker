@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MeleeService } from 'app/shared/melee.service';
-import { LazyItem } from 'app/shared/lazyItem.interface';
+import { Component, OnInit, Input } from "@angular/core";
+import { MeleeService } from "app/shared/melee.service";
+import { LazyItem } from "app/shared/lazyItem.interface";
 
 @Component({
-  selector: 'app-melee-summary',
-  templateUrl: './melee-summary.component.html',
-  styleUrls: ['./melee-summary.component.scss']
+  selector: "app-melee-summary",
+  templateUrl: "./melee-summary.component.html",
+  styleUrls: ["./melee-summary.component.scss"]
 })
 export class MeleeSummaryComponent implements OnInit {
   @Input() melee: LazyItem;

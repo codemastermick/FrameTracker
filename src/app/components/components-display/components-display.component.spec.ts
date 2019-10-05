@@ -1,9 +1,9 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ComponentsDisplayComponent } from './components-display.component';
-import { MaterialModule } from 'app/shared/material.module';
+import { ComponentsDisplayComponent } from "./components-display.component";
+import { MaterialModule } from "app/shared/material.module";
 
-describe('ComponentsDisplayComponent', () => {
+describe("ComponentsDisplayComponent", () => {
   let component: ComponentsDisplayComponent;
   let fixture: ComponentFixture<ComponentsDisplayComponent>;
 
@@ -21,7 +21,7 @@ describe('ComponentsDisplayComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

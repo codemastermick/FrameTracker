@@ -1,13 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
-import { Item, DamageTypes } from 'warframe-items';
-import { Router } from '@angular/router';
-import { MeleeService } from 'app/shared/melee.service';
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Title, Meta } from "@angular/platform-browser";
+import { Item, DamageTypes } from "warframe-items";
+import { Router } from "@angular/router";
+import { MeleeService } from "app/shared/melee.service";
 
 @Component({
-  selector: 'app-melee-detail',
-  templateUrl: './melee-detail.component.html',
-  styleUrls: ['./melee-detail.component.scss'],
+  selector: "app-melee-detail",
+  templateUrl: "./melee-detail.component.html",
+  styleUrls: ["./melee-detail.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MeleeDetailComponent implements OnInit {
@@ -20,12 +20,12 @@ export class MeleeDetailComponent implements OnInit {
     private weapons: MeleeService) { }
 
   ngOnInit() {
-    this.melee = this.weapons.getMeleeByName(this.router.url.split('/')[2]);
+    this.melee = this.weapons.getMeleeByName(this.router.url.split("/")[2]);
 
     this.titleService.setTitle(`Details for ${this.melee.name}`);
-    this.metaTagService.updateTag({ name: 'description', content: `Primary weapon details for ${this.melee.name}` });
-    this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
-    this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
+    this.metaTagService.updateTag({ name: "description", content: `Primary weapon details for ${this.melee.name}` });
+    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
+    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
 
   }
 

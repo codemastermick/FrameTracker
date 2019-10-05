@@ -1,20 +1,20 @@
-import { Injectable } from '@angular/core';
-import Items, { Item, Type } from 'warframe-items';
-import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
+import { Injectable } from "@angular/core";
+import Items, { Item, Type } from "warframe-items";
+import { DomSanitizer, SafeStyle, SafeUrl } from "@angular/platform-browser";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class SecondaryWeaponsService {
   allSecondaries: Item[];
 
   constructor(private sanitization: DomSanitizer) {
-    this.allSecondaries = new Items({ category: ['Secondary'] });
+    this.allSecondaries = new Items({ category: ["Secondary"] });
   }
 
   private formatUrl(url: string): string {
     url = url.toLowerCase();
-    url = url.replace('%20', ' ');
+    url = url.replace("%20", " ");
     url = url.replace(/\b(\w)/g, c => c.toUpperCase());
     return url;
   }

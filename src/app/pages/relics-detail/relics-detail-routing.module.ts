@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { RelicsDetailComponent } from './relics-detail.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { RelicsDetailComponent } from "./relics-detail.component";
 
-const routes: Routes = [{ path: '', component: RelicsDetailComponent }];
+const routes: Routes = [{ path: "", component: RelicsDetailComponent }];
 
 @NgModule({
   exports: [RouterModule],

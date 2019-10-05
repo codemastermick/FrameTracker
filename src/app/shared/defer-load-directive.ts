@@ -1,9 +1,9 @@
-import { ElementRef, EventEmitter, Output, AfterViewInit, Directive, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { ElementRef, EventEmitter, Output, AfterViewInit, Directive, NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @Directive({
   // tslint:disable-next-line: directive-selector
-  selector: '[deferLoad]'
+  selector: "[deferLoad]"
 })
 export class DeferLoadDirective implements AfterViewInit {
   @Output() public deferLoad: EventEmitter<any> = new EventEmitter();

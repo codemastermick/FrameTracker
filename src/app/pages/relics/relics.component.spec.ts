@@ -1,12 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RelicsComponent } from './relics.component';
-import { MaterialModule } from 'app/shared/material.module';
-import { RelicSummaryComponent } from 'app/components/relic-summary/relic-summary.component';
-import { RouterTestingModule } from '@angular/router/testing';
-import { Router } from '@angular/router';
+import { RelicsComponent } from "./relics.component";
+import { MaterialModule } from "app/shared/material.module";
+import { RelicSummaryComponent } from "app/components/relic-summary/relic-summary.component";
+import { RouterTestingModule } from "@angular/router/testing";
+import { Router } from "@angular/router";
 
-describe('RelicsComponent', () => {
+describe("RelicsComponent", () => {
   let router: Router;
   let component: RelicsComponent;
   let fixture: ComponentFixture<RelicsComponent>;
@@ -25,7 +25,7 @@ describe('RelicsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

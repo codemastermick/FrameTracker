@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import Items, { Item, Type } from 'warframe-items';
-import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
+import { Injectable } from "@angular/core";
+import Items, { Item, Type } from "warframe-items";
+import { DomSanitizer, SafeStyle, SafeUrl } from "@angular/platform-browser";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class PrimaryWeaponsService {
   allPrimaries: Item[];
   constructor(private sanitization: DomSanitizer) {
-    this.allPrimaries = new Items({ category: ['Primary'] });
+    this.allPrimaries = new Items({ category: ["Primary"] });
   }
 
   private formatUrl(url: string): string {
     url = url.toLowerCase();
-    url = url.replace('%20', ' ');
+    url = url.replace("%20", " ");
     url = url.replace(/\b(\w)/g, c => c.toUpperCase());
     return url;
   }
@@ -33,11 +33,11 @@ export class PrimaryWeaponsService {
   }
 
   public getThumb(wikiaURL: string): SafeStyle {
-    if (wikiaURL === 'miter.png') {
-      wikiaURL = 'https://raw.githubusercontent.com/wfcd/warframe-items/development/data/img/miter.png';
+    if (wikiaURL === "miter.png") {
+      wikiaURL = "https://raw.githubusercontent.com/wfcd/warframe-items/development/data/img/miter.png";
     }
-    if (wikiaURL === 'sybaris-prime.png') {
-      wikiaURL = 'https://raw.githubusercontent.com/wfcd/warframe-items/development/data/img/sybaris-prime.png';
+    if (wikiaURL === "sybaris-prime.png") {
+      wikiaURL = "https://raw.githubusercontent.com/wfcd/warframe-items/development/data/img/sybaris-prime.png";
     }
     return this.sanitization.bypassSecurityTrustStyle(`url(${wikiaURL})`);
   }

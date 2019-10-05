@@ -1,12 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { RelicsDetailComponent } from './relics-detail.component';
-import { MaterialModule } from 'app/shared/material.module';
-import { Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RelicsDetailComponent } from "./relics-detail.component";
+import { MaterialModule } from "app/shared/material.module";
+import { Router } from "@angular/router";
+import { RouterTestingModule } from "@angular/router/testing";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-describe('RelicsDetailComponent', () => {
+describe("RelicsDetailComponent", () => {
   let component: RelicsDetailComponent;
   let fixture: ComponentFixture<RelicsDetailComponent>;
   let router: Router;
@@ -21,7 +21,7 @@ describe('RelicsDetailComponent', () => {
         {
           provide: Router,
           useValue: {
-            url: 'localhost:4200/relics/Axi%20A1%20Exceptional'
+            url: "localhost:4200/relics/Axi%20A1%20Exceptional"
           }
         }
       ]
@@ -35,7 +35,7 @@ describe('RelicsDetailComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

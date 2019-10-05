@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-disposition',
-  templateUrl: './disposition.component.html',
-  styleUrls: ['./disposition.component.scss']
+  selector: "app-disposition",
+  templateUrl: "./disposition.component.html",
+  styleUrls: ["./disposition.component.scss"]
 })
 export class DispositionComponent implements OnInit {
   @Input() disposition: number;

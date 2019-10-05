@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { DispositionComponent } from './disposition.component';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { DispositionComponent } from "./disposition.component";
 
 @NgModule({
   imports: [

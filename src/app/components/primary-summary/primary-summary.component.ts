@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PrimaryWeaponsService } from 'app/shared/primary-weapons.service';
-import { LazyItem } from 'app/shared/lazyItem.interface';
+import { Component, OnInit, Input } from "@angular/core";
+import { PrimaryWeaponsService } from "app/shared/primary-weapons.service";
+import { LazyItem } from "app/shared/lazyItem.interface";
 
 @Component({
-  selector: 'app-primary-summary',
-  templateUrl: './primary-summary.component.html',
-  styleUrls: ['./primary-summary.component.scss']
+  selector: "app-primary-summary",
+  templateUrl: "./primary-summary.component.html",
+  styleUrls: ["./primary-summary.component.scss"]
 })
 export class PrimarySummaryComponent implements OnInit {
   @Input() primary: LazyItem;

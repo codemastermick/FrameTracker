@@ -1,12 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { WarframesComponent } from './warframes.component';
-import { MaterialModule } from 'app/shared/material.module';
-import { RouterTestingModule } from '@angular/router/testing';
-import { WfSummaryComponent } from 'app/components/wf-summary/wf-summary.component';
-import { Router } from '@angular/router';
+import { WarframesComponent } from "./warframes.component";
+import { MaterialModule } from "app/shared/material.module";
+import { RouterTestingModule } from "@angular/router/testing";
+import { WfSummaryComponent } from "app/components/wf-summary/wf-summary.component";
+import { Router } from "@angular/router";
 
-describe('WarframesComponent', () => {
+describe("WarframesComponent", () => {
   let router: Router;
   let component: WarframesComponent;
   let fixture: ComponentFixture<WarframesComponent>;
@@ -25,7 +25,7 @@ describe('WarframesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

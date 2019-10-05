@@ -1,13 +1,13 @@
-import { Component, OnInit, ChangeDetectionStrategy, HostListener, ChangeDetectorRef } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
-import { Type } from 'warframe-items';
-import { MeleeService } from 'app/shared/melee.service';
-import { LazyItem } from 'app/shared/lazyItem.interface';
+import { Component, OnInit, ChangeDetectionStrategy, HostListener, ChangeDetectorRef } from "@angular/core";
+import { Title, Meta } from "@angular/platform-browser";
+import { Type } from "warframe-items";
+import { MeleeService } from "app/shared/melee.service";
+import { LazyItem } from "app/shared/lazyItem.interface";
 
 @Component({
-  selector: 'app-melee',
-  templateUrl: './melee.component.html',
-  styleUrls: ['./melee.component.scss'],
+  selector: "app-melee",
+  templateUrl: "./melee.component.html",
+  styleUrls: ["./melee.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MeleeComponent implements OnInit {
@@ -21,22 +21,22 @@ export class MeleeComponent implements OnInit {
     private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.titleService.setTitle('The Tenno Sanctuary: Melee Weapons');
-    this.metaTagService.updateTag({ name: 'description', content: 'Warframe melee items' });
-    this.metaTagService.updateTag({ name: 'author', content: 'Codemaster Mick' });
-    this.metaTagService.updateTag({ name: 'robots', content: 'index, follow' });
+    this.titleService.setTitle("The Tenno Sanctuary: Melee Weapons");
+    this.metaTagService.updateTag({ name: "description", content: "Warframe melee items" });
+    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
+    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
 
     this.allMelees = this.weapons.getAllMelees();
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener("window:scroll", ["$event"])
   onWindowScroll(e) {
     if (window.pageYOffset > 70) {
-      const element = document.getElementsByClassName('filterbar')[0];
-      element.classList.add('sticky-nav');
+      const element = document.getElementsByClassName("filterbar")[0];
+      element.classList.add("sticky-nav");
     } else {
-      const element = document.getElementsByClassName('filterbar')[0];
-      element.classList.remove('sticky-nav');
+      const element = document.getElementsByClassName("filterbar")[0];
+      element.classList.remove("sticky-nav");
     }
   }
 

@@ -1,13 +1,13 @@
-import { Component, HostListener } from '@angular/core';
-import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
+import { Component, HostListener } from "@angular/core";
+import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'The Sanctuary';
+  title = "The Sanctuary";
   darkTheme = false;
 
   // Sets initial value to true to show loading spinner on first load
@@ -37,14 +37,14 @@ export class AppComponent {
     }
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener("window:scroll", ["$event"])
   onWindowScroll(e) {
     if (window.pageYOffset > 70) {
-      const element = document.getElementsByTagName('mat-toolbar')[0];
-      element.classList.add('sticky-nav');
+      const element = document.getElementsByTagName("mat-toolbar")[0];
+      element.classList.add("sticky-nav");
     } else {
-      const element = document.getElementsByTagName('mat-toolbar')[0];
-      element.classList.remove('sticky-nav');
+      const element = document.getElementsByTagName("mat-toolbar")[0];
+      element.classList.remove("sticky-nav");
     }
   }
 }

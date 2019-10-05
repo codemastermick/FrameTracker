@@ -1,21 +1,21 @@
-import { Injectable } from '@angular/core';
-import Items, { Item } from 'warframe-items';
-import { DomSanitizer, SafeStyle, SafeUrl } from '@angular/platform-browser';
+import { Injectable } from "@angular/core";
+import Items, { Item } from "warframe-items";
+import { DomSanitizer, SafeStyle, SafeUrl } from "@angular/platform-browser";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class RelicService {
   allRelics: Item[];
 
   constructor(private sanitization: DomSanitizer) {
-    this.allRelics = new Items({ category: ['Relics'] });
+    this.allRelics = new Items({ category: ["Relics"] });
   }
 
   private formatUrl(url: string): string {
     url = url.toLowerCase();
-    url = url.replace('%20', ' ');
-    url = url.replace(/\%20.*?/gm, ' ');
+    url = url.replace("%20", " ");
+    url = url.replace(/\%20.*?/gm, " ");
     url = url.replace(/\b(\w)/g, c => c.toUpperCase());
     return url;
   }

@@ -1,10 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DamageDisplayComponent } from './damage-display.component';
-import { MaterialModule } from 'app/shared/material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DamageDisplayComponent } from "./damage-display.component";
+import { MaterialModule } from "app/shared/material.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-describe('DamageDisplayComponent', () => {
+describe("DamageDisplayComponent", () => {
   let component: DamageDisplayComponent;
   let fixture: ComponentFixture<DamageDisplayComponent>;
 
@@ -22,7 +22,7 @@ describe('DamageDisplayComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
