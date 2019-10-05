@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { DamageBreakdownModule } from 'app/components/damage-breakdown/damage-breakdown.module';
 import { DamageDisplayModule } from 'app/components/damage-display/damage-display.module';
 import { ComponentsDisplayModule } from 'app/components/components-display/components-display.module';
+import { BuildSectionModule } from 'app/components/build-section/build-section.module';
 
 describe('SecondariesDetailComponent', () => {
   let component: SecondariesDetailComponent;
@@ -24,7 +25,8 @@ describe('SecondariesDetailComponent', () => {
         BrowserAnimationsModule,
         DamageBreakdownModule,
         DamageDisplayModule,
-        ComponentsDisplayModule
+        ComponentsDisplayModule,
+        BuildSectionModule
       ],
       declarations: [SecondariesDetailComponent],
       providers: [

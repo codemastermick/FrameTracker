@@ -1,17 +1,17 @@
 <mat-card *ngIf="secondary">
-  <mat-card-header>
-    <mat-card-title>
-      {{secondary.name}}
-    </mat-card-title>
-    <mat-card-subtitle>
-      {{secondary.description}}
-    </mat-card-subtitle>
-    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
-  </mat-card-header>
+    <mat-card-header fxLayout="row">
+        <mat-card-title fxLayout="column">
+          {{secondary.name}}
+        </mat-card-title>
+        <mat-card-subtitle fxLayout="column">
+          {{secondary.description}}
+        </mat-card-subtitle>
+        <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
+      </mat-card-header>
 
   <mat-card-content>
     <div fxLayout="row">
-      <div fxFlex="60%">
+      <div fxFlex="40%">
         <div *ngIf="secondary.vaulted;else estVaulting">
           Vaulted On: {{secondary.vaultDate}}
         </div>
@@ -33,13 +33,7 @@
           Mod Polarities: None
         </ng-template>
 
-        <div>Build Time: {{secondary.buildTime/60/60}} hours</div>
-        <div>Cost to Build: {{secondary.buildPrice|number}}
-          <img src="../../../assets/img/Credits64.png" alt="credits icon" height="15em">
-        </div>
-        <div>Cost to Skip Build Time: {{secondary.skipBuildTimePrice}}
-          <img src="../../../assets/img/PlatinumLarge.png" alt="platinum icon" height="15em">
-        </div>
+        <app-build-section [weapon]="secondary"></app-build-section>
         <app-disposition [disposition]="secondary.disposition"></app-disposition>
         <app-damage-breakdown [weapon]=secondary></app-damage-breakdown>
         <div>Rate of Fire: {{secondary.fireRate.toFixed(2)}}</div>
@@ -48,7 +42,7 @@
         <div>Status Chance: {{(secondary.procChance*100).toFixed()}}%</div>
         <div>Accuracy: {{secondary.accuracy.toFixed(2)}}%</div>
       </div>
-      <div fxFlex="40%" class="secondaryImage">
+      <div fxFlex="60%" class="secondaryImage">
         <img [src]="getImage(secondary.imageName)" alt="{{secondary.name}} image">
       </div>
     </div>

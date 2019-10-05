@@ -1,0 +1,9 @@
+<div *ngIf="weapon">
+  <div>Build Time: {{weapon.buildTime/60/60}} hours</div>
+  <div>Cost to Build: {{weapon.buildPrice|number}}
+    <img src="../../../assets/img/Credits64.png" alt="credits icon" height="15em">
+  </div>
+  <div>Cost to Skip Build Time: {{weapon.skipBuildTimePrice}}
+    <img src="../../../assets/img/PlatinumLarge.png" alt="platinum icon" height="15em">
+  </div>
+</div>

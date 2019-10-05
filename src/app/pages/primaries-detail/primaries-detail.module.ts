@@ -8,6 +8,7 @@ import { DispositionModule } from '../../components/disposition/disposition.modu
 import { DamageDisplayModule } from 'app/components/damage-display/damage-display.module';
 import { ComponentsDisplayModule } from 'app/components/components-display/components-display.module';
 import { DamageBreakdownModule } from 'app/components/damage-breakdown/damage-breakdown.module';
+import { BuildSectionModule } from 'app/components/build-section/build-section.module';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { DamageBreakdownModule } from 'app/components/damage-breakdown/damage-br
     DispositionModule,
     DamageDisplayModule,
     ComponentsDisplayModule,
-    DamageBreakdownModule
+    DamageBreakdownModule,
+    BuildSectionModule
   ],
   declarations: [PrimariesDetailComponent]
 })
