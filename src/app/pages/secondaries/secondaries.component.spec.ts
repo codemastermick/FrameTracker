@@ -52,7 +52,7 @@ describe('SecondariesComponent', () => {
 
   it('should sort by damage per shot when asked', () => {
     component.sortByDamage();
-    expect(component.allSecondaries[0].damagePerShot >= component.allSecondaries[10].damagePerShot).toBeTruthy();
+    expect(component.allSecondaries[0].damagePerShot <= component.allSecondaries[10].damagePerShot).toBeTruthy();
   });
 
   it('should sort by DPS when asked', () => {
