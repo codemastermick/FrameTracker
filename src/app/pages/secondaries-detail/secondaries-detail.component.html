@@ -32,15 +32,15 @@
         <ng-template #noPols>
           Mod Polarities: None
         </ng-template>
-
         <app-build-section [weapon]="secondary"></app-build-section>
-        <app-disposition [disposition]="secondary.disposition"></app-disposition>
-        <app-damage-breakdown [weapon]=secondary></app-damage-breakdown>
-        <div>Rate of Fire: {{secondary.fireRate.toFixed(2)}}</div>
+
+        <div>Accuracy: {{secondary.accuracy.toFixed(2)}}%</div>
         <div>Critical Chance: {{(secondary.criticalChance*100).toFixed()}}%</div>
         <div>Critical Multiplier: x{{secondary.criticalMultiplier}}</div>
+        <div>Fire Rate: {{secondary.fireRate.toFixed(2)}}</div>
+        <app-disposition [disposition]="secondary.disposition"></app-disposition>
         <div>Status Chance: {{(secondary.procChance*100).toFixed()}}%</div>
-        <div>Accuracy: {{secondary.accuracy.toFixed(2)}}%</div>
+        <app-damage-breakdown [weapon]=secondary></app-damage-breakdown>
       </div>
       <div fxFlex="60%" class="secondaryImage">
         <img [src]="getImage(secondary.imageName)" alt="{{secondary.name}} image">

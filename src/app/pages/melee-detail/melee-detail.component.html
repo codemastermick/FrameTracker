@@ -32,15 +32,15 @@
         <ng-template #noPols>
           Mod Polarities: None
         </ng-template>
-
         <app-build-section [weapon]="melee"></app-build-section>
-        <app-disposition [disposition]="melee.disposition"></app-disposition>
-        <app-damage-breakdown [weapon]=melee></app-damage-breakdown>
-        <div>Rate of Fire: {{melee.fireRate.toFixed(2)}}</div>
+
+        <div>Accuracy: {{melee.accuracy.toFixed(2)}}%</div>
         <div>Critical Chance: {{(melee.criticalChance*100).toFixed()}}%</div>
         <div>Critical Multiplier: x{{melee.criticalMultiplier}}</div>
+        <div>Fire Rate: {{melee.fireRate.toFixed(2)}}</div>
+        <app-disposition [disposition]="melee.disposition"></app-disposition>
         <div>Status Chance: {{(melee.procChance*100).toFixed()}}%</div>
-        <div>Accuracy: {{melee.accuracy.toFixed(2)}}%</div>
+        <app-damage-breakdown [weapon]=melee></app-damage-breakdown>
       </div>
       <div fxFlex="60%" class="meleeImage">
         <img [src]="getImage(melee.imageName)" alt="{{melee.name}} image">
