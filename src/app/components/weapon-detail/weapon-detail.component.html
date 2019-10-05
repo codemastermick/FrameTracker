@@ -1,17 +1,17 @@
 <hr>
 <hr>
 
-<div>
+<div *ngIf="weapon.accuracy<100">
   Accuracy {{weapon.accuracy.toFixed(2)}}%
   <hr>
 </div>
 
-<div>
+<div *ngIf="weapon.criticalChance">
   Critical Chance {{(weapon.criticalChance*100).toFixed()}}%
   <hr>
 </div>
 
-<div>
+<div *ngIf="weapon.criticalMultiplier">
   Critical Multiplier {{weapon.criticalMultiplier}}x
   <hr>
 </div>
@@ -21,17 +21,17 @@
   <hr>
 </div>
 
-<div>
+<div *ngIf="weapon.magazineSize>0">
   Magazine Size {{weapon.magazineSize}}
   <hr>
 </div>
 
-<div>
+<div *ngIf="weapon.noise">
   Noise {{weapon.noise}}
   <hr>
 </div>
 
-<div>
+<div *ngIf="weapon.reloadTime">
   Reload Speed {{weapon.reloadTime}}
   <hr>
 </div>
@@ -39,15 +39,16 @@
 <app-disposition [disposition]="weapon.disposition"></app-disposition>
 <hr>
 
-<div>
+<div *ngIf="weapon.procChance">
   Status Chance {{(weapon.procChance*100).toFixed()}}%
   <hr>
 </div>
 
-<div>
+<div *ngIf="weapon.trigger">
   Trigger Type {{weapon.trigger}}
   <hr>
 </div>
 
 <app-damage-breakdown [weapon]=weapon></app-damage-breakdown>
+<hr>
 <hr>
