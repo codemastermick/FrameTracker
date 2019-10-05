@@ -69,4 +69,9 @@ describe("PrimariesComponent", () => {
     component.sortByProc();
     expect(component.allPrimaries[0].procChance <= component.allPrimaries[10].procChance).toBeTruthy();
   });
+
+  it("should reset to the default sort order when asked", () => {
+    component.resetFilters();
+    expect(component.allPrimaries[0].name <= component.allPrimaries[10].name).toBeTruthy();
+  });
 });

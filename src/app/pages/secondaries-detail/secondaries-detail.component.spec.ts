@@ -48,4 +48,8 @@ describe("SecondariesDetailComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should return damage types when asked", () => {
+    expect(component.getDamageTypes(component.secondary)).toBeTruthy();
+  });
 });

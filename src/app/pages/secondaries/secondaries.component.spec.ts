@@ -69,4 +69,9 @@ describe("SecondariesComponent", () => {
     component.sortByProc();
     expect(component.allSecondaries[0].procChance <= component.allSecondaries[10].procChance).toBeTruthy();
   });
+
+  it("should reset to the default sort order when asked", () => {
+    component.resetFilters();
+    expect(component.allSecondaries[0].name <= component.allSecondaries[10].name).toBeTruthy();
+  });
 });

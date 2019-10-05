@@ -67,4 +67,9 @@ describe("MeleeComponent", () => {
     component.sortByProc();
     expect(component.allMelees[0].procChance <= component.allMelees[10].procChance).toBeTruthy();
   });
+
+  it("should reset to the default sort order when asked", () => {
+    component.resetFilters();
+    expect(component.allMelees[0].name <= component.allMelees[10].name).toBeTruthy();
+  });
 });
