@@ -59,4 +59,14 @@ describe('PrimariesComponent', () => {
     component.sortByDPS();
     expect(component.allPrimaries[0].damagePerSecond <= component.allPrimaries[10].damagePerSecond).toBeTruthy();
   });
+
+  it('should sort by critical chance when asked', () => {
+    component.sortByCrit();
+    expect(component.allPrimaries[0].criticalChance <= component.allPrimaries[10].criticalChance).toBeTruthy();
+  });
+
+  it('should sort by status chance when asked', () => {
+    component.sortByProc();
+    expect(component.allPrimaries[0].procChance <= component.allPrimaries[10].procChance).toBeTruthy();
+  });
 });

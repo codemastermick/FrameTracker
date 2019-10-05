@@ -57,4 +57,14 @@ describe('MeleeComponent', () => {
     component.sortByDPS();
     expect(component.allMelees[0].damagePerSecond <= component.allMelees[10].damagePerSecond).toBeTruthy();
   });
+
+  it('should sort by critical chance when asked', () => {
+    component.sortByCrit();
+    expect(component.allMelees[0].criticalChance <= component.allMelees[10].criticalChance).toBeTruthy();
+  });
+
+  it('should sort by status chance when asked', () => {
+    component.sortByProc();
+    expect(component.allMelees[0].procChance <= component.allMelees[10].procChance).toBeTruthy();
+  });
 });
