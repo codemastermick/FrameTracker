@@ -4,6 +4,7 @@ import { SecondarySummaryComponent } from './secondary-summary.component';
 import { MaterialModule } from 'app/shared/material.module';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Item } from 'warframe-items';
+import { SafeStyle } from '@angular/platform-browser';
 
 const ACRID: Item = {
   name: 'Acrid',
@@ -3829,13 +3830,16 @@ describe('SecondarySummaryComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should return a thumbnail URL containing one of the valid images', () => {
+    const val: SafeStyle = component.getThumb();
+    expect(val.toString()).toContain(ACRID.wikiaThumbnail || ACRID.imageName);
+  });
+
   it('should return a thumbnail URL', () => {
-    const val = component.getThumb();
-    expect(val).toBeTruthy();
+    expect(component.getThumb()).toBeTruthy();
   });
 
   it('should return DPS', () => {
-    const val = component.getDPS();
-    expect(val).toBeTruthy();
+    expect(component.getDPS()).toBeTruthy();
   });
 });

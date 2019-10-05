@@ -7,6 +7,7 @@ import { Item } from 'warframe-items';
 import { DeferLoadModule } from 'app/shared/defer-load-directive';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MeleeModule } from 'app/pages/melee/melee.module';
+import { SafeStyle } from '@angular/platform-browser';
 
 const AMPHIS: Item = {
   name: 'Amphis',
@@ -448,13 +449,16 @@ describe('MeleeSummaryComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should return a thumbnail URL containing one of the valid images', () => {
+    const val: SafeStyle = component.getThumb();
+    expect(val.toString()).toContain(AMPHIS.wikiaThumbnail || AMPHIS.imageName);
+  });
+
   it('should return a thumbnail URL', () => {
-    const val = component.getThumb();
-    expect(val).toBeTruthy();
+    expect(component.getThumb()).toBeTruthy();
   });
 
   it('should return DPS', () => {
-    const val = component.getDPS();
-    expect(val).toBeTruthy();
+    expect(component.getDPS()).toBeTruthy();
   });
 });
