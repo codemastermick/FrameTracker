@@ -37,7 +37,7 @@
         <app-damage-breakdown [weapon]=primary></app-damage-breakdown>
         <div>Rate of Fire: {{primary.fireRate.toFixed(2)}}</div>
         <div>Critical Chance: {{(primary.criticalChance*100).toFixed()}}%</div>
-        <div>Critical Multiplier: x{{primary.criticalMultiplier}}</div>
+        <div>Critical Multiplier: {{primary.criticalMultiplier}}x</div>
         <div>Status Chance: {{(primary.procChance*100).toFixed()}}%</div>
         <div>Accuracy: {{primary.accuracy.toFixed(2)}}%</div>
       </div>
