@@ -1,18 +1,76 @@
-<div *ngIf="isOpened===true&&weapon.category==='Melee';else totalDMG" (click)="isOpened=!isOpened">
-  <div>
-    Damage per Second: {{weapon.damagePerSecond}}
+<span *ngIf="isOpened===true&&weapon.category==='Melee';else totalDMG" (click)="isOpened=!isOpened">
+
+  <span class="section">
+    <span class="tableItem">
+      Damage per Hit
+    </span>
+    <span class="dataField">
+      {{weapon.totalDamage}}
+    </span>
     <mat-icon>keyboard_arrow_down</mat-icon>
-  </div>
-  <div>
-      <div>Charge Attack: {{weapon.chargeAttack}}</div>
-      <div>Spin Attack: {{weapon.spinAttack}}</div>
-      <div>Leap Attack: {{weapon.leapAttack}}</div>
-      <div>Wall Attack: {{weapon.wallAttack}}</div>
-  </div>
-</div>
+  </span>
+  <hr style="width: 100%">
+
+  <span class="section">
+    <span class="tableItem">
+      Damage per Second
+    </span>
+    <span class="dataField">
+      {{weapon.damagePerSecond}}
+    </span>
+    <hr style="width: 100%">
+  </span>
+
+  <span class="section">
+    <span class="tableItem">
+      Charge Attack
+    </span>
+    <span class="dataField">
+      {{weapon.chargeAttack}}
+    </span>
+    <hr style="width: 100%">
+  </span>
+
+  <span class="section">
+    <span class="tableItem">
+      Spin Attack
+    </span>
+    <span class="dataField">
+      {{weapon.spinAttack}}
+    </span>
+    <hr style="width: 100%">
+  </span>
+
+  <span class="section">
+    <span class="tableItem">
+      Leap Attack
+    </span>
+    <span class="dataField">
+      {{weapon.leapAttack}}
+    </span>
+    <hr style="width: 100%">
+  </span>
+
+  <span class="section">
+    <span class="tableItem">
+      Wall Attack
+    </span>
+    <span class="dataField">
+      {{weapon.wallAttack}}
+    </span>
+    <hr style="width: 100%">
+  </span>
+</span>
 
 <ng-template #totalDMG>
-  <div (click)="isOpened=!isOpened">Damage: {{weapon.totalDamage}}
+  <span (click)="isOpened=!isOpened" class="section">
+    <span class="tableItem">
+      Damage
+    </span>
+    <span class="dataField">
+      {{weapon.totalDamage}}
+    </span>
     <mat-icon *ngIf="weapon.category==='Melee'">keyboard_arrow_right</mat-icon>
-  </div>
+  </span>
+  <hr style="width: 100%">
 </ng-template>

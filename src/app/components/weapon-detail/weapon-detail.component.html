@@ -1,54 +1,99 @@
-<hr>
-<hr>
-
-<div *ngIf="weapon.accuracy<100">
-  Accuracy {{weapon.accuracy.toFixed(2)}}%
+<div fxFlex="column">
   <hr>
-</div>
 
-<div *ngIf="weapon.criticalChance">
-  Critical Chance {{(weapon.criticalChance*100).toFixed()}}%
+  <div *ngIf="weapon.accuracy<100" class="section">
+    <span class="tableItem">
+      Accuracy
+    </span>
+    <span class="dataField">
+      {{weapon.accuracy.toFixed(2)}}%
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <div *ngIf="weapon.criticalChance" class="section">
+    <span class="tableItem">
+      Critical Chance
+    </span>
+    <span class="dataField">
+      {{(weapon.criticalChance*100).toFixed()}}%
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <div *ngIf="weapon.criticalMultiplier" class="section">
+    <span class="tableItem">
+      Critical Multiplier
+    </span>
+    <span class="dataField">
+      {{weapon.criticalMultiplier}}x
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <div *ngIf="weapon.fireRate" class="section">
+    <span class="tableItem">
+      Fire Rate
+    </span>
+    <span class="dataField">
+      {{weapon.fireRate.toFixed(2)}}
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <div *ngIf="weapon.magazineSize>0" class="section">
+    <span class="tableItem">
+      Magazine Size
+    </span>
+    <span class="dataField">
+      {{weapon.magazineSize}}
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <div *ngIf="weapon.noise" class="section">
+    <span class="tableItem">
+      Noise
+    </span>
+    <span class="dataField">
+      {{weapon.noise}}
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <div *ngIf="weapon.reloadTime" class="section">
+    <span class="tableItem">
+      Reload Speed
+    </span>
+    <span class="dataField">
+      {{weapon.reloadTime}}
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <app-disposition [disposition]="weapon.disposition"></app-disposition>
   <hr>
+
+  <div *ngIf="weapon.procChance" class="section">
+    <span class="tableItem">
+      Status Chance
+    </span>
+    <span class="dataField">
+      {{(weapon.procChance*100).toFixed()}}%
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <div *ngIf="weapon.trigger" class="section">
+    <span class="tableItem">
+    Trigger Type
+    </span>
+
+    <span class="dataField">
+      {{weapon.trigger}}
+    </span>
+    <hr style="width: 100%">
+  </div>
+
+  <app-damage-breakdown [weapon]=weapon></app-damage-breakdown>
 </div>
-
-<div *ngIf="weapon.criticalMultiplier">
-  Critical Multiplier {{weapon.criticalMultiplier}}x
-  <hr>
-</div>
-
-<div *ngIf="weapon.fireRate">
-  Fire Rate {{weapon.fireRate.toFixed(2)}}
-  <hr>
-</div>
-
-<div *ngIf="weapon.magazineSize>0">
-  Magazine Size {{weapon.magazineSize}}
-  <hr>
-</div>
-
-<div *ngIf="weapon.noise">
-  Noise {{weapon.noise}}
-  <hr>
-</div>
-
-<div *ngIf="weapon.reloadTime">
-  Reload Speed {{weapon.reloadTime}}
-  <hr>
-</div>
-
-<app-disposition [disposition]="weapon.disposition"></app-disposition>
-<hr>
-
-<div *ngIf="weapon.procChance">
-  Status Chance {{(weapon.procChance*100).toFixed()}}%
-  <hr>
-</div>
-
-<div *ngIf="weapon.trigger">
-  Trigger Type {{weapon.trigger}}
-  <hr>
-</div>
-
-<app-damage-breakdown [weapon]=weapon></app-damage-breakdown>
-<hr>
-<hr>

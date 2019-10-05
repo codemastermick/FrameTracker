@@ -1,0 +1,15 @@
+.section{
+  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
+
+.tableItem{
+  flex: 1 1 auto;
+}
+
+.dataField{
+  flex: 1 1 auto;
+  text-align: end;
+}
