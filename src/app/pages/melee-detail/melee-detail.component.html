@@ -38,6 +38,9 @@
         <div>Critical Chance: {{(melee.criticalChance*100).toFixed()}}%</div>
         <div>Critical Multiplier: x{{melee.criticalMultiplier}}</div>
         <div>Fire Rate: {{melee.fireRate.toFixed(2)}}</div>
+        <div *ngIf="melee.magazineSize">
+          Magazine Size: {{melee.magazineSize}}
+        </div>
         <app-disposition [disposition]="melee.disposition"></app-disposition>
         <div>Status Chance: {{(melee.procChance*100).toFixed()}}%</div>
         <app-damage-breakdown [weapon]=melee></app-damage-breakdown>
