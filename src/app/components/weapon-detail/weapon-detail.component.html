@@ -1,0 +1,53 @@
+<hr>
+<hr>
+
+<div>
+  Accuracy {{weapon.accuracy.toFixed(2)}}%
+  <hr>
+</div>
+
+<div>
+  Critical Chance {{(weapon.criticalChance*100).toFixed()}}%
+  <hr>
+</div>
+
+<div>
+  Critical Multiplier {{weapon.criticalMultiplier}}x
+  <hr>
+</div>
+
+<div *ngIf="weapon.fireRate">
+  Fire Rate {{weapon.fireRate.toFixed(2)}}
+  <hr>
+</div>
+
+<div>
+  Magazine Size {{weapon.magazineSize}}
+  <hr>
+</div>
+
+<div>
+  Noise {{weapon.noise}}
+  <hr>
+</div>
+
+<div>
+  Reload Speed {{weapon.reloadTime}}
+  <hr>
+</div>
+
+<app-disposition [disposition]="weapon.disposition"></app-disposition>
+<hr>
+
+<div>
+  Status Chance {{(weapon.procChance*100).toFixed()}}%
+  <hr>
+</div>
+
+<div>
+  Trigger Type {{weapon.trigger}}
+  <hr>
+</div>
+
+<app-damage-breakdown [weapon]=weapon></app-damage-breakdown>
+<hr>

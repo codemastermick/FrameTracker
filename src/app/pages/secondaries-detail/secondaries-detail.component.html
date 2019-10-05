@@ -1,13 +1,13 @@
 <mat-card *ngIf="secondary">
-    <mat-card-header fxLayout="row">
-        <mat-card-title fxLayout="column">
-          {{secondary.name}}
-        </mat-card-title>
-        <mat-card-subtitle fxLayout="column">
-          {{secondary.description}}
-        </mat-card-subtitle>
-        <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
-      </mat-card-header>
+  <mat-card-header fxLayout="row">
+    <mat-card-title fxLayout="column">
+      {{secondary.name}}
+    </mat-card-title>
+    <mat-card-subtitle fxLayout="column">
+      {{secondary.description}}
+    </mat-card-subtitle>
+    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
+  </mat-card-header>
 
   <mat-card-content>
     <div fxLayout="row">
@@ -33,14 +33,7 @@
           Mod Polarities: None
         </ng-template>
         <app-build-section [weapon]="secondary"></app-build-section>
-
-        <div>Accuracy: {{secondary.accuracy.toFixed(2)}}%</div>
-        <div>Critical Chance: {{(secondary.criticalChance*100).toFixed()}}%</div>
-        <div>Critical Multiplier: x{{secondary.criticalMultiplier}}</div>
-        <div>Fire Rate: {{secondary.fireRate.toFixed(2)}}</div>
-        <app-disposition [disposition]="secondary.disposition"></app-disposition>
-        <div>Status Chance: {{(secondary.procChance*100).toFixed()}}%</div>
-        <app-damage-breakdown [weapon]=secondary></app-damage-breakdown>
+        <app-weapon-detail [weapon]="secondary"></app-weapon-detail>
       </div>
       <div fxFlex="60%" class="secondaryImage">
         <img [src]="getImage(secondary.imageName)" alt="{{secondary.name}} image">

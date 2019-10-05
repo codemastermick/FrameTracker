@@ -6,7 +6,6 @@ import { DispositionModule } from '../../components/disposition/disposition.modu
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
-import { PrimarySummaryComponent } from 'app/components/primary-summary/primary-summary.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { PrimarySummaryModule } from 'app/components/primary-summary/primary-summary.module';
 
