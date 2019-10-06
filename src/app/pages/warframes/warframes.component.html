@@ -1,5 +1,56 @@
-<div fxFlex="row">
+<!-- <div fxFlex="row">
   <div *ngFor="let frame of allWarframes">
     <app-wf-summary frame={{frame|json}}></app-wf-summary>
   </div>
+</div> -->
+
+
+<div fxFlex="row">
+  <mat-toolbar color="accent" class="filterbar">
+    <span fxFlex="90%">
+
+    </span>
+
+    <div fxFlex="10%">
+      <button mat-raised-button [matMenuTriggerFor]="filters">Sort By</button>
+      <mat-menu #filters="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <button mat-button (click)="sortByArmour()" class="itemButton">
+              Armour
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="sortByEnergy()" class="itemButton">
+              Energy
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="sortByHealth()" class="itemButton">
+              Health
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+              <button mat-button (click)="resetFilters()" class="itemButton">
+                Name
+              </button>
+            </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="sortByShield()" class="itemButton">
+              Shields
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+  <cdk-virtual-scroll-viewport style="height: 70vh" itemSize="90">
+    <div *cdkVirtualFor="let frame of allWarframes; let even=even; let odd=odd templateCacheSize: 0">
+      <div *ngIf="!frame.sentinel">
+        <app-wf-summary [odd]="odd" [even]="even" [frame]="frame"></app-wf-summary>
+      </div>
+    </div>
+  </cdk-virtual-scroll-viewport>
+
 </div>

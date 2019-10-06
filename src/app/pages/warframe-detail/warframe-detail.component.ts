@@ -45,4 +45,8 @@ export class WarframeDetailComponent implements OnInit {
   getPassive() {
     return this.wf.getFramePassive(this.frame);
   }
+
+  getAbilities() {
+    return this.wf.getFrameAbilities(this.frame);
+  }
 }

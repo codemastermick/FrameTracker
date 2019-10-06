@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Item } from "warframe-items";
 import { WfDataService } from "app/shared/wf-data.service";
+import { LazyItem } from "app/shared/lazyItem.interface";
 
 @Component({
   selector: "app-wf-summary",
@@ -8,7 +8,9 @@ import { WfDataService } from "app/shared/wf-data.service";
   styleUrls: ["./wf-summary.component.scss"]
 })
 export class WfSummaryComponent implements OnInit {
-  @Input() frame: Item;
+  @Input() frame: LazyItem;
+  @Input() even: boolean;
+  @Input() odd: boolean;
 
   constructor(public wf: WfDataService) { }
 
@@ -23,9 +25,4 @@ export class WfSummaryComponent implements OnInit {
   getThumb(imageName: string) {
     return this.wf.getThumb(imageName);
   }
-
-  public openDetails() {
-    // open overlay with detail view
-  }
-
 }

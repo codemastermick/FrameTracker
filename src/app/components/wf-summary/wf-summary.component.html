@@ -1,4 +1,4 @@
-<mat-card routerLink="/warframes/{{frame.name}}">
+<mat-card *ngIf="frame" (deferLoad)="frame.show === true" routerLink="/warframes/{{frame.name}}" [class.odd]="odd" [class.even]="even">
   <mat-card-header>
     <mat-card-title>
       {{frame.name}}
@@ -6,14 +6,22 @@
     <mat-card-subtitle>
       {{frame.description}}
     </mat-card-subtitle>
-    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb(frame.wikiaThumbnail||frame.imageName)"></div>
+    <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb(frame.wikiaThumbnail||frame.imageName)">
+    </div>
   </mat-card-header>
 
   <mat-card-content>
-    <span *ngIf="frame.aura" class="wf-{{frame.aura.toLowerCase()}}"></span>
-    <span class="health">Health {{frame.health}}</span>
-    <span class="shield">Shield {{frame.shield}}</span>
-    <span class="energy">Energy {{frame.power}}</span>
-    <span class="armour">Armour {{frame.armor}}</span>
+    <span *ngIf="frame.aura">
+      <span class="wf-{{frame.aura.toLowerCase()}}"> </span>
+      |
+    </span>
+
+    <span>Health {{frame.health}}</span>
+    |
+    <span>Shield {{frame.shield}}</span>
+    |
+    <span>Energy {{frame.power}}</span>
+    |
+    <span>Armour {{frame.armor}}</span>
   </mat-card-content>
 </mat-card>

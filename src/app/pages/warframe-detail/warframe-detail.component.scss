@@ -2,22 +2,27 @@
   background-size: cover;
 }
 
-.health {
-  color: red;
+.wfImage{
+  display: flex;
 }
 
-.shield {
-  color: blue;
+.thumb {
+  background-size: cover;
+  flex: 1 1 auto;
 }
 
-.energy {
-  color: cyan;
+.section{
+  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
 }
 
-.armour {
-  color: purple;
+.tableItem{
+  flex: 1 1 auto;
 }
 
-.polarities > span {
-  color: black;
+.dataField{
+  flex: 1 1 auto;
+  text-align: end;
 }

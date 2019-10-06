@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { Title, Meta } from "@angular/platform-browser";
 import { WfDataService } from "app/shared/wf-data.service";
-import { Item } from "warframe-items";
+import { Item, Type } from "warframe-items";
+import { LazyItem } from "app/shared/lazyItem.interface";
 
 @Component({
   selector: "app-warframes",
@@ -13,7 +14,12 @@ export class WarframesComponent implements OnInit {
 
   allWarframes: Item[];
 
-  constructor(private titleService: Title, private metaTagService: Meta, private wf: WfDataService) { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta,
+    private wf: WfDataService,
+    private changeDetectorRef: ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
     this.titleService.setTitle("The Tenno Sanctuary: Warframes");
@@ -24,4 +30,36 @@ export class WarframesComponent implements OnInit {
     this.allWarframes = this.wf.getAllWarframes();
   }
 
+  resetFilters() {
+    this.allWarframes = this.wf.getAllWarframes();
+    this.allWarframes.sort((a, b) => (a.name > b.name) ? 1 : -1);
+  }
+
+  filterOn(type: Type) {
+    this.allWarframes = this.wf.getAllOfType(type);
+  }
+
+  sortByArmour() {
+    const newList: LazyItem[] = this.allWarframes.sort((a, b) => (a.armor > b.armor) ? 1 : -1);
+    this.allWarframes = [...newList];
+    this.changeDetectorRef.detectChanges();
+  }
+
+  sortByHealth() {
+    const newList: LazyItem[] = this.allWarframes.sort((a, b) => (a.health > b.health) ? 1 : -1);
+    this.allWarframes = [...newList];
+    this.changeDetectorRef.detectChanges();
+  }
+
+  sortByShield() {
+    const newList: LazyItem[] = this.allWarframes.sort((a, b) => (a.shield > b.shield) ? 1 : -1);
+    this.allWarframes = [...newList];
+    this.changeDetectorRef.detectChanges();
+  }
+
+  sortByEnergy() {
+    const newList: LazyItem[] = this.allWarframes.sort((a, b) => (a.power > b.power) ? 1 : -1);
+    this.allWarframes = [...newList];
+    this.changeDetectorRef.detectChanges();
+  }
 }

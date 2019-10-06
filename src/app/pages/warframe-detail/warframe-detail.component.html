@@ -1,9 +1,9 @@
 <mat-card *ngIf="frame">
-  <mat-card-header>
-    <mat-card-title>
+  <mat-card-header fxLayout="row">
+    <mat-card-title fxLayout="column">
       {{frame.name}}
     </mat-card-title>
-    <mat-card-subtitle>
+    <mat-card-subtitle fxLayout="column">
       {{frame.description}}
     </mat-card-subtitle>
     <div mat-card-avatar class="thumbnail" [style.background-image]="getThumb()"></div>
@@ -11,64 +11,119 @@
 
   <mat-card-content>
     <div fxLayout="row">
-      <div fxFlex="60%">
-        <div>Passive Ability: {{getPassive()}}</div>
-        <div *ngIf="frame.aura">Aura Polarity:
-          <span class="wf-{{frame.aura.toLowerCase()}}"></span>
-        </div>
-        <div class="health">Health: {{frame.health}}</div>
-        <div class="shield">Shield: {{frame.shield}}</div>
-        <div class="energy">Energy: {{frame.power}}</div>
-        <div class="armour">Armour: {{frame.armor}}</div>
-        <div>Sprint Speed: {{frame.sprintSpeed}}</div>
-        <div>PVP: {{frame.conclave}}</div>
-        <div>MR: {{frame.masteryReq}}</div>
-        Polarities:
-        <span *ngFor="let polarity of frame.polarities" class="polarities">
-          <span class="wf-{{polarity.toLowerCase()}}"></span>
+      <div fxFlex="40%">
+        <div>Passive Ability {{getPassive()}}</div>
+        <hr style="width: 100%">
+
+        <span class="section">
+          <span *ngIf="frame.aura">
+            <span class="tableItem">
+              Aura Polarity
+            </span>
+
+            <span class="dataField">
+              <span class="wf-{{frame.aura.toLowerCase()}}"></span>
+            </span>
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            Health
+          </span>
+          <span class="dataField">
+            {{frame.health}}
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            Shield
+          </span>
+          <span class="dataField">
+            {{frame.shield}}
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            Energy
+          </span>
+          <span class="dataField">
+            {{frame.power}}
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            Armour
+          </span>
+          <span class="dataField">
+            {{frame.armor}}
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            PVP
+          </span>
+          <span class="dataField">
+            {{frame.conclave}}
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            MR
+          </span>
+          <span class="dataField">
+            {{frame.masteryReq}}
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            Polarities
+          </span>
+          <span class="dataField">
+            <span *ngFor="let polarity of frame.polarities" class="polarities">
+              <span class="wf-{{polarity.toLowerCase()}}"></span>
+            </span>
+          </span>
+          <hr style="width: 100%">
         </span>
       </div>
 
-      <div fxFlex="40%" class="wfImage">
-        <img [src]="getImage(frame.imageName)" alt="{{frame.name}} image">
+      <div fxFlex="60%" class="wfImage">
+        <img class="thumb" [src]="getImage(frame.imageName)" alt="{{frame.name}} image">
       </div>
+
     </div>
-    <!-- bottom section -->
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Components
-        </mat-panel-title>
-      </mat-expansion-panel-header>
 
-      <div *ngFor="let comp of frame.components;">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <div *ngIf="comp.drops">
-              <mat-panel-title>
-                {{comp.name}}
-              </mat-panel-title>
-            </div>
-          </mat-expansion-panel-header>
-          <mat-list>
-            <div *ngIf="comp.drops">
-              <mat-list-item *ngFor="let d of comp.drops.sort()">
-                {{d.location.split('nce:')[0]}}: {{d.chance.toFixed(2)}}%
-              </mat-list-item>
-            </div>
-          </mat-list>
-        </mat-expansion-panel>
-      </div>
-    </mat-expansion-panel>
-
+    <app-components-display [components]="frame.components"></app-components-display>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
           Abilities
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <div *ngFor="let ability of frame.abilities">
-        {{ability.name}}: {{ability.description}}
+      <div *ngFor="let ability of getAbilities(); let last=last;">
+        <span class="section">
+          <span class="tableItem">
+            {{ability.name}}
+          </span>
+          <span class="dataField">
+            {{ability.description}}
+          </span>
+          <hr *ngIf="!last" style="width: 100%">
+        </span>
       </div>
     </mat-expansion-panel>
 

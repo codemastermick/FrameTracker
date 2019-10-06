@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import Items, { Item } from "warframe-items";
+import Items, { Item, Type, Ability } from "warframe-items";
 import { DomSanitizer, SafeStyle, SafeUrl } from "@angular/platform-browser";
 
 @Injectable({
@@ -51,5 +51,15 @@ export class WfDataService {
 
   getFramePassive(frame: Item) {
     return frame.passiveDescription.replace(/\|\b.*?\|%/gm, "");
+  }
+
+  getFrameAbilities(frame: Item): Ability[] {
+    const a = frame.abilities;
+    a.forEach(x => { x.description.replace(/<DT_FIRE>|<DT_FREEZE>|<DT_EXPLOSION>/gm, ""); });
+    return a;
+  }
+
+  getAllOfType(type: Type) {
+    return this.allFrames.filter(x => x.type === type);
   }
 }

@@ -2,18 +2,22 @@
   background-size: cover;
 }
 
-.health{
-  color: red;
+.odd {
+  background-color: rgba($color: #000000, $alpha: 0.3);
 }
 
-.shield{
-  color: blue;
+.section{
+  width: 100%;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
 }
 
-.energy{
-  color: cyan;
+.tableItem{
+  flex: 1 1 auto;
 }
 
-.armour{
-  color: purple;
+.dataField{
+  flex: 1 1 auto;
+  text-align: end;
 }
