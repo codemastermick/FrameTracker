@@ -1,4 +1,4 @@
-<mat-card *ngIf="relic" routerLink="/relics/{{relic.name}}">
+<mat-card *ngIf="relic" routerLink="/relics/{{relic.name}}" [class.odd]="odd" [class.even]="even">
   <mat-card-header>
     <mat-card-title>
       {{relic.name}}

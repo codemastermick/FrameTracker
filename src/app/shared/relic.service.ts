@@ -37,4 +37,16 @@ export class RelicService {
     console.log(`Retreiving data for ${name}`);
     return this.allRelics.find(x => x.name === name);
   }
+
+  getRelicsByType(type: string) {
+    return this.allRelics.filter(x => {
+      return x.name.includes(type, 0);
+    });
+  }
+
+  getRelicsByLevel(level: string) {
+    return this.allRelics.filter(x => {
+      return x.name.includes(level, 0);
+    });
+  }
 }

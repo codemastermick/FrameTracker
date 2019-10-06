@@ -5,6 +5,7 @@ import { MaterialModule } from "app/shared/material.module";
 import { RelicSummaryComponent } from "app/components/relic-summary/relic-summary.component";
 import { RouterTestingModule } from "@angular/router/testing";
 import { Router } from "@angular/router";
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 describe("RelicsComponent", () => {
   let router: Router;
@@ -13,7 +14,11 @@ describe("RelicsComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule, RouterTestingModule],
+      imports: [
+        MaterialModule,
+        RouterTestingModule,
+        ScrollingModule
+      ],
       declarations: [RelicsComponent, RelicSummaryComponent]
     }).compileComponents();
   }));

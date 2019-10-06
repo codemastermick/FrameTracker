@@ -9,6 +9,8 @@ import { RelicService } from "app/shared/relic.service";
 })
 export class RelicSummaryComponent implements OnInit {
   @Input() relic: Item;
+  @Input() even: boolean;
+  @Input() odd: boolean;
 
   constructor(private relics: RelicService) { }
 

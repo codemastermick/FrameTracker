@@ -1,5 +1,48 @@
 <div fxFlex="row">
-  <div *ngFor="let relic of allRelics">
-    <app-relic-summary relic={{relic|json}}></app-relic-summary>
-  </div>
+  <mat-toolbar color="accent" class="filterbar">
+    <div fxFlex="90%">
+      <button mat-raised-button (click)="resetFilters()">
+        All
+      </button>
+      <button mat-raised-button (click)="filterOn('Lith')">Lith</button>
+      <button mat-raised-button (click)="filterOn('Meso')">Meso</button>
+      <button mat-raised-button (click)="filterOn('Neo')">Neo</button>
+      <button mat-raised-button (click)="filterOn('Axi')">Axi</button>
+    </div>
+
+    <div fxFlex="10%">
+      <button mat-raised-button [matMenuTriggerFor]="filters">Sort By</button>
+      <mat-menu #filters="matMenu">
+        <mat-list>
+          <mat-list-item>
+            <button mat-button (click)="sortByIntact()" class="itemButton">
+              Intact
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="sortByExceptional()" class="itemButton">
+              Exceptional
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="sortByFlawless()" class="itemButton">
+              Flawless
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button (click)="sortByRadiant()" class="itemButton">
+              Radiant
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+
+  <cdk-virtual-scroll-viewport style="height: 70vh" itemSize="90">
+    <div *cdkVirtualFor="let relic of allRelics; let even=even; let odd=odd templateCacheSize: 0">
+      <app-relic-summary [odd]="odd" [even]="even" relic={{relic|json}}></app-relic-summary>
+    </div>
+  </cdk-virtual-scroll-viewport>
+
 </div>
