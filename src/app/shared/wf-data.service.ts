@@ -54,8 +54,11 @@ export class WfDataService {
   }
 
   getFrameAbilities(frame: Item): Ability[] {
-    const a = frame.abilities;
-    a.forEach(x => { x.description.replace(/<DT_FIRE>|<DT_FREEZE>|<DT_EXPLOSION>/gm, ""); });
+    const a: Ability[] = [];
+    frame.abilities.forEach(x => {
+      a.push(x);
+    });
+    a.forEach(x => { x.description.replace(/\<DT_.*?\>/gm, ""); });
     return a;
   }
 
