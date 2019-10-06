@@ -12,17 +12,32 @@
   <mat-card-content>
     <div fxLayout="row">
       <div fxFlex="40%">
-        <div>Passive Ability {{getPassive()}}</div>
-        <hr style="width: 100%">
+        <span class="section" *ngIf="frame.aura">
+          <span class="tableItem">
+            Aura Polarity
+          </span>
+          <span class="dataField">
+            <span class="wf-{{frame.aura.toLowerCase()}}"></span>
+          </span>
+          <hr style="width: 100%">
+        </span>
 
         <span class="section">
-          <span *ngIf="frame.aura">
-            <span class="tableItem">
-              Aura Polarity
-            </span>
-            <span class="dataField">
-              <span class="wf-{{frame.aura.toLowerCase()}}"></span>
-            </span>
+          <span class="tableItem">
+            Armour
+          </span>
+          <span class="dataField">
+            {{frame.armor}}
+          </span>
+          <hr style="width: 100%">
+        </span>
+
+        <span class="section">
+          <span class="tableItem">
+            Energy
+          </span>
+          <span class="dataField">
+            {{frame.power}}
           </span>
           <hr style="width: 100%">
         </span>
@@ -49,20 +64,10 @@
 
         <span class="section">
           <span class="tableItem">
-            Energy
+            Sprint Speed
           </span>
           <span class="dataField">
-            {{frame.power}}
-          </span>
-          <hr style="width: 100%">
-        </span>
-
-        <span class="section">
-          <span class="tableItem">
-            Armour
-          </span>
-          <span class="dataField">
-            {{frame.armor}}
+            {{frame.sprintSpeed}}
           </span>
           <hr style="width: 100%">
         </span>
@@ -72,12 +77,12 @@
             PVP
           </span>
           <span class="dataField">
-            {{frame.conclave}}
+            {{frame.conclave?"Yes":"No"}}
           </span>
           <hr style="width: 100%">
         </span>
 
-        <span class="section">
+        <span class="section" *ngIf="frame.masteryReq>0">
           <span class="tableItem">
             MR
           </span>
@@ -92,7 +97,7 @@
             Polarities
           </span>
           <span class="dataField">
-            <span *ngFor="let polarity of frame.polarities" class="polarities">
+            <span *ngFor="let polarity of frame.polarities">
               <span class="wf-{{polarity.toLowerCase()}}"></span>
             </span>
           </span>
@@ -103,16 +108,18 @@
       <div fxFlex="60%" class="wfImage">
         <img class="thumb" [src]="getImage(frame.imageName)" alt="{{frame.name}} image">
       </div>
-
     </div>
 
     <app-components-display [components]="frame.components"></app-components-display>
-    <mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]=true>
       <mat-expansion-panel-header>
         <mat-panel-title>
           Abilities
         </mat-panel-title>
       </mat-expansion-panel-header>
+      <div>{{getPassive()}}</div>
+      <hr style="width: 100%">
       <div *ngFor="let ability of getAbilities(); let last=last;">
         <span class="section">
           <span class="tableItem">
