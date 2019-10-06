@@ -5,6 +5,7 @@ import { MaterialModule } from "app/shared/material.module";
 import { RouterTestingModule } from "@angular/router/testing";
 import { WfSummaryComponent } from "app/components/wf-summary/wf-summary.component";
 import { Router } from "@angular/router";
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 describe("WarframesComponent", () => {
   let router: Router;
@@ -13,7 +14,11 @@ describe("WarframesComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule, RouterTestingModule],
+      imports: [
+        MaterialModule,
+        RouterTestingModule,
+        ScrollingModule
+      ],
       declarations: [WarframesComponent, WfSummaryComponent]
     }).compileComponents();
   }));

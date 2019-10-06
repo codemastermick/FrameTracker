@@ -5,6 +5,7 @@ import { MaterialModule } from "app/shared/material.module";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ComponentsDisplayModule } from "app/components/components-display/components-display.module";
 
 describe("WarframesDetailComponent", () => {
   let component: WarframeDetailComponent;
@@ -13,9 +14,12 @@ describe("WarframesDetailComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MaterialModule,
+      imports: [
+        MaterialModule,
         RouterTestingModule,
-        BrowserAnimationsModule],
+        BrowserAnimationsModule,
+        ComponentsDisplayModule
+      ],
       declarations: [WarframeDetailComponent],
       providers: [
         {
