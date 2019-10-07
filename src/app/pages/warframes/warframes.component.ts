@@ -30,6 +30,10 @@ export class WarframesComponent implements OnInit {
     this.allWarframes = this.wf.getAllWarframes();
   }
 
+  getThumb(imageName: string) {
+    return this.wf.getThumb(imageName);
+  }
+
   resetFilters() {
     this.allWarframes = this.wf.getAllWarframes();
     this.allWarframes.sort((a, b) => (a.name > b.name) ? 1 : -1);
