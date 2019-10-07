@@ -33,4 +33,40 @@ describe("WarframesComponent", () => {
   it("should create", () => {
     expect(component).toBeTruthy();
   });
+
+  it("should return a thumbnail URL", () => {
+    const val = component.getThumb(component.allWarframes[0].imageName);
+    expect(val).toBeTruthy();
+  });
+
+  it("should filter when asked", () => {
+    const t = component.allWarframes[0].type;
+    component.filterOn(t);
+    expect(component.allWarframes[0].type === t).toBeTruthy();
+  });
+
+  it("should sort by armour when asked", () => {
+    component.sortByArmour();
+    expect(component.allWarframes[0].armor <= component.allWarframes[10].armor).toBeTruthy();
+  });
+
+  it("should sort by health when asked", () => {
+    component.sortByHealth();
+    expect(component.allWarframes[0].health <= component.allWarframes[10].health).toBeTruthy();
+  });
+
+  it("should sort by shield when asked", () => {
+    component.sortByShield();
+    expect(component.allWarframes[0].shield <= component.allWarframes[10].shield).toBeTruthy();
+  });
+
+  it("should sort by energy when asked", () => {
+    component.sortByEnergy();
+    expect(component.allWarframes[0].power <= component.allWarframes[10].power).toBeTruthy();
+  });
+
+  it("should reset to the default sort order when asked", () => {
+    component.resetFilters();
+    expect(component.allWarframes[0].name <= component.allWarframes[10].name).toBeTruthy();
+  });
 });
