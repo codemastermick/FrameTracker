@@ -1,7 +1,7 @@
 # Tenno Sanctuary
 
 [![Travis (.org)](https://img.shields.io/travis/codemastermick/FrameTracker)](https://travis-ci.org/codemastermick/FrameTracker)
-[![Website](https://img.shields.io/website/http/dev-profile-cd9ed.web.app?down_color=red&down_message=offline&up_message=up)](https://dev-profile-cd9ed.web.app)
+[![Website](https://img.shields.io/website/http/tenno-sanctuary.web.app?down_color=red&down_message=offline&up_message=up)](https://tenno-sanctuary.web.app)
 [![GitHub issues](https://img.shields.io/github/issues/codemastermick/FrameTracker)](https://github.com/codemastermick/FrameTracker/issues)
 
 [![codecov](https://codecov.io/gh/codemastermick/FrameTracker/branch/master/graph/badge.svg)](https://codecov.io/gh/codemastermick/FrameTracker)
