@@ -53,3 +53,9 @@ mat-toolbar > div > a {
   bottom: 0;
   right: 0;
 }
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
