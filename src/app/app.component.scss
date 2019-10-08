@@ -2,6 +2,7 @@
   text-align: center;
   border-radius: 0;
   flex-grow: 1;
+  max-height: 5vh;
 }
 
 .navPanel {
@@ -56,6 +57,7 @@ mat-toolbar > div > a {
 
 .app {
   display: flex;
-  min-height: 100vh;
+  max-height: 100vh;
   flex-direction: column;
+  overflow: initial;
 }
