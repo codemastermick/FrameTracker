@@ -34,22 +34,22 @@ export class RelicsComponent implements OnInit {
   }
 
   filterOn(type: string) {
-    this.allRelics = this.relic.getRelicsByType(type);
+    this.allRelics = this.relic.getRelicsBy(type);
   }
 
   sortByIntact() {
-    this.allRelics = this.relic.getRelicsByLevel("Intact");
+    this.allRelics = this.relic.getRelicsBy("Intact");
   }
 
   sortByExceptional() {
-    this.allRelics = this.relic.getRelicsByLevel("Exceptional");
+    this.allRelics = this.relic.getRelicsBy("Exceptional");
   }
 
   sortByFlawless() {
-    this.allRelics = this.relic.getRelicsByLevel("Flawless");
+    this.allRelics = this.relic.getRelicsBy("Flawless");
   }
 
   sortByRadiant() {
-    this.allRelics = this.relic.getRelicsByLevel("Radiant");
+    this.allRelics = this.relic.getRelicsBy("Radiant");
   }
 }

@@ -31,15 +31,9 @@ export class RelicService {
     return this.allRelics.find(x => x.name === name);
   }
 
-  getRelicsByType(type: string) {
+  getRelicsBy(type: string) {
     return this.allRelics.filter(x => {
       return x.name.includes(type, 0);
-    });
-  }
-
-  getRelicsByLevel(level: string) {
-    return this.allRelics.filter(x => {
-      return x.name.includes(level, 0);
     });
   }
 }
