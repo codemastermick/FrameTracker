@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-home",
@@ -9,13 +9,11 @@ import { Title, Meta } from "@angular/platform-browser";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private titleService: Title, private metaTagService: Meta) { }
+  constructor(private tagger: TagService) { }
 
   ngOnInit() {
-    this.titleService.setTitle("The Tenno Sanctuary");
-    this.metaTagService.updateTag({ name: "description", content: "A public Warframe data browser app" });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle("The Tenno Sanctuary");
+    this.tagger.setDescription("A public Warframe data browser app");
   }
 
 }

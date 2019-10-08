@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { Item } from "warframe-items";
 import { RelicService } from "app/shared/relic.service";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-relics",
@@ -13,13 +13,11 @@ export class RelicsComponent implements OnInit {
 
   allRelics: Item[];
 
-  constructor(private titleService: Title, private metaTagService: Meta, private relic: RelicService) { }
+  constructor(private tagger: TagService, private relic: RelicService) { }
 
   ngOnInit() {
-    this.titleService.setTitle("The Tenno Sanctuary: Relics");
-    this.metaTagService.updateTag({ name: "description", content: "Warframe relics" });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle("The Tenno Sanctuary: Relics");
+    this.tagger.setDescription("Warframe relics");
 
     this.allRelics = this.relic.getAllRelics();
   }

@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, HostListener, ChangeDetectorRef } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { Item, Type } from "warframe-items";
 import { PrimaryWeaponsService } from "../../shared/primary-weapons.service";
 import { LazyItem } from "app/shared/lazyItem.interface";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-primaries",
@@ -15,16 +15,13 @@ export class PrimariesComponent implements OnInit {
   allPrimaries: Item[];
 
   constructor(
-    private titleService: Title,
-    private metaTagService: Meta,
+    private tagger: TagService,
     private weapons: PrimaryWeaponsService,
     private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.titleService.setTitle("The Tenno Sanctuary: Primary Weapons");
-    this.metaTagService.updateTag({ name: "description", content: "Warframe primary items" });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle("The Tenno Sanctuary: Primary Weapons");
+    this.tagger.setDescription("Warframe primary items");
 
     this.allPrimaries = this.weapons.getAllPrimaries();
   }

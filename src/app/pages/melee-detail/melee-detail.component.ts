@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { Item, DamageTypes } from "warframe-items";
 import { Router } from "@angular/router";
 import { MeleeService } from "app/shared/melee.service";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-melee-detail",
@@ -14,18 +14,15 @@ export class MeleeDetailComponent implements OnInit {
   melee: Item;
 
   constructor(
-    private titleService: Title,
-    private metaTagService: Meta,
+    private tagger: TagService,
     private router: Router,
     private weapons: MeleeService) { }
 
   ngOnInit() {
     this.melee = this.weapons.getMeleeByName(this.router.url.split("/")[2]);
 
-    this.titleService.setTitle(`Details for ${this.melee.name}`);
-    this.metaTagService.updateTag({ name: "description", content: `Primary weapon details for ${this.melee.name}` });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle(`Details for ${this.melee.name}`);
+    this.tagger.setDescription(`Primary weapon details for ${this.melee.name}`);
 
   }
 

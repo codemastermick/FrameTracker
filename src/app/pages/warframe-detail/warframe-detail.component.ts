@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
-import { Item, Component as wfComponent, Drop, Polarity } from "warframe-items";
+import { Item, Component as wfComponent } from "warframe-items";
 import { Router } from "@angular/router";
 import { WfDataService } from "app/shared/wf-data.service";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-warframe-detail",
@@ -14,18 +14,15 @@ export class WarframeDetailComponent implements OnInit {
   frame: Item;
 
   constructor(
-    private titleService: Title,
-    private metaTagService: Meta,
+    private tagger: TagService,
     private router: Router,
     private wf: WfDataService) { }
 
   ngOnInit() {
     this.frame = this.wf.getWarframeByName(this.router.url.split("/")[2]);
 
-    this.titleService.setTitle(`Details for ${this.frame.name}`);
-    this.metaTagService.updateTag({ name: "description", content: `Warframe details for ${this.frame.name}` });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle(`Details for ${this.frame.name}`);
+    this.tagger.setDescription(`Warframe details for ${this.frame.name}`);
   }
 
   getImage(imageName: string) {
@@ -36,7 +33,7 @@ export class WarframeDetailComponent implements OnInit {
     return this.wf.getThumb(this.frame.wikiaThumbnail);
   }
 
-  getUniqueDrops(comp: Item) {
+  getUniqueDrops(comp: wfComponent) {
     return comp.drops.filter((item, index) => {
       return comp.drops.indexOf(item) === index;
     });

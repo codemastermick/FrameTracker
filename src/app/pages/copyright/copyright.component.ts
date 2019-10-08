@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-copyright",
@@ -9,13 +9,11 @@ import { Title, Meta } from "@angular/platform-browser";
 })
 export class CopyrightComponent implements OnInit {
 
-  constructor(private titleService: Title, private metaTagService: Meta) { }
+  constructor(private tagger: TagService) { }
 
   ngOnInit() {
-    this.titleService.setTitle("Copyright information for The Tenno Sanctuary");
-    this.metaTagService.updateTag({ name: "description", content: "Copyright information for the webapp The Tenno Sanctuary" });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle("Copyright information for The Tenno Sanctuary");
+    this.tagger.setDescription("Copyright information for the webapp The Tenno Sanctuary");
   }
 
 }

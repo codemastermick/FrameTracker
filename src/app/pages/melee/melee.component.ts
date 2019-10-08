@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, HostListener, ChangeDetectorRef } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { Type } from "warframe-items";
 import { MeleeService } from "app/shared/melee.service";
 import { LazyItem } from "app/shared/lazyItem.interface";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-melee",
@@ -15,16 +15,13 @@ export class MeleeComponent implements OnInit {
   allMelees: LazyItem[] = [];
 
   constructor(
-    private titleService: Title,
-    private metaTagService: Meta,
+    private tagger: TagService,
     private weapons: MeleeService,
     private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.titleService.setTitle("The Tenno Sanctuary: Melee Weapons");
-    this.metaTagService.updateTag({ name: "description", content: "Warframe melee items" });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle("The Tenno Sanctuary: Melee Weapons");
+    this.tagger.setDescription("Warframe melee items");
 
     this.allMelees = this.weapons.getAllMelees();
   }

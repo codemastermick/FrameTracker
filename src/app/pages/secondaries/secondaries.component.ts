@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, HostListener } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { Type } from "warframe-items";
 import { SecondaryWeaponsService } from "app/shared/secondary-weapons.service";
 import { LazyItem } from "app/shared/lazyItem.interface";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-secondaries",
@@ -15,17 +15,14 @@ export class SecondariesComponent implements OnInit {
   allSecondaries: LazyItem[];
 
   constructor(
-    private titleService: Title,
-    private metaTagService: Meta,
+    private tagger: TagService,
     private weapons: SecondaryWeaponsService,
     private changeDetectorRef: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
-    this.titleService.setTitle("The Tenno Sanctuary: Secondary Weapons");
-    this.metaTagService.updateTag({ name: "description", content: "Warframe secondary items" });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle("The Tenno Sanctuary: Secondary Weapons");
+    this.tagger.setDescription("Warframe secondary items");
 
     this.allSecondaries = this.weapons.getAllSecondaries();
   }

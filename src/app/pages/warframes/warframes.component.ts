@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
-import { Title, Meta } from "@angular/platform-browser";
 import { WfDataService } from "app/shared/wf-data.service";
 import { Item, Type } from "warframe-items";
 import { LazyItem } from "app/shared/lazyItem.interface";
+import { TagService } from "app/shared/tag-service.service";
 
 @Component({
   selector: "app-warframes",
@@ -15,17 +15,14 @@ export class WarframesComponent implements OnInit {
   allWarframes: Item[];
 
   constructor(
-    private titleService: Title,
-    private metaTagService: Meta,
+    private tagger: TagService,
     private wf: WfDataService,
     private changeDetectorRef: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
-    this.titleService.setTitle("The Tenno Sanctuary: Warframes");
-    this.metaTagService.updateTag({ name: "description", content: "Warframes" });
-    this.metaTagService.updateTag({ name: "author", content: "Codemaster Mick" });
-    this.metaTagService.updateTag({ name: "robots", content: "index, follow" });
+    this.tagger.setTitle("The Tenno Sanctuary: Warframes");
+    this.tagger.setDescription("Warframes");
 
     this.allWarframes = this.wf.getAllWarframes();
   }
