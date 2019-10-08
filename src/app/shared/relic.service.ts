@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import Items, { Item } from "warframe-items";
 import { DomSanitizer, SafeStyle, SafeUrl } from "@angular/platform-browser";
+import { formatUrl } from "./urlHandler";
 
 @Injectable({
   providedIn: "root"
@@ -10,14 +11,6 @@ export class RelicService {
 
   constructor(private sanitization: DomSanitizer) {
     this.allRelics = new Items({ category: ["Relics"] });
-  }
-
-  private formatUrl(url: string): string {
-    url = url.toLowerCase();
-    url = url.replace("%20", " ");
-    url = url.replace(/\%20.*?/gm, " ");
-    url = url.replace(/\b(\w)/g, c => c.toUpperCase());
-    return url;
   }
 
   public getImage(imageName: string): SafeUrl {
@@ -33,7 +26,7 @@ export class RelicService {
   }
 
   getRelicByName(name: string) {
-    name = this.formatUrl(name);
+    name = formatUrl(name);
     console.log(`Retreiving data for ${name}`);
     return this.allRelics.find(x => x.name === name);
   }

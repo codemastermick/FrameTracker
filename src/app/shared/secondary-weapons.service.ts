@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import Items, { Item, Type } from "warframe-items";
 import { DomSanitizer, SafeStyle, SafeUrl } from "@angular/platform-browser";
+import { formatUrl } from "./urlHandler";
 
 @Injectable({
   providedIn: "root"
@@ -12,12 +13,6 @@ export class SecondaryWeaponsService {
     this.allSecondaries = new Items({ category: ["Secondary"] });
   }
 
-  private formatUrl(url: string): string {
-    url = url.toLowerCase();
-    url = url.replace("%20", " ");
-    url = url.replace(/\b(\w)/g, c => c.toUpperCase());
-    return url;
-  }
 
   public getImage(imageName: string): SafeUrl {
     return this.sanitization.bypassSecurityTrustUrl(`https://cdn.warframestat.us/img/${imageName}`);
@@ -32,7 +27,7 @@ export class SecondaryWeaponsService {
   }
 
   getSecondaryByName(name: string): Item {
-    name = this.formatUrl(name);
+    name = formatUrl(name);
     console.log(`Retreiving data for ${name}`);
     return this.allSecondaries.find(x => x.name === name);
   }

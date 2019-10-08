@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import Items, { Item, Type } from "warframe-items";
 import { DomSanitizer, SafeStyle, SafeUrl } from "@angular/platform-browser";
+import { formatUrl } from "./urlHandler";
 
 @Injectable({
   providedIn: "root"
@@ -11,19 +12,12 @@ export class PrimaryWeaponsService {
     this.allPrimaries = new Items({ category: ["Primary"] });
   }
 
-  private formatUrl(url: string): string {
-    url = url.toLowerCase();
-    url = url.replace("%20", " ");
-    url = url.replace(/\b(\w)/g, c => c.toUpperCase());
-    return url;
-  }
-
   getAllPrimaries(): Item[] {
     return this.allPrimaries;
   }
 
   getPrimaryByName(name: string): Item {
-    name = this.formatUrl(name);
+    name = formatUrl(name);
     console.log(`Retreiving data for ${name}`);
     return this.allPrimaries.find(x => x.name === name);
   }
