@@ -65,18 +65,20 @@
 
     <span fxFlex="30%" fxShow fxHide.lt-md class="themeToggle">
       {{!darkTheme?"Toggle Light Theme":"Toggle Dark Theme"}}
-      <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme" aria-label="Toggle between light and dark theme"> </mat-slide-toggle>
+      <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme"
+        aria-label="Toggle between light and dark theme"> </mat-slide-toggle>
     </span>
     <span fxFlex="30%" fxHide.gt-sm class="themeToggle">
       {{!darkTheme?"Light Theme":"Dark Theme"}}
-      <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme" aria-label="Toggle between light and dark theme"> </mat-slide-toggle>
+      <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme"
+        aria-label="Toggle between light and dark theme"> </mat-slide-toggle>
     </span>
 
   </mat-toolbar>
 
   <div *ngIf="loading">
-    <mat-progress-spinner class="spinner" mode="indeterminate" color="accent"> </mat-progress-spinner>
-  </div>
+      <mat-progress-spinner class="spinner" mode="indeterminate" color="accent"> </mat-progress-spinner>
+    </div>
   <router-outlet *ngIf="!loading" class="main"> </router-outlet>
 
   <mat-toolbar fxFlex="row" fxLayoutAlign="space-between" class="footer" [routerLink]="['/copyright']">
