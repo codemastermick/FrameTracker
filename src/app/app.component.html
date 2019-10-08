@@ -8,7 +8,7 @@
   </mat-card>
 
   <mat-toolbar color="primary" class="navPanel" fxFlex="row">
-    <div fxFlexAlign="start" fxFlex="80%" class="navButtons">
+    <div fxShow fxHide.lt-md fxFlexAlign="start" fxFlex="70%" class="navButtons">
       <button mat-button [routerLink]="['/home']" aria-label="Home">
         <span class="wf-lotus" style="font-size: 2em;"></span>
       </button>
@@ -29,7 +29,41 @@
       </button>
     </div>
 
-    <div fxFlex="20%">
+    <div fxHide.gt-sm fxFlexAlign="start" fxFlex="70%" class="navButtons">
+      <button mat-button [routerLink]="['/home']" aria-label="Home">
+        <span class="wf-lotus" style="font-size: 2em;"></span>
+      </button>
+      <button mat-raised-button [routerLink]="['/warframes']">
+        Warframes
+      </button>
+      <button mat-raised-button [matMenuTriggerFor]="weapons">Weapons</button>
+      <mat-menu #weapons>
+        <mat-list>
+          <mat-list-item>
+            <button mat-button [routerLink]="['/primary']" class="itemButton">
+              Primary
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button [routerLink]="['/secondary']" class="itemButton">
+              Secondary
+            </button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button [routerLink]="['/melee']" class="itemButton">
+              Melee
+            </button>
+          </mat-list-item>
+        </mat-list>
+      </mat-menu>
+
+
+      <button mat-raised-button [routerLink]="['/relics']">
+        Relics
+      </button>
+    </div>
+
+    <div fxFlex="30%" class="themeToggle">
       {{!darkTheme?"Toggle Light Theme":"Toggle Dark Theme"}}
       <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme" aria-label="Toggle between light and dark theme"> </mat-slide-toggle>
     </div>
@@ -41,11 +75,19 @@
   <router-outlet *ngIf="!loading" class="main"> </router-outlet>
 
   <mat-toolbar fxFlex="row" fxLayoutAlign="space-between" class="footer" [routerLink]="['/copyright']">
-    <div class="decopyline">
+    <div class="decopyline" fxShow fxHide.lt-md>
       All game data and imagery owned by <a href="https://www.digitalextremes.com/">Digital Extremes</a>
     </div>
-    <div class="copyline">
+    <div class="decopyline" fxHide.gt-sm>
+      Data and images: <a href="https://www.digitalextremes.com/">Digital Extremes</a>
+    </div>
+
+    <div class="copyline" fxShow fxHide.lt-md>
       Site design by <a href="https://codemastermick.firebaseapp.com">Codemaster Mick</a>
     </div>
+    <div class="copyline" fxHide.gt-sm>
+      Design: <a href="https://codemastermick.firebaseapp.com">Codemaster Mick</a>
+    </div>
+
   </mat-toolbar>
 </div>
