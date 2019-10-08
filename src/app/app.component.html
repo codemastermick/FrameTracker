@@ -8,7 +8,7 @@
   </mat-card>
 
   <mat-toolbar color="primary" class="navPanel" fxFlex="row">
-    <div fxShow fxHide.lt-md fxFlexAlign="start" fxFlex="70%" class="navButtons">
+    <span fxShow fxHide.lt-md fxFlexAlign="start" fxFlex="70%" class="navButtons">
       <button mat-button [routerLink]="['/home']" aria-label="Home">
         <span class="wf-lotus" style="font-size: 2em;"></span>
       </button>
@@ -27,9 +27,9 @@
       <button mat-raised-button [routerLink]="['/relics']">
         Relics
       </button>
-    </div>
+    </span>
 
-    <div fxHide.gt-sm fxFlexAlign="start" fxFlex="70%" class="navButtons">
+    <span fxHide.gt-sm fxFlexAlign="start" fxFlex="70%" class="navButtons">
       <button mat-button [routerLink]="['/home']" aria-label="Home">
         <span class="wf-lotus" style="font-size: 2em;"></span>
       </button>
@@ -61,12 +61,17 @@
       <button mat-raised-button [routerLink]="['/relics']">
         Relics
       </button>
-    </div>
+    </span>
 
-    <div fxFlex="30%" class="themeToggle">
+    <span fxFlex="30%" fxShow fxHide.lt-md class="themeToggle">
       {{!darkTheme?"Toggle Light Theme":"Toggle Dark Theme"}}
       <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme" aria-label="Toggle between light and dark theme"> </mat-slide-toggle>
-    </div>
+    </span>
+    <span fxFlex="30%" fxHide.gt-sm class="themeToggle">
+      {{!darkTheme?"Light Theme":"Dark Theme"}}
+      <mat-slide-toggle checked="darkTheme" (toggleChange)="darkTheme=!darkTheme" aria-label="Toggle between light and dark theme"> </mat-slide-toggle>
+    </span>
+
   </mat-toolbar>
 
   <div *ngIf="loading">
