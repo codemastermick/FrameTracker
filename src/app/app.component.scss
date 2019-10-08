@@ -10,6 +10,7 @@
   // and apply the stick-nav style to it. DO NOT REMOVE!
   width: 100%;
   min-height: 5vh;
+  max-height: 5vh;
 }
 
 button {
@@ -26,6 +27,7 @@ button {
 .footer {
   width: 100%;
   z-index: 999;
+  max-height: 5vh;
 }
 
 .decopyline {
