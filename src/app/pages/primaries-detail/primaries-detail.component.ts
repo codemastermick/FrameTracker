@@ -1,8 +1,9 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { Item, DamageTypes } from "warframe-items";
+import { DamageTypes } from "warframe-items";
 import { Router } from "@angular/router";
 import { PrimaryWeaponsService } from "../../shared/primary-weapons.service";
 import { TagService } from "app/shared/tag-service.service";
+import { LazyItem } from "app/shared/lazyItem.interface";
 
 @Component({
   selector: "app-primaries-detail",
@@ -11,7 +12,7 @@ import { TagService } from "app/shared/tag-service.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrimariesDetailComponent implements OnInit {
-  primary: Item;
+  primary: LazyItem;
 
   constructor(
     private tagger: TagService,
@@ -34,7 +35,7 @@ export class PrimariesDetailComponent implements OnInit {
     return this.weapons.getThumb(this.primary.wikiaThumbnail);
   }
 
-  getDamageTypes(weapon: Item): DamageTypes[] {
+  getDamageTypes(weapon: LazyItem): DamageTypes[] {
     return new Array(weapon.damageTypes);
   }
 
