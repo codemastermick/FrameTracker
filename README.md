@@ -3,6 +3,7 @@
 [![Travis (.org)](https://img.shields.io/travis/codemastermick/FrameTracker)](https://travis-ci.org/codemastermick/FrameTracker)
 [![Website](https://img.shields.io/website/http/tenno-sanctuary.web.app?down_color=red&down_message=offline&up_message=up)](https://tenno-sanctuary.web.app)
 [![GitHub issues](https://img.shields.io/github/issues/codemastermick/FrameTracker)](https://github.com/codemastermick/FrameTracker/issues)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/codemastermick/FrameTracker)
 
 [![codecov](https://codecov.io/gh/codemastermick/FrameTracker/branch/master/graph/badge.svg)](https://codecov.io/gh/codemastermick/FrameTracker)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b091e9b3211a491bbf949b60dcf2011a)](https://www.codacy.com/app/codemastermick/FrameTracker?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=codemastermick/FrameTracker&amp;utm_campaign=Badge_Grade)
