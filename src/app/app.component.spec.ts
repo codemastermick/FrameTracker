@@ -2,7 +2,6 @@ import { TestBed, async } from "@angular/core/testing";
 import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "./app.component";
 import { MaterialModule } from "./shared/material.module";
-import { By } from "@angular/platform-browser";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
