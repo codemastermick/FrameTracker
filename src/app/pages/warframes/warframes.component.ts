@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { WfDataService } from "app/shared/wf-data.service";
-import { Item, Type } from "warframe-items";
+import { Type } from "warframe-items";
 import { LazyItem } from "app/shared/lazyItem.interface";
 import { TagService } from "app/shared/tag-service.service";
 
@@ -12,7 +12,7 @@ import { TagService } from "app/shared/tag-service.service";
 })
 export class WarframesComponent implements OnInit {
 
-  allWarframes: Item[];
+  allWarframes: LazyItem[];
 
   constructor(
     private tagger: TagService,
