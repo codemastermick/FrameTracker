@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, HostListener, ChangeDetectorRef } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { Type } from "warframe-items";
 import { MeleeService } from "app/shared/melee.service";
 import { LazyItem } from "app/shared/lazyItem.interface";
@@ -24,17 +24,6 @@ export class MeleeComponent implements OnInit {
     this.tagger.setDescription("Warframe melee items");
 
     this.allMelees = this.weapons.getAllMelees();
-  }
-
-  @HostListener("window:scroll", ["$event"])
-  onWindowScroll(e) {
-    if (window.pageYOffset > 70) {
-      const element = document.getElementsByClassName("filterbar")[0];
-      element.classList.add("sticky-nav");
-    } else {
-      const element = document.getElementsByClassName("filterbar")[0];
-      element.classList.remove("sticky-nav");
-    }
   }
 
   getThumb(imageName: string) {

@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, HostListener, ChangeDetectorRef } from "@angular/core";
-import { Item, Type } from "warframe-items";
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
+import { Type } from "warframe-items";
 import { PrimaryWeaponsService } from "../../shared/primary-weapons.service";
 import { LazyItem } from "app/shared/lazyItem.interface";
 import { TagService } from "app/shared/tag-service.service";
@@ -12,7 +12,7 @@ import { TagService } from "app/shared/tag-service.service";
 })
 export class PrimariesComponent implements OnInit {
 
-  allPrimaries: Item[];
+  allPrimaries: LazyItem[];
 
   constructor(
     private tagger: TagService,
@@ -24,18 +24,6 @@ export class PrimariesComponent implements OnInit {
     this.tagger.setDescription("Warframe primary items");
 
     this.allPrimaries = this.weapons.getAllPrimaries();
-  }
-
-
-  @HostListener("window:scroll", ["$event"])
-  onWindowScroll(e) {
-    if (window.pageYOffset > 70) {
-      const element = document.getElementsByClassName("filterbar")[0];
-      element.classList.add("sticky-nav");
-    } else {
-      const element = document.getElementsByClassName("filterbar")[0];
-      element.classList.remove("sticky-nav");
-    }
   }
 
   getThumb(imageName: string) {

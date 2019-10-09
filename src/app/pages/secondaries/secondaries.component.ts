@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, HostListener } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from "@angular/core";
 import { Type } from "warframe-items";
 import { SecondaryWeaponsService } from "app/shared/secondary-weapons.service";
 import { LazyItem } from "app/shared/lazyItem.interface";
@@ -25,18 +25,6 @@ export class SecondariesComponent implements OnInit {
     this.tagger.setDescription("Warframe secondary items");
 
     this.allSecondaries = this.weapons.getAllSecondaries();
-  }
-
-
-  @HostListener("window:scroll", ["$event"])
-  onWindowScroll(e) {
-    if (window.pageYOffset > 70) {
-      const element = document.getElementsByClassName("filterbar")[0];
-      element.classList.add("sticky-nav");
-    } else {
-      const element = document.getElementsByClassName("filterbar")[0];
-      element.classList.remove("sticky-nav");
-    }
   }
 
   getThumb(imageName: string) {
