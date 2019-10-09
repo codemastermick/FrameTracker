@@ -13,3 +13,12 @@
   flex: 1 1 auto;
   text-align: end;
 }
+
+.dot {
+  height: 1em;
+  width: 1em;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.25em;
+}
