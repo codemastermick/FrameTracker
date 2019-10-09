@@ -2,7 +2,9 @@
   text-align: center;
   border-radius: 0;
   flex-grow: 1;
-  max-height: 5vh;
+  min-height: 5vh;
+  max-height: 10vh;
+  height: 5vh;
 }
 
 .navPanel {
