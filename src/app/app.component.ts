@@ -1,4 +1,4 @@
-import { Component, HostListener } from "@angular/core";
+import { Component } from "@angular/core";
 import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from "@angular/router";
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent {
   // Sets initial value to true to show loading spinner on first load
   loading = true;
 
-  constructor(private router: Router) {
+  constructor(router: Router) {
     router.events.subscribe((event: RouterEvent) => {
       this.navigationInterceptor(event);
     });
@@ -34,17 +34,6 @@ export class AppComponent {
     }
     if (event instanceof NavigationError) {
       this.loading = false;
-    }
-  }
-
-  @HostListener("window:scroll", ["$event"])
-  onWindowScroll(e) {
-    if (window.pageYOffset > 70) {
-      const element = document.getElementsByTagName("mat-toolbar")[0];
-      element.classList.add("sticky-nav");
-    } else {
-      const element = document.getElementsByTagName("mat-toolbar")[0];
-      element.classList.remove("sticky-nav");
     }
   }
 }

@@ -28,19 +28,4 @@ describe("AppComponent", () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual("The Sanctuary");
   });
-
-  it("should have the navbar not sticky at first", () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const container = fixture.debugElement.query(By.css(".sticky-nav"));
-    expect(container).toBeFalsy();
-  });
-
-  // it('should have the navbar on scroll', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const container = fixture.debugElement.query(By.css('mat-toolbar'));
-  //   window.dispatchEvent(new Event('scroll'));
-  //   window.scrollTo(0, 50);
-  //   fixture.detectChanges();
-  //   expect(container.classes).toContain('.sticky-nav');
-  // });
 });

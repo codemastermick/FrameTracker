@@ -8,8 +8,6 @@
 }
 
 .navPanel {
-  // this is being used to select the correct element
-  // and apply the stick-nav style to it. DO NOT REMOVE!
   width: 100%;
   min-height: 5vh;
   max-height: 5vh;
@@ -17,13 +15,6 @@
 
 button {
   margin: 0.25em;
-}
-
-.sticky-nav {
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  width: 100%;
 }
 
 .footer {
