@@ -16,7 +16,7 @@ install:
 before_script:
   - .travis/skip_on_readme.sh || travis_terminate 1 # bail out if the only files changes were .md* files
   - npm run lintonly || travis_terminate 1 # ensure files pass linting
-  - export NODE_OPTIONS=–max_old_space_size=8192
+  - export NODE_OPTIONS=--max_old_space_size=8192
 script:
   - npm run build:prod || travis_terminate 1 # build the app
   - npm run test:ci || travis_terminate 1 # run all tests
